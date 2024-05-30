@@ -1,11 +1,24 @@
+<script setup>
+import headerpic from '../components/header.vue';
+import coverpic from '../components/cover.vue';
+
+</script>
 <template>
+<body>
     <div>
-        <h1>Startseite</h1>
-        <router-link to="/login">Link zur Login Seite</router-link>
+        <header>
+            <headerpic />
+        </header>
     </div>
+    <div>
+        <coverpic />
+    </div>
+
+    <!-- <div>
+        <router-link to="/login">Link zur Login Seite</router-link>
+    </div> -->
+</body>
 </template>
 <style lang="scss">
-h1 {
-    color: red;
-}
+
 </style>
