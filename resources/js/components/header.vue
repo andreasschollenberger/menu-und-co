@@ -31,7 +31,6 @@
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 
 /* Das ist für den Kochlöffel der als Header benutzt wird */ 
 .headerimg {
