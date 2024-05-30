@@ -1,6 +1,5 @@
 <script setup>
 import headerpic from '../components/header.vue';
-import coverpic from '../components/cover.vue';
 
 </script>
 <template>
@@ -10,9 +9,7 @@ import coverpic from '../components/cover.vue';
             <headerpic />
         </header>
     </div>
-    <div>
-        <coverpic />
-    </div>
+    
 
     <!-- <div>
         <router-link to="/login">Link zur Login Seite</router-link>
