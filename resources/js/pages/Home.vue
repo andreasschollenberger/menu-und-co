@@ -14,13 +14,30 @@ import headerpic from '../components/header.vue';
             <div class="semitransparent">
                 <div class="w-text">
                     <h1>Willkommen bei unserer Rezepte-Plattform!</h1>
-                    <p>Als Gast haben Sie die Möglichkeit, alle unsere köstlichen Rezepte und nützlichen Informationen einzusehen und auszuprobieren. Tauchen Sie ein in die Welt des Kochens und entdecken Sie eine Vielzahl von Gerichten für jeden Geschmack.</p>
-                    <p>Für unsere registrierten Benutzer bieten wir noch mehr Möglichkeiten. Werden Sie Teil unserer Community und erstellen Sie Ihre eigenen Rezepte! Ihre Kreativität und kulinarischen Fähigkeiten helfen dabei, unsere Datenbank mit Leben zu füllen.</p>
+                    <p>Als Gast haben Sie die Möglichkeit, alle unsere köstlichen Rezepte
+                         und nützlichen Informationen einzusehen und auszuprobieren. 
+                         Tauchen Sie ein in die Welt des Kochens und entdecken Sie eine 
+                         Vielzahl von Gerichten für jeden Geschmack.</p>
+                    <p>Für unsere registrierten Benutzer bieten wir noch mehr 
+                        Möglichkeiten. Werden Sie Teil unserer Community 
+                        und erstellen Sie Ihre eigenen Rezepte! Ihre Kreativität 
+                        und kulinarischen Fähigkeiten helfen dabei, unsere Datenbank 
+                        mit Leben zu füllen.</p>
                 </div>
-                <div class="Homelogo">
-                    
+
+                <div class="homelogo">
+                    <img class="homeimg" src="/public/Assets/img/homelogo.png" alt="Home Logo" />
                 </div>
-                 
+
+                <div class="muc-text">
+                    <h2>MENÜ UND CO</h2>
+                    <p>Unser Ziel ist es, nicht nur die Zutatenliste eines Rezepts 
+                        bereitzustellen, sondern auch den Vitamin- und Nährwertgehalt 
+                        transparent zu machen. Dabei legen wir besonderen Wert 
+                        auf die Berücksichtigung der Ernährungsbedürfnisse von 
+                        Allergikern, die stets im Vordergrund unserer Rezeptentwicklung 
+                        stehen.</p>
+                </div>
             </div>
         </div>
     </main>
@@ -31,10 +48,13 @@ import headerpic from '../components/header.vue';
     </div> -->
 </body>
 </template>
+
+
 <style scoped>
+
 /* Willkommens Text */
 .w-text {
-    width: 353px;
+    width: 450px;
     padding: 20px;
     position: absolute;
     top: 150px;
@@ -42,28 +62,55 @@ import headerpic from '../components/header.vue';
 }
 
 h1 {
-font-size: 25px;
+font-size: 36px;
 }
 
 p {
-font-size: 20px;
+font-size: 27px;
 }
 
+/* Home Logo (Teller mit Logo)*/
+.homelogo {
+    position: absolute;
+    top: 150px;
+    left: 200px;
+}
+
+.homeimg {
+    width: 800px;
+    height: 800px;
+}
+
+/* Menü und Co Text */
+.muc-text {
+    width: 776px;
+    padding: 20px;
+    position: absolute;
+    top: 950px;
+    left: 250px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+/* Halbtransparenter Hintergrund für die Texte, bilder usw. */
 .semicontainer {
-        padding-left: 100px;
-        padding-right: 100px;
-    }
+    padding-left: 100px;
+    padding-right: 100px;
+}
 
-    .semitransparent {
-        position: absolute;
-        width: 90%;
-
-        top: 230px;
-        left: 100px;
-        bottom: 0px;
-        border-radius: 30px;
-        background-color: rgba(222, 220, 220, 0.81);
-        z-index: -1;
-    }
+/*-----------------------hier muss noch nachgebessert werden, es soll automatisch wachsen----------   */ 
+.semitransparent {
+    position: absolute;
+    width: 90%;
+    height: 1500px ;
+    top: 230px;
+    left: 100px;
+    bottom: 0px;
+    border-radius: 30px;
+    background-color: rgba(222, 220, 220, 0.81);
+    z-index: -1;
+}
 
 </style>
