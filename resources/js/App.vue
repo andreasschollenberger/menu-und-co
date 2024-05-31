@@ -60,4 +60,11 @@
         right: 0;
         z-index: -2;
     }
+
+    @media (max-width: 768px) {
+
+        .coverpictwo {
+            display: none;
+    }
+}
 </style>

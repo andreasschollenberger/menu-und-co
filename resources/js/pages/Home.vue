@@ -1,5 +1,6 @@
 <script setup>
 import headerpic from '../components/header.vue';
+import hamburger from '../components/hamburger.vue';
 
 </script>
 <template>
@@ -7,6 +8,11 @@ import headerpic from '../components/header.vue';
     <div>
         <header>
             <headerpic />
+
+            <div class="ham-nav">
+                <hamburger />
+            </div>
+
         </header>
     </div>
     <main>
@@ -94,6 +100,11 @@ h2 {
     font-size: 32px;
 }
 
+/* Hamburger Navigation */
+.ham-nav {
+    display: none;
+}
+
 /* Halbtransparenter Hintergrund für die Texte, bilder usw. */
 .semicontainer {
     padding-left: 100px;
@@ -113,4 +124,55 @@ h2 {
     z-index: -1;
 }
 
+@media (max-width: 768px) {
+    .w-text {
+        width: 450px;
+        padding: 20px;
+        position: absolute;
+        top: 711px;
+        left: 145px;
+    }
+
+    .homelogo {
+        position: absolute;
+        top: 50px;
+        left: 27px;
+    }
+
+    .muc-text {
+        width: 700px;
+        padding: 20px;
+        position: absolute;
+        top: 1455px;
+        left: 18px;
+    }
+
+    .homeimg {
+    width: 700px;
+    height: 700px;
+}
+
+    .semicontainer {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .semitransparent {
+        position: absolute;
+        width: 750px;
+        height: 1900px ;
+        top: 90px;
+        left: 15px;
+        bottom: 50px;
+        border-radius: 30px;
+        background-color: rgba(222, 220, 220, 0.81);
+        z-index: -1;
+    }
+
+    /* Hamburger Navigation */
+    .ham-nav {
+    display: block;
+}
+
+}
 </style>

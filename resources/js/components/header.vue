@@ -41,7 +41,7 @@
 }
 
 .headerpic {
-    width: 100%;
+    width: 97%;
     padding: 0px 20px 0px 20px;
     position: absolute;
     z-index: -1;
@@ -105,7 +105,43 @@
     color: rgb(133, 121, 121);
 }
 
+@media (max-width: 768px) {
+    .navigation {
+        display: none;
+    }
+    .loginNav {
+        top: 5px;
+        right: 480px;
+    }
 
+    .loginNav a{
+        font-size: 15px;
+        
+    }
+
+    .LogoHeader {
+        width: 120px;
+        height: 70px;
+        position: absolute;
+        z-index: 1;
+        top: 1px;
+        left: 50px;
+    }
+
+    .headerimg {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .headerpic {
+        width: 97%;
+        padding: 0px 20px 0px 20px;
+        position: absolute;
+        z-index: -1;
+    }
+}
 
 
     
