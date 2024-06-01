@@ -50,7 +50,7 @@
 
     <div class="t-label">
         <input type="text" id="herkunft" name="herkunft">
-        <label for="herkunft">  Herkunft</label>
+        <label for="herkunft">  Aus welchem Land kommt Ihr Rezept?</label>
     </div>
 
 </template>

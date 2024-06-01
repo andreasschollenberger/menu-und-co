@@ -5,6 +5,7 @@
             <p class="titel">Rezept Name</p>
             <p class="kategorie">Kategorie: Haubtgericht</p>
             <p class="herkunft">Herkunft: Italien</p>
+            <p class="vegi">Neigung: Vegetarisch</p>
             <p class="autor">Autor: Max Mustermann</p>
 
             <button>Rezept Anschauen</button>
@@ -58,11 +59,19 @@ img {
     left: 500px;
 }
 
+.vegi {
+    font-size: 25px;
+    color: #393636;
+    position: absolute;
+    top: 200px;
+    left: 500px;
+}
+
 .autor {
     font-size: 25px;
     color: #393636;
     position: absolute;
-    top: 240px;
+    top: 280px;
     left: 500px;
 }
 
