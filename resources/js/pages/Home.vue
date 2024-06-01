@@ -1,6 +1,7 @@
 <script setup>
 import headerpic from '../components/header.vue';
 import hamburger from '../components/hamburger.vue';
+import rezcard from '../components/menucard.vue';
 
 </script>
 <template>
@@ -18,6 +19,10 @@ import hamburger from '../components/hamburger.vue';
     <main>
         <div class="semicontainer">
             <div class="semitransparent">
+                <div class="test1">
+                    <rezcard />
+                </div>
+
                 <div class="w-text">
                     <h1>Willkommen bei unserer Rezepte-Plattform!</h1>
                     <p>Als Gast haben Sie die Möglichkeit, alle unsere köstlichen Rezepte
@@ -43,6 +48,7 @@ import hamburger from '../components/hamburger.vue';
                         auf die Berücksichtigung der Ernährungsbedürfnisse von 
                         Allergikern, die stets im Vordergrund unserer Rezeptentwicklung 
                         stehen.</p>
+
                 </div>
             </div>
         </div>
@@ -57,6 +63,10 @@ import hamburger from '../components/hamburger.vue';
 
 
 <style scoped>
+.test1 {
+    z-index: 9999;
+
+}
 
 /* Willkommens Text */
 .w-text {
