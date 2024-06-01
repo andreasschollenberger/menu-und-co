@@ -2,6 +2,8 @@
 import headerpic from '../components/header.vue';
 import hamburger from '../components/hamburger.vue';
 import rezcard from '../components/menucard.vue';
+import createZutaten from '../components/createZutaten.vue';
+import createKategorie from '../components/createKategorie.vue';
 
 </script>
 <template>
@@ -21,6 +23,12 @@ import rezcard from '../components/menucard.vue';
             <div class="semitransparent">
                 <div class="test1">
                     <rezcard />
+                </div>
+                <div class="test2">
+                    <createZutaten />
+                </div>
+                <div class="test3">
+                    <createKategorie />
                 </div>
 
                 <div class="w-text">
@@ -66,6 +74,15 @@ import rezcard from '../components/menucard.vue';
 .test1 {
     z-index: 9999;
 
+}
+.test2 {
+    position: absolute;
+    top: 2100px;
+}
+
+.test3 {
+    position: absolute;
+    top: 2500px;
 }
 
 /* Willkommens Text */
