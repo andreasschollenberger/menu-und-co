@@ -25,10 +25,34 @@
 
         <nav class="loginNav">
             <a href="register">Registrieren</a>
-            <a href="login">Login</a>
+        
+            <div>
+                <select class="user" v-model="selectedOption">
+                    <option disabled value="">User</option>
+                    <option>Login</option>
+                    <option>Profil</option>
+                    <option>Logout</option>
+                </select>
+
+                <div v-if="selectedOption === 'Login'">
+                    <input class="pass" type="password" v-model="password" placeholder="Passwort" />
+                </div>
+            </div> 
+        
         </nav>
 </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            selectedOption: '',
+            password: ''
+        }
+    }
+}
+</script>
 
 <style scoped>
 
@@ -103,6 +127,26 @@
 
 .loginNav a:hover {
     color: rgb(133, 121, 121);
+}
+
+.user {
+    width: 100px;
+    height: 30px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 28px;
+}
+
+.pass {
+    width: 200px;
+    height: 30px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 28px;
 }
 
 @media (max-width: 768px) {
