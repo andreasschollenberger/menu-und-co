@@ -5,6 +5,7 @@ import rezcard from '../components/menucard.vue';
 import createZutaten from '../components/createZutaten.vue';
 import createKategorie from '../components/createKategorie.vue';
 import createImgTitel from '../components/createImgTitel.vue';
+import createZubereitung from '../components/createZubereitung.vue';
 
 </script>
 <template>
@@ -33,6 +34,9 @@ import createImgTitel from '../components/createImgTitel.vue';
                 </div>
                 <div class="test3">
                     <createKategorie />
+                </div>
+                <div class="test5">
+                    <createZubereitung />
                 </div>
                 
 
@@ -94,6 +98,12 @@ import createImgTitel from '../components/createImgTitel.vue';
     position: absolute;
     top: 2100px;
     z-index: 9998;
+}
+
+.test5 {
+    position: absolute;
+    top: 3100px;
+    z-index: 9997;
 }
 
 /* Willkommens Text */

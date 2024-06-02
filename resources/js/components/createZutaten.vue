@@ -94,6 +94,7 @@ export default {
     text-align: center;
     line-height: 28px;
 }
+
 .plus-b {
     width: 50px;
     height: 50px;
