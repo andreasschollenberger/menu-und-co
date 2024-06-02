@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="place">
         <h1>Neue Kategorie erstellen</h1>
 
         <form class="h-label">
@@ -38,7 +38,7 @@
             
         </form>
     </div>
-    <div>
+    <div class="place2">
         <form class="s-label">
             <input type="radio" id="vegan" name="kategorie" value="Vegan">
             <label for="vegan">Vegan</label>
@@ -48,15 +48,34 @@
         </form>
     </div>
 
-    <div class="t-label">
-        <input type="text" id="herkunft" name="herkunft">
-        <label for="herkunft">  Aus welchem Land kommt Ihr Rezept?</label>
+    <div class="place3">
+        <div class="t-label">
+            <input type="text" id="herkunft" name="herkunft">
+            <label for="herkunft">  Aus welchem Land kommt Ihr Rezept?</label>
+        </div>
     </div>
 
 </template>
 
 
 <style scoped>
+
+.place {
+    position: absolute;
+    left: 400px;
+}
+
+.place2 {
+    position: absolute;
+    left: 400px;
+    top: 200px;
+}
+
+.place3 {
+    position: absolute;
+    left: 400px;
+    top: 270px;
+}
 
 .h-label {
     display: flex;

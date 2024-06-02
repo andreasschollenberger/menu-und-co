@@ -4,6 +4,7 @@ import hamburger from '../components/hamburger.vue';
 import rezcard from '../components/menucard.vue';
 import createZutaten from '../components/createZutaten.vue';
 import createKategorie from '../components/createKategorie.vue';
+import createImgTitel from '../components/createImgTitel.vue';
 
 </script>
 <template>
@@ -24,12 +25,16 @@ import createKategorie from '../components/createKategorie.vue';
                 <div class="test1">
                     <rezcard />
                 </div>
+                <div class="test4">
+                    <createImgTitel />
+                </div>
                 <div class="test2">
                     <createZutaten />
                 </div>
                 <div class="test3">
                     <createKategorie />
                 </div>
+                
 
                 <div class="w-text">
                     <h1>Willkommen bei unserer Rezepte-Plattform!</h1>
@@ -77,12 +82,18 @@ import createKategorie from '../components/createKategorie.vue';
 }
 .test2 {
     position: absolute;
-    top: 2100px;
+    top: 2600px;
 }
 
 .test3 {
     position: absolute;
-    top: 2500px;
+    top: 2200px;
+}
+
+.test4 {
+    position: absolute;
+    top: 2100px;
+    z-index: 9998;
 }
 
 /* Willkommens Text */
