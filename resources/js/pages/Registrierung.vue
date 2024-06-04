@@ -1,9 +1,162 @@
 <template>
+    <main class="m-container">
+        <div class="r-container">
+            <div class="i-container">
+                <h3>Registrierung</h3>
+                <p>Für unsere registrierten Benutzer bieten wir noch mehr Möglichkeiten. 
+                    Werden Sie Teil unserer Community und erstellen Sie Ihre eigenen Rezepte! 
+                    Ihre Kreativität und kulinarischen Fähigkeiten helfen dabei, 
+                    unsere Datenbank mit Leben zu füllen.</p>
+            </div>
 
+            <div class="registrierung">
+                <h3>Registrierung User</h3>
+                <form>
+                    <div class="reg-label">
+                        <label for="username">Vorname</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+
+                    <div class="reg-label">
+                        <label for="username">Familien Name</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+
+                    <div class="reg-label">
+                        <label for="email">E-Mail:</label>
+                        <input type="email" id="email" name="email" v-model="email" @blur="validateEmail" required>
+                    </div>
+
+                    <div class="reg-label">
+                        <label for="password">Passwort:</label>
+                        <input type="password" id="password" name="password" v-model="password" required>
+                    </div>
+
+                    <div class="reg-label">
+                        <label for="passwordConfirm">Passwort wiederholen:</label>
+                        <input type="password" id="passwordConfirm" name="passwordConfirm" v-model="passwordConfirm" @blur="validatePassword" required>
+                    </div>
+
+                    <div class="check-label">
+                        <input type="checkbox" id="agb" name="agb" required>
+                        <router-link to="/agb"><label for="agb">AGB Akzeptiert</label></router-link>
+                    </div>
+
+                    <div>
+                    <button type="submit"><img src="/public/Assets/img/registrieren-button.png" alt=""></button>
+                </div>
+                </form>
+            </div>
+
+        </div>
+    </main>
 
 </template>
 
+<script>
+export default {
+    data() {
+        return {
+            email: '',
+            password: '',
+            passwordConfirm: '',
+            // ...
+        }
+    },
+    methods: {
+        validateEmail() {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (!re.test(this.email)) {
+                alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
+            }
+        },
+        validatePassword() {
+            if (this.password !== this.passwordConfirm) {
+                alert('Die Passwörter stimmen nicht überein.');
+            }
+        },
+        // ...
+    }
+}
+</script>
+
 
 <style scoped>
+
+main {
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    top: 230px;
+    left: 100px;
+    bottom: 0px;
+    border-radius: 30px;
+    background-color: rgba(222, 220, 220, 0.81);
+    z-index: -1;
+}
+
+.r-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.i-container {
+    background-color: rgba(179, 187, 195, 1);
+    width: 353px;
+    margin-top: 250px;
+    margin-left: 0px;
+    border-radius: 20px;
+}
+
+.i-container h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+    padding-top: 20px;
+}
+
+.i-container p {
+    font-size: 15px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.registrierung {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 250px;
+    margin-left: 150px;
+    border-radius: 20px;
+}
+
+.reg-label {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.reg-label input {
+    font-size: 25px;
+    width: 500px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid rgba(179, 187, 195, 1);
+    padding-left: 10px;
+}
+
+.check-label {
+    display: flex;
+    margin-top: 20px;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    margin-top: 20px;
+}
+
 
 </style>

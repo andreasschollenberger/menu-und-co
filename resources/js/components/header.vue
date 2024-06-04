@@ -23,8 +23,9 @@
             <router-link to="/agb">AGB</router-link>
         </nav>
 
+        
         <nav class="loginNav">
-            <a href="register">Registrieren</a>
+            <router-link to="/registrierung">Registrieren</router-link>
         
             <div>
                 <select class="user" v-model="selectedOption">
