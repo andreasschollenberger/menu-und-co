@@ -8,7 +8,9 @@
             <p class="vegi">Neigung: Vegetarisch</p>
             <p class="autor">Autor: Max Mustermann</p>
 
-            <button>Rezept Anschauen</button>
+            <router-link to="/rezept">
+                <button>Rezept Anschauen</button>
+            </router-link>
         </div>
 
     </div> 
