@@ -1,4 +1,8 @@
 
+<script setup>
+import headerpic from './components/header.vue';
+</script>
+
 <template>
     
     <router-view v-slot="{ Component, route }">
@@ -6,6 +10,10 @@
             <Component :is="Component" />
         </div>
     </router-view>
+
+    <header>
+        <headerpic />
+    </header>
 
     <div class="cover">
         <img class="coverpic" src="/public/Assets/img/cover.png" alt="Cover Background" />

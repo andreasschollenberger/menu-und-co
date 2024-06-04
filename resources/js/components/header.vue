@@ -9,18 +9,18 @@
         <img class="headerpic" src="/public/Assets/img/haeder-hintergrund.png" alt="Header Background" />
     </div>
     
-    <a href="home">
+    <router-link to="/">
         <img class="LogoHeader" src="/public/Assets/img/logo.png" alt="Logo" />
-    </a>
+    </router-link>
 
         <nav class="navigation">
-           <a href="home">Home</a>
-           <a href="#">Rezepte</a>
-           <a href="#">Produkte</a>
-           <a href="#">Restaurants</a>
-           <a href="#">Tipps</a>
-           <a href="#">Über uns</a>
-           <a href="#">AGB</a>
+            <router-link to="/">Home</router-link>
+            <router-link to="/rezepte">Rezepte</router-link>
+            <router-link to="/produkte">Produkte</router-link>
+            <router-link to="/restaurants">Restaurants</router-link>
+            <router-link to="/tipps">Tipps</router-link>
+            <router-link to="/über-uns">Über uns</router-link>
+            <router-link to="/agb">AGB</router-link>
         </nav>
 
         <nav class="loginNav">
@@ -93,7 +93,7 @@ export default {
     top: 0;
 }
 
-.navigation a {
+.navigation a{ /* Hier muss der Tag umbenannt werden*/
     text-decoration: none;
     font-family: "Lexend Deca", sans-serif;
     font-size: 26px;

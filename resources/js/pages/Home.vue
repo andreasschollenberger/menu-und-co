@@ -1,7 +1,5 @@
 <script setup>
-import headerpic from '../components/header.vue';
 import hamburger from '../components/hamburger.vue';
-import rezcard from '../components/menucard.vue';
 import createZutaten from '../components/createZutaten.vue';
 import createKategorie from '../components/createKategorie.vue';
 import createImgTitel from '../components/createImgTitel.vue';
@@ -12,7 +10,6 @@ import createZubereitung from '../components/createZubereitung.vue';
 <body>
     <div>
         <header>
-            <headerpic />
 
             <div class="ham-nav">
                 <hamburger />
@@ -23,9 +20,6 @@ import createZubereitung from '../components/createZubereitung.vue';
     <main>
         <div class="semicontainer">
             <div class="semitransparent">
-                <div class="test1">
-                    <rezcard />
-                </div>
                 <div class="test4">
                     <createImgTitel />
                 </div>
@@ -80,10 +74,6 @@ import createZubereitung from '../components/createZubereitung.vue';
 
 
 <style scoped>
-.test1 {
-    z-index: 9999;
-
-}
 .test2 {
     position: absolute;
     top: 2600px;
@@ -198,7 +188,7 @@ h2 {
     .homeimg {
     width: 700px;
     height: 700px;
-}
+    }
 
     .semicontainer {
         padding-left: 0px;
@@ -220,7 +210,7 @@ h2 {
     /* Hamburger Navigation */
     .ham-nav {
     display: block;
-}
+    }
 
 }
 </style>

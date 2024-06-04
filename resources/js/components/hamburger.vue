@@ -115,14 +115,14 @@
         transform: translate(-50%, -50%);
     }
 
-    input:checked ~ .togel .top_line {
+    input:checked ~ .toggle .top_line {
         left: 2px;
         top: 14px;
         width: 25px;
         transform: rotate(45deg);
     }
 
-    input:checked ~ .togel .bottom_line {
+    input:checked ~ .toggle .bottom_line {
         left: 2px;
         top: 14px;
         width: 25px;

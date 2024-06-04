@@ -46,7 +46,7 @@ export default {
 
 .img-container img {
     width: 200px;
-    height: 200px;
+    aspect-ratio: 4/3;
     object-fit: cover;
     margin: 0 0 0 27px;
     border-radius: 25px;

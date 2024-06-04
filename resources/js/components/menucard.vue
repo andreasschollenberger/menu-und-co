@@ -23,9 +23,7 @@
     background-color: rgba(179, 187, 195, 1);
     border-top-left-radius: 150px;
     border-bottom-right-radius: 150px;
-    position: absolute;
-    top: 1600px;
-    left: 250px;
+    
 }
 
 img {

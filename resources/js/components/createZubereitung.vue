@@ -7,7 +7,7 @@
             <button class="plus-b" @click="addFields">+</button>
         </div>
         <div v-for="(field, index) in fields" :key="index">
-            <textarea class="textfield" placeholder=" Weiterer Zubereitung Schritt" v-model="field.textValue"></textarea>
+            <textarea class="textfield" placeholder="Weiterer Zubereitung Schritt" v-model="field.textValue"></textarea>
         </div>
         
     </div>
