@@ -1,13 +1,8 @@
 <script setup>
 import hamburger from '../components/hamburger.vue';
-import createZutaten from '../components/createZutaten.vue';
-import createKategorie from '../components/createKategorie.vue';
-import createImgTitel from '../components/createImgTitel.vue';
-import createZubereitung from '../components/createZubereitung.vue';
 
 </script>
 <template>
-<body>
     <div>
         <header>
 
@@ -18,39 +13,29 @@ import createZubereitung from '../components/createZubereitung.vue';
         </header>
     </div>
     <main>
-        <div class="semicontainer">
-            <div class="semitransparent">
-                <div class="test4">
-                    <createImgTitel />
+        <div class="h-container">
+
+            <div class="i-container">
+                <div class="homelogo">
+                    <img class="homeimg" src="/public/Assets/img/homelogo.png" alt="Home Logo" />
                 </div>
-                <div class="test2">
-                    <createZutaten />
-                </div>
-                <div class="test3">
-                    <createKategorie />
-                </div>
-                <div class="test5">
-                    <createZubereitung />
-                </div>
-                
 
                 <div class="w-text">
                     <h1>Willkommen bei unserer Rezepte-Plattform!</h1>
+
                     <p>Als Gast haben Sie die Möglichkeit, alle unsere köstlichen Rezepte
-                         und nützlichen Informationen einzusehen und auszuprobieren. 
-                         Tauchen Sie ein in die Welt des Kochens und entdecken Sie eine 
-                         Vielzahl von Gerichten für jeden Geschmack.</p>
+                            und nützlichen Informationen einzusehen und auszuprobieren. 
+                            Tauchen Sie ein in die Welt des Kochens und entdecken Sie eine 
+                            Vielzahl von Gerichten für jeden Geschmack.</p>
+
                     <p>Für unsere registrierten Benutzer bieten wir noch mehr 
                         Möglichkeiten. Werden Sie Teil unserer Community 
                         und erstellen Sie Ihre eigenen Rezepte! Ihre Kreativität 
                         und kulinarischen Fähigkeiten helfen dabei, unsere Datenbank 
                         mit Leben zu füllen.</p>
                 </div>
-
-                <div class="homelogo">
-                    <img class="homeimg" src="/public/Assets/img/homelogo.png" alt="Home Logo" />
-                </div>
-
+            </div> 
+        </div>
                 <div class="muc-text">
                     <h2>MENÜ UND CO</h2>
                     <p>Unser Ziel ist es, nicht nur die Zutatenliste eines Rezepts 
@@ -59,65 +44,49 @@ import createZubereitung from '../components/createZubereitung.vue';
                         auf die Berücksichtigung der Ernährungsbedürfnisse von 
                         Allergikern, die stets im Vordergrund unserer Rezeptentwicklung 
                         stehen.</p>
-
                 </div>
-            </div>
-        </div>
     </main>
     
 
     <!-- <div>
         <router-link to="/login">Link zur Login Seite</router-link>
     </div> -->
-</body>
 </template>
 
 
 <style scoped>
-.test2 {
-    position: absolute;
-    top: 2600px;
+
+/* Halbtransparenter Hintergrund */
+main {
+    /* position: absolute;
+    width: 90%;
+    height: auto;
+    min-height: 100%;
+    top: 230px;
+    left: 100px;
+    bottom: 0px; */
+    max-width: 90%;
+    margin: auto;
+    border-radius: 30px;
+    background-color: rgba(222, 220, 220, 0.81);
+    /* z-index: -1; */  
 }
 
-.test3 {
-    position: absolute;
-    top: 2200px;
+.h-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.test4 {
-    position: absolute;
-    top: 2100px;
-    z-index: 9998;
-}
+.i-container {
+    display: flex;
 
-.test5 {
-    position: absolute;
-    top: 3100px;
-    z-index: 9997;
-}
-
-/* Willkommens Text */
-.w-text {
-    width: 450px;
-    padding: 20px;
-    position: absolute;
-    top: 150px;
-    left: 1000px;
-}
-
-h1 {
-font-size: 36px;
-}
-
-p {
-font-size: 27px;
 }
 
 /* Home Logo (Teller mit Logo)*/
 .homelogo {
-    position: absolute;
-    top: 150px;
-    left: 200px;
+    margin-top: 50px;
+    margin-left: 0px;
 }
 
 .homeimg {
@@ -125,42 +94,49 @@ font-size: 27px;
     height: 800px;
 }
 
+
+
+/* Willkommens Text */
+.w-text {
+    width: 445px;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+.w-text h1  {
+font-size: 36px;
+}
+
+.w-text p {
+font-size: 27px;
+}
+
 /* Menü und Co Text */
+
 .muc-text {
     width: 776px;
     padding: 20px;
-    position: absolute;
-    top: 950px;
-    left: 250px;
+    
 }
 
-h2 {
+.muc-text h2 {
     font-size: 32px;
 }
+
+.muc-text h1 {
+    font-size: 36px;
+}
+
+.muc-text p {
+    font-size: 27px;
+}
+
 
 /* Hamburger Navigation */
 .ham-nav {
     display: none;
 }
 
-/* Halbtransparenter Hintergrund für die Texte, bilder usw. */
-.semicontainer {
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-/*-----------------------hier muss noch nachgebessert werden, es soll automatisch wachsen----------   */ 
-.semitransparent {
-    position: absolute;
-    width: 90%;
-    height: 1500px ;
-    top: 230px;
-    left: 100px;
-    bottom: 0px;
-    border-radius: 30px;
-    background-color: rgba(222, 220, 220, 0.81);
-    z-index: -1;
-}
 
 @media (max-width: 768px) {
     .w-text {

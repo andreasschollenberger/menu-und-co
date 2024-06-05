@@ -4,12 +4,6 @@ import headerpic from './components/header.vue';
 </script>
 
 <template>
-    
-    <router-view v-slot="{ Component, route }">
-        <div :key="route.name">
-            <Component :is="Component" />
-        </div>
-    </router-view>
 
     <header>
         <headerpic />
@@ -22,6 +16,14 @@ import headerpic from './components/header.vue';
     <div class="coversecend">
         <img class="coverpictwo" src="/public/Assets/img/coversecend.png" alt="Cover Background" />
     </div>
+    
+    <router-view v-slot="{ Component, route }">
+        <div :key="route.name">
+            <Component :is="Component" />
+        </div>
+    </router-view>
+
+   
     
    
 </template>
@@ -44,7 +46,7 @@ import headerpic from './components/header.vue';
 
     .cover {
         position: absolute;
-        top: 450px;
+        top: 0px;
         left: -350px;
         right: 0;
         z-index: -2;            

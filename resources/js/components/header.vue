@@ -68,8 +68,6 @@ export default {
 .headerpic {
     width: 97%;
     padding: 0px 20px 0px 20px;
-    position: absolute;
-    z-index: -1;
 }
 
 /* Logo auf dem Kochlöffel */ 

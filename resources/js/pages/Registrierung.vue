@@ -1,5 +1,5 @@
 <template>
-    <main class="m-container">
+    <main>
         <div class="r-container">
             <div class="i-container">
                 <h3>Registrierung</h3>
