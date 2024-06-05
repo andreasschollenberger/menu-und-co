@@ -58,18 +58,10 @@ import hamburger from '../components/hamburger.vue';
 
 /* Halbtransparenter Hintergrund */
 main {
-    /* position: absolute;
-    width: 90%;
-    height: auto;
-    min-height: 100%;
-    top: 230px;
-    left: 100px;
-    bottom: 0px; */
     max-width: 90%;
     margin: auto;
     border-radius: 30px;
     background-color: rgba(222, 220, 220, 0.81);
-    /* z-index: -1; */  
 }
 
 .h-container {
