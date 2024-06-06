@@ -107,7 +107,7 @@ font-size: 27px;
 
 .muc-text {
     width: 776px;
-    padding: 20px;
+    padding: 0px 0px 50px 50px;
     
 }
 

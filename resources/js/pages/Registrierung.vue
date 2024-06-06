@@ -11,7 +11,7 @@
 
             <div class="registrierung">
                 <h3>Registrierung User</h3>
-                <form>
+                <form method="post">
                     <div class="reg-label">
                         <label for="username">Vorname</label>
                         <input type="text" id="username" name="username" required>
@@ -83,16 +83,12 @@ export default {
 
 <style scoped>
 
+/* Halbtransparenter Hintergrund */
 main {
-    position: absolute;
-    width: 90%;
-    height: 100%;
-    top: 230px;
-    left: 100px;
-    bottom: 0px;
+    max-width: 90%;
+    margin: auto;
     border-radius: 30px;
     background-color: rgba(222, 220, 220, 0.81);
-    z-index: -1;
 }
 
 .r-container {
@@ -103,21 +99,21 @@ main {
 
 .i-container {
     background-color: rgba(179, 187, 195, 1);
-    width: 353px;
-    margin-top: 250px;
+    width: 390px;
+    /* margin-top: 250px; */
     margin-left: 0px;
     border-radius: 20px;
 }
 
 .i-container h3 {
-    font-size: 20px;
+    font-size: 36px;
     font-weight: bold;
     margin-left: 20px;
     padding-top: 20px;
 }
 
 .i-container p {
-    font-size: 15px;
+    font-size: 27px;
     margin-left: 20px;
     margin-top: 20px;
     padding-bottom: 20px;
@@ -127,15 +123,27 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 250px;
+    margin-top: 70px;
     margin-left: 150px;
+    margin-bottom: 100px;
     border-radius: 20px;
+}
+
+.registrierung h3 {
+    font-size: 37px;
+    font-weight: bold;
+    /* margin-bottom: 20px; */
 }
 
 .reg-label {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+}
+
+.reg-label label {
+    font-size: 27px;
+    /* margin-bottom: 10px; */
 }
 
 .reg-label input {
