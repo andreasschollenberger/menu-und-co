@@ -5,7 +5,7 @@ import hamburger from '../components/hamburger.vue';
 <template>
     <div>
         <header>
-
+            <!-- Haburger Navigation muss noch in den Header umziehen -->
             <div class="ham-nav">
                 <hamburger />
             </div>

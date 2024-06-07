@@ -16,7 +16,7 @@ import menücard from '../components/dashMenuCard.vue';
             </div>
 
             <div class="create">
-                <router-link to="/CreateRezept">
+                <router-link to="/create-rezept">
                     <img src="/public/Assets/img/rezept-button.png" alt="">
                 </router-link>
             </div>
