@@ -1,9 +1,60 @@
-<template>
+<script setup>
+import menücard from '../components/dashMenüCard.vue';
+</script>
 
+<template>
+    <main>
+        <div class="r-container">
+            <div class="i-container">
+                <h3>Ihre Profil</h3>
+                <p>Max</p>
+                <p>Mustermann</p>
+                <p>m@m.com</p>
+                <router-link to="/EditUser">
+                    <img src="/public/Assets/img/edit-button.png" alt="">
+                </router-link>
+            </div>
+
+            <div class="r-card">
+                <menücard />
+            </div>
+
+        </div>
+
+    </main>
 
 </template>
 
 
 <style scoped>
+    main {
+    max-width: 90%;
+    margin: auto;
+    border-radius: 30px;
+    background-color: rgba(222, 220, 220, 0.81);
+}
 
+.r-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.i-container {
+    background-color: rgba(179, 187, 195, 1);
+    width: 200px;
+    margin-left: 0px;
+    padding-left: 20px;
+    border-radius: 20px;
+}
+
+.i-container img {
+    width: 80px;
+    height: 80px;
+    margin-left: 20px;
+}
+
+.r-card {
+    padding-left: 50px;
+}
 </style>

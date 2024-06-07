@@ -43,7 +43,9 @@
                     </div>
 
                     <div>
+                        <router-link to="/User">
                     <button type="submit"><img src="/public/Assets/img/registrieren-button.png" alt=""></button>
+                </router-link>
                 </div>
                 </form>
             </div>
@@ -100,7 +102,6 @@ main {
 .i-container {
     background-color: rgba(179, 187, 195, 1);
     width: 390px;
-    /* margin-top: 250px; */
     margin-left: 0px;
     border-radius: 20px;
 }
@@ -132,7 +133,6 @@ main {
 .registrierung h3 {
     font-size: 37px;
     font-weight: bold;
-    /* margin-bottom: 20px; */
 }
 
 .reg-label {
@@ -143,7 +143,6 @@ main {
 
 .reg-label label {
     font-size: 27px;
-    /* margin-bottom: 10px; */
 }
 
 .reg-label input {
