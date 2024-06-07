@@ -10,11 +10,14 @@
                 <div class="vegi">Neigung: Vegetarisch</div>
                 <div class="autor">Autor: Max Mustermann</div>
                 
-                <router-link to="/rezept">
-                    <div class="button">
+                <div class="button">
+                    <router-link to="/rezept">
                         <button>Rezept Anschauen</button>
-                    </div>
-                </router-link>
+                    </router-link>
+                    <router-link to="/edit-rezept">
+                        <button>Rezept Bearbeiten</button>
+                    </router-link>
+                </div>
             </div>
         </div>
 
@@ -33,20 +36,21 @@
 
 .menu-container {
     display: flex;
+    margin: 50px 0 50px 0;
 }
 
 .menu-text {
     display: flex;
     flex-direction: column;
     width: 300px;
-    margin: 50px 100px 50px 150px;
+    margin: 50px 200px 50px 100px;
     
 }
 
 img {
     border-radius: 50px;
     margin-top: 50px;
-    margin-left: 120px;
+    margin-left: 100px;
     margin-bottom: 50px;
 }
 
@@ -79,6 +83,10 @@ img {
     margin-top: 20px;
 }
 
+.button {
+    display: flex;
+}
+
 button {
     width: 200px;
     height: 50px;
@@ -88,6 +96,7 @@ button {
     border: none;
     border-radius: 10px;
     margin-top: 20px;
+    margin-right: 10px;
 }
 
 .menucard button:hover {

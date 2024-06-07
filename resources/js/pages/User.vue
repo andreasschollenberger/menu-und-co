@@ -1,5 +1,5 @@
 <script setup>
-import menücard from '../components/dashMenüCard.vue';
+import menücard from '../components/dashMenuCard.vue';
 </script>
 
 <template>
@@ -12,6 +12,12 @@ import menücard from '../components/dashMenüCard.vue';
                 <p>m@m.com</p>
                 <router-link to="/EditUser">
                     <img src="/public/Assets/img/edit-button.png" alt="">
+                </router-link>
+            </div>
+
+            <div class="create">
+                <router-link to="/CreateRezept">
+                    <img src="/public/Assets/img/rezept-button.png" alt="">
                 </router-link>
             </div>
 
@@ -51,7 +57,7 @@ import menücard from '../components/dashMenüCard.vue';
 .i-container img {
     width: 80px;
     height: 80px;
-    margin-left: 20px;
+    margin-left: 100px;
 }
 
 .r-card {
