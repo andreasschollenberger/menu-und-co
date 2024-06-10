@@ -93,30 +93,32 @@
                 <p>EL = Esslöffel, Kg. = Kilogramm, g = Gramm, Stk. = Stück l = Liter, Dl. = Deziliter.  </p>
             </div>
 
-
-            <input class="nr-field" type="number" placeholder="Einheit Eingeben (Zahl)" v-model="numberValue" />
-            <select class="el-drop" v-model="unitValue">
-                <option value="EL">EL</option>
-                <option value="kg">Kg.</option>
-                <option value="g">g</option>
-                <option value="stk">Stk.</option>
-                <option value="l">l.</option>
-                <option value="dl">Dl.</option>
-            </select>
-            <textarea class="textfield" placeholder="Zutat Eingeben" v-model="textValue"></textarea>
-            <button class="plus-b" @click="addFields">+</button>
-        <!-- </div> -->
-            <div class="input-container2" v-for="(field, index) in fields" :key="index">
-                <input class="nr-field" type="number" placeholder="Einheit Eingeben (Zahl)" v-model="field.numberValue" />
-                <select class="el-drop" v-model="field.unitValue">
-                    <option value="EL">EL</option>
-                    <option value="kg">Kg.</option>
-                    <option value="g">g</option>
-                    <option value="stk">Stk.</option>
-                    <option value="l">l.</option>
-                    <option value="dl">Dl.</option>
-                </select>
-                <textarea class="textfield" placeholder="Zutat Eingeben" v-model="field.textValue"></textarea>
+            <div class="nr-container">
+                <div class="input-container1">
+                    <input class="nr-field" type="number" placeholder="Einheit Eingeben (Zahl)" v-model="numberValue" />
+                    <select class="el-drop" v-model="unitValue">
+                        <option value="EL">EL</option>
+                        <option value="kg">Kg.</option>
+                        <option value="g">g</option>
+                        <option value="stk">Stk.</option>
+                        <option value="l">l.</option>
+                        <option value="dl">Dl.</option>
+                    </select>
+                    <textarea class="textfield" placeholder="Zutat Eingeben" v-model="textValue"></textarea>
+                    <button class="plus-b" @click="addFields">+</button>
+                </div>
+                <div class="input-container2" v-for="(field, index) in fields" :key="index">
+                    <input class="nr-field" type="number" placeholder="Einheit Eingeben (Zahl)" v-model="field.numberValue" />
+                    <select class="el-drop" v-model="field.unitValue">
+                        <option value="EL">EL</option>
+                        <option value="kg">Kg.</option>
+                        <option value="g">g</option>
+                        <option value="stk">Stk.</option>
+                        <option value="l">l.</option>
+                        <option value="dl">Dl.</option>
+                    </select>
+                    <textarea class="textfield" placeholder="Zutat Eingeben" v-model="field.textValue"></textarea>
+                </div>
             </div>
         </div>
     </div>
@@ -127,9 +129,9 @@
                 <h1>Zubereitung detailiert eintragen</h1>
                 <div>
                     <textarea class="textfield" placeholder="Zubereitung erster Schritt" v-model="textValue"></textarea>
-                    <button class="plus-b" @click="addFields">+</button>
+                    <button class="plus-b" @click="addzFields">+</button>
                 </div>
-                <div v-for="(field, index) in fields" :key="index">
+                <div v-for="(field, index) in zFields" :key="index">
                     <textarea class="textfield" placeholder="Weiterer Zubereitung Schritt" v-model="field.textValue"></textarea>
                 </div>
             </div>
@@ -169,7 +171,8 @@ export default {
             'Timor-Leste', 'Togo', 'Tokelau', 'Tonga', 'Trinidad und Tobago', 'Tromelin', 'Tschad', 'Tschechische Republik', 'Tunesien', 'Türkei', 'Turkmenistan', 'Turks- und Caicosinseln', 'Tuvalu', 'Uganda', 'Ukraine', 'Ungarn', 'Uruguay',
             'Usbekistan', 'Vanuatu', 'Vatikanstadt', 'Venezuela', 'Vereinigte Arabische Emirate', 'USA', 'Vietnam', 'Wallis und Futuna', 'Weihnachtsinsel', 'Westjordanland', 'Westsahara', 'Zentralafrikanische Republik', 'Zypern',],
             textValue: '',
-            fields: []
+            fields: [],
+            zFields: []
         };
     },
     methods: {
@@ -186,6 +189,12 @@ export default {
     
         addFields() {
             this.fields.push({
+                textValue: ''
+            });
+        },
+
+        addzFields() {
+            this.zFields.push({
                 textValue: ''
             });
         }
@@ -308,11 +317,10 @@ main {
     display: flex;
 }
 
-.input-container2 {
+.nr-container {
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
 }
-
 
 .nr-field {
     width: 200px;
@@ -352,8 +360,6 @@ main {
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    /* position: absolute;
-    left: 630px; */
     font-size: 40px;
     text-align: center; 
     line-height: 28px;
@@ -366,10 +372,6 @@ main {
     padding: 20px;
     margin: 0 10px 0 50px ;
     font-size: 18px;
-
-    /* position : absolute;
-    top: 0px;
-    left: 700px; */
 }
 
 .i-titel {
