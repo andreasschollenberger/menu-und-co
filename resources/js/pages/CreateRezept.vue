@@ -60,6 +60,9 @@
 
                         <input type="radio" id="fleisch" name="kategorie" value="Fleisch">
                         <label for="fleisch">Fleisch</label>
+
+                        <input type="radio" id="ka" name="kategorie" value="ka">
+                        <label for="ka">k.A</label>
                     </form>
                 </div>
 
@@ -70,12 +73,59 @@
                             <option value="" disabled selected>Land auswählen</option>
                             <option v-for="country in countries" :key="country">{{ country }}</option>
                         </select>
+
                     </div>
                 </div>
-
             </div>
-
+            
         </div>
+
+        <div>
+        <h1>Zutaten erstellen</h1>
+        <div class="input-container">
+            <input class="nr-field" type="number" placeholder="Einheit Eingeben (Zahl)" v-model="numberValue" />
+            <select class="el-drop" v-model="unitValue">
+                <option value="EL">EL</option>
+                <option value="g">g</option>
+                <option value="stk">Stk.</option>
+            </select>
+            <textarea class="textfield" placeholder="Zutat Eingeben" v-model="textValue"></textarea>
+            <button class="plus-b" @click="addFields">+</button>
+        </div>
+        <div class="input-container" v-for="(field, index) in fields" :key="index">
+            <input class="nr-field" type="number" placeholder="Einheit Eingeben (Zahl)" v-model="field.numberValue" />
+            <select class="el-drop" v-model="field.unitValue">
+                <option value="EL">EL</option>
+                <option value="g">g</option>
+                <option value="stk">Stk.</option>
+            </select>
+            <textarea class="textfield" placeholder="Zutat Eingeben" v-model="field.textValue"></textarea>
+        </div>
+    </div>
+
+    <div class="infobox">
+        <p class="i-titel">Zutaten erstellen:</p>
+        <p>Die Zutaten werden in der Reihenfolge angezeigt, in der sie hinzugefügt wurden.
+            Zuerst wird die Menge wie z.B. 2, dann die Einheit wie 
+            z.B. EL (EL = Esslöffel) und zuletzt die Zutat wie z.B. Mehl angezeigt.</p>
+        <p>Eine neue Zutat können durch Klicken auf das Pluszeichen hinzugefühgt werden.</p>
+        <p>EL = Esslöffel, g = Gramm, Stk. = Stück. </p>
+    </div>
+        
+        <div class="zu-container">
+            <div class="zubereitung">
+                <h1>Zubereitung detailiert eintragen</h1>
+                <div>
+                    <textarea class="textfield" placeholder="Zubereitung erster Schritt" v-model="textValue"></textarea>
+                    <button class="plus-b" @click="addFields">+</button>
+                </div>
+                <div v-for="(field, index) in fields" :key="index">
+                    <textarea class="textfield" placeholder="Weiterer Zubereitung Schritt" v-model="field.textValue"></textarea>
+                </div>
+            </div>
+        </div>
+        
+            
 
     </main>  
 </template>
@@ -90,7 +140,7 @@ export default {
             'Åland', 'Albanien', '	Algerien', 'Amerikanische Jungferninseln', 'Amerikanisch-Samoa', 'Andorra', 'Angola', 
             'Anguilla', 'Antarktika', 'Antigua und Barbuda', 'Äquatorialguinea', 'Argentinien', 'Armenien', 
             'Aruba', 'Aserbaidschan', 'Äthiopien', 'Australien', 'Bahamas', 'Bahrain', 
-            'Bangladesch', 'Barbados', 'Bassas da India', '	Belarus', 'Belgien', 
+            'Bangladesch', 'Barbados', 'Bassas da India', 'Belarus', 'Belgien', 
             'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivien', 'Bosnien und Herzegowina', 
             'Botsuana', 'Bouvetinsel', 'Brasilien', 'Britische Jungferninseln', 'Britisches Territorium im Indischen Ozean', 'Brunei Darussalam', 
             'Bulgarien', 'Burkina Faso', 'Burundi', 'Cabo Verde', '	Chile', 'China', 'Clipperton', 'Cookinseln', 'Costa Rica', 'Côte d Ivoire',
@@ -107,7 +157,9 @@ export default {
             'Samoa', 'San Marino', 'São Tomé und Príncipe', 'Saudi-Arabien', 'Schweden', 'Senegal', 'Serbien', 'Serbien und Montenegro', 'Seychellen', 'Sierra Leone', 'Simbabwe', 'Singapur', 'Slowakei', 'Slowenien', 'Somalia', 'Spanien', 'Spitzbergen',
             'Sri Lanka', 'St. Barthélemy', 'St. Helena, Ascension und Tristan da Cunha', 'St. Kitts und Nevis', 'St. Lucia', 'St. Pierre und Miquelon', 'St. Vincent und die Grenadinen', 'Südafrika', 'Sudan', 'Südgeorgien', 'Südsudan', 'Suriname', 'Syrien', 'Tadschikistan', 'Taiwan', 'Tansania', 'Thailand',
             'Timor-Leste', 'Togo', 'Tokelau', 'Tonga', 'Trinidad und Tobago', 'Tromelin', 'Tschad', 'Tschechische Republik', 'Tunesien', 'Türkei', 'Turkmenistan', 'Turks- und Caicosinseln', 'Tuvalu', 'Uganda', 'Ukraine', 'Ungarn', 'Uruguay',
-            'Usbekistan', 'Vanuatu', 'Vatikanstadt', 'Venezuela', 'Vereinigte Arabische Emirate', 'USA', 'Vietnam', 'Wallis und Futuna', 'Weihnachtsinsel', 'Westjordanland', 'Westsahara', 'Zentralafrikanische Republik', 'Zypern',]
+            'Usbekistan', 'Vanuatu', 'Vatikanstadt', 'Venezuela', 'Vereinigte Arabische Emirate', 'USA', 'Vietnam', 'Wallis und Futuna', 'Weihnachtsinsel', 'Westjordanland', 'Westsahara', 'Zentralafrikanische Republik', 'Zypern',],
+            textValue: '',
+            fields: []
         };
     },
     methods: {
@@ -120,6 +172,12 @@ export default {
             };
 
             reader.readAsDataURL(file);
+        },
+    
+        addFields() {
+            this.fields.push({
+                textValue: ''
+            });
         }
     }
 };
@@ -231,6 +289,37 @@ main {
     border-radius: 10px;
     margin-right: 20px;
     text-align: center;
+    line-height: 28px;
+}
+
+.zu-container {
+    display: flex;
+    width: 500px;
+    margin: 50px 0 0 400px;
+    /* margin-left: 100px; */
+    /* padding: 20px; */
+}
+
+.textfield {
+    width: 800px;
+    height: 50px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 28px;
+}
+
+.plus-b {
+    width: 50px;
+    height: 50px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 40px;
+    text-align: center; 
     line-height: 28px;
 }
 </style>
