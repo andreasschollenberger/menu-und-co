@@ -137,7 +137,44 @@
             </div>
         </div>
         
+        <div class="allergene">
+            <h1>Allergene im Rezept</h1>
+            <div class="checkbox-container">
+                <input type="checkbox" id="gluten" name="allergene" value="gluten">
+                <label for="gluten">Glutenhaltige Getreide</label>
+                <input type="checkbox" id="laktose" name="allergene" value="laktose">
+                <label for="laktose">Milch (einschliesslich Laktose)</label>
+                <input type="checkbox" id="ei" name="allergene" value="ei">
+                <label for="ei">Eier</label>
+                <input type="checkbox" id="soja" name="allergene" value="soja">
+                <label for="soja">Sojabohnen</label>
+                <input type="checkbox" id="erdnuss" name="allergene" value="erdnuss">
+                <label for="erdnuss">Erdnuss</label>
+                <input type="checkbox" id="nuss" name="allergene" value="nuss">
+                <label for="nuss">Hartschalenopst (Nüsse)</label>
+                <input type="checkbox" id="fisch" name="allergene" value="fisch">
+                <label for="fisch">Fisch</label>
+                <input type="checkbox" id="krebstiere" name="allergene" value="krebstiere">
+                <label for="krebstiere">Krebstiere</label>
+                <input type="checkbox" id="sellerie" name="allergene" value="sellerie">
+                <label for="sellerie">Sellerie</label>
+                <input type="checkbox" id="senf" name="allergene" value="senf">
+                <label for="senf">Senf</label>
+                <input type="checkbox" id="sesam" name="allergene" value="sesam">
+                <label for="sesam">Sesamsamen</label>
+                <input type="checkbox" id="schwefeldioxid" name="allergene" value="schwefeldioxid">
+                <label for="schwefeldioxid">Schwefeldioxid (Trocken Obst, Opstsäfte, Marmeladen...)</label>
+                <input type="checkbox" id="sulfate" name="allergene" value="sulfate">
+                <label for="sulfate">Sulfate (Äpfel, Reis, Zwibeln, Kohl, sowie <img src="" alt="" sizes="" srcset=""> Wein)</label>
+                <input type="checkbox" id="lupine" name="allergene" value="lupine">
+                <label for="lupine">Lupine (Mehl, Nudeln, Kaffee-, Milch- und Fleischersatz)</label>
+                <input type="checkbox" id="weichtiere" name="allergene" value="weichtiere">
+                <label for="weichtiere">Weichtiere (Schnecken, Muscheln, Tintenfische...)</label>
+                <input type="checkbox" id="hausgrillenpulver" name="allergene" value="hausgrillenpulverweichtiere">
+                <label for="hausgrillenpulver">Hausgrillenpulver (Kekse, Saucen, Pizzas...)</label>
+            </div>
             
+        </div>
 
     </main>  
 </template>
@@ -410,6 +447,25 @@ main {
     font-size: 40px;
     text-align: center; 
     line-height: 28px;
+}
+
+.allergene {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-container {
+    font-size: 26px;
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    margin: 50px 0 0 300px;
+}
+
+[type="checkbox"] {
+    width: 20px;
+    height: 20px;
 }
 
 
