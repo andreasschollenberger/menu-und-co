@@ -80,98 +80,105 @@
             
         </div>
 
-        <div>
-        <h1>Zutaten erstellen</h1>
-        <div class="input-container">
+        <div class="zutaten">
+            <h2>Zutaten erstellen</h2>
+            <div class="input-container">
 
-            <div class="infobox">
-                <p class="i-titel">Zutaten erstellen:</p>
-                <p>Die Zutaten werden in der Reihenfolge angezeigt, in der sie hinzugefügt wurden.
-                    Zuerst wird die Menge wie z.B. 2, dann die Einheit wie 
-                    z.B. EL (EL = Esslöffel) und zuletzt die Zutat wie z.B. Mehl angezeigt.</p>
-                <p>Eine neue Zutat können durch Klicken auf das Pluszeichen hinzugefühgt werden.</p>
-                <p>EL = Esslöffel, Kg. = Kilogramm, g = Gramm, Stk. = Stück l = Liter, Dl. = Deziliter.  </p>
-            </div>
-
-            <div class="nr-container">
-                <div class="input-container1">
-                    <input class="nr-field" type="number" placeholder="Einheit Eingeben (Zahl)" v-model="numberValue" />
-                    <select class="el-drop" v-model="unitValue">
-                        <option value="EL">EL</option>
-                        <option value="kg">Kg.</option>
-                        <option value="g">g</option>
-                        <option value="stk">Stk.</option>
-                        <option value="l">l.</option>
-                        <option value="dl">Dl.</option>
-                    </select>
-                    <textarea class="textfield" placeholder="Zutat Eingeben" v-model="textValue"></textarea>
-                    <button class="plus-b" @click="addFields">+</button>
+                <div class="infobox">
+                    <p class="i-titel">Zutaten erstellen:</p>
+                    <p>Die Zutaten werden in der Reihenfolge angezeigt, in der sie hinzugefügt wurden.
+                        Zuerst wird die Menge wie z.B. 2, dann die Einheit wie 
+                        z.B. EL (EL = Esslöffel) und zuletzt die Zutat wie z.B. Mehl angezeigt.</p>
+                    <p>Eine neue Zutat können durch Klicken auf das Pluszeichen hinzugefühgt werden.</p>
+                    <p> Mit dem Minuszeichen entfenen Sie ein feld.</p>
+                    <p>EL = Esslöffel, Kg. = Kilogramm, g = Gramm, Stk. = Stück l = Liter, Dl. = Deziliter.  </p>
                 </div>
-                <div class="input-container2" v-for="(field, index) in fields" :key="index">
-                    <input class="nr-field" type="number" placeholder="Einheit Eingeben (Zahl)" v-model="field.numberValue" />
-                    <select class="el-drop" v-model="field.unitValue">
-                        <option value="EL">EL</option>
-                        <option value="kg">Kg.</option>
-                        <option value="g">g</option>
-                        <option value="stk">Stk.</option>
-                        <option value="l">l.</option>
-                        <option value="dl">Dl.</option>
-                    </select>
-                    <textarea class="textfield" placeholder="Zutat Eingeben" v-model="field.textValue"></textarea>
+
+                <div class="nr-container">
+                    <div class="input-container1">
+                        <input class="nr-field" type="number" placeholder="Einheit Eingeben (Zahl)" v-model="numberValue" />
+                        <select class="el-drop" v-model="unitValue">
+                            <option value="EL">EL</option>
+                            <option value="kg">Kg.</option>
+                            <option value="g">g</option>
+                            <option value="stk">Stk.</option>
+                            <option value="l">l.</option>
+                            <option value="dl">Dl.</option>
+                        </select>
+                        <textarea class="textfield-zu" placeholder="Zutat Eingeben" v-model="textValue"></textarea>
+                        <button class="plus-b" @click="addFields">+</button>
+                        <button class="minus-b" @click="removeField(index)">-</button>
+                    </div>
+                    <div class="input-container2" v-for="(field, index) in fields" :key="index">
+                        <input class="nr-field" type="number" placeholder="Einheit Eingeben (Zahl)" v-model="field.numberValue" />
+                        <select class="el-drop" v-model="field.unitValue">
+                            <option value="EL">EL</option>
+                            <option value="kg">Kg.</option>
+                            <option value="g">g</option>
+                            <option value="stk">Stk.</option>
+                            <option value="l">l.</option>
+                            <option value="dl">Dl.</option>
+                        </select>
+                        <textarea class="textfield-zu" placeholder="Zutat Eingeben" v-model="field.textValue"></textarea>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
         
         <div class="zu-container">
-            <div class="zubereitung">
-                <h1>Zubereitung detailiert eintragen</h1>
-                <div>
+            <div>
+                <h2>Zubereitung detailiert eintragen</h2>
+                <div class="zubereitung">
                     <textarea class="textfield" placeholder="Zubereitung erster Schritt" v-model="textValue"></textarea>
                     <button class="plus-b" @click="addzFields">+</button>
+                    <button class="minus-b" @click="removezField(index)">-</button>
                 </div>
-                <div v-for="(field, index) in zFields" :key="index">
+                <div class="zubereitung" v-for="(field, index) in zFields" :key="index">
                     <textarea class="textfield" placeholder="Weiterer Zubereitung Schritt" v-model="field.textValue"></textarea>
                 </div>
             </div>
         </div>
         
         <div class="allergene">
-            <h1>Allergene im Rezept</h1>
+            <h2>Mögliche Allergene im Rezept</h2>
             <div class="checkbox-container">
-                <input type="checkbox" id="gluten" name="allergene" value="gluten">
-                <label for="gluten">Glutenhaltige Getreide</label>
-                <input type="checkbox" id="laktose" name="allergene" value="laktose">
-                <label for="laktose">Milch (einschliesslich Laktose)</label>
-                <input type="checkbox" id="ei" name="allergene" value="ei">
-                <label for="ei">Eier</label>
-                <input type="checkbox" id="soja" name="allergene" value="soja">
-                <label for="soja">Sojabohnen</label>
-                <input type="checkbox" id="erdnuss" name="allergene" value="erdnuss">
-                <label for="erdnuss">Erdnuss</label>
-                <input type="checkbox" id="nuss" name="allergene" value="nuss">
-                <label for="nuss">Hartschalenopst (Nüsse)</label>
-                <input type="checkbox" id="fisch" name="allergene" value="fisch">
-                <label for="fisch">Fisch</label>
-                <input type="checkbox" id="krebstiere" name="allergene" value="krebstiere">
-                <label for="krebstiere">Krebstiere</label>
-                <input type="checkbox" id="sellerie" name="allergene" value="sellerie">
-                <label for="sellerie">Sellerie</label>
-                <input type="checkbox" id="senf" name="allergene" value="senf">
-                <label for="senf">Senf</label>
-                <input type="checkbox" id="sesam" name="allergene" value="sesam">
-                <label for="sesam">Sesamsamen</label>
-                <input type="checkbox" id="schwefeldioxid" name="allergene" value="schwefeldioxid">
-                <label for="schwefeldioxid">Schwefeldioxid (Trocken Obst, Opstsäfte, Marmeladen...)</label>
-                <input type="checkbox" id="sulfate" name="allergene" value="sulfate">
-                <label for="sulfate">Sulfate (Äpfel, Reis, Zwibeln, Kohl, sowie <img src="" alt="" sizes="" srcset=""> Wein)</label>
-                <input type="checkbox" id="lupine" name="allergene" value="lupine">
-                <label for="lupine">Lupine (Mehl, Nudeln, Kaffee-, Milch- und Fleischersatz)</label>
-                <input type="checkbox" id="weichtiere" name="allergene" value="weichtiere">
-                <label for="weichtiere">Weichtiere (Schnecken, Muscheln, Tintenfische...)</label>
-                <input type="checkbox" id="hausgrillenpulver" name="allergene" value="hausgrillenpulverweichtiere">
-                <label for="hausgrillenpulver">Hausgrillenpulver (Kekse, Saucen, Pizzas...)</label>
+                <div class="al-box">
+                    <input type="checkbox" id="gluten" name="allergene" value="gluten">
+                    <label for="gluten">Glutenhaltige Getreide</label>
+                    <input type="checkbox" id="laktose" name="allergene" value="laktose">
+                    <label for="laktose">Milch (einschliesslich Laktose)</label>
+                    <input type="checkbox" id="ei" name="allergene" value="ei">
+                    <label for="ei">Eier</label>
+                    <input type="checkbox" id="soja" name="allergene" value="soja">
+                    <label for="soja">Sojabohnen</label>
+                    <input type="checkbox" id="erdnuss" name="allergene" value="erdnuss">
+                    <label for="erdnuss">Erdnuss</label>
+                    <input type="checkbox" id="nuss" name="allergene" value="nuss">
+                    <label for="nuss">Hartschalenopst (Nüsse)</label>
+                    <input type="checkbox" id="fisch" name="allergene" value="fisch">
+                    <label for="fisch">Fisch</label>
+                    <input type="checkbox" id="krebstiere" name="allergene" value="krebstiere">
+                    <label for="krebstiere">Krebstiere</label>
+                    <input type="checkbox" id="sellerie" name="allergene" value="sellerie">
+                    <label for="sellerie">Sellerie</label>
+                    <input type="checkbox" id="senf" name="allergene" value="senf">
+                    <label for="senf">Senf</label>
+                </div>
+                <div class="al-box2">
+                    <input type="checkbox" id="sesam" name="allergene" value="sesam">
+                    <label for="sesam">Sesam-Samen</label>
+                    <input type="checkbox" id="schwefeldioxid" name="allergene" value="schwefeldioxid">
+                    <label for="schwefeldioxid">Schwefeldioxid (Trocken Obst, Opstsäfte, Marmeladen...)</label>
+                    <input type="checkbox" id="sulfate" name="allergene" value="sulfate">
+                    <label for="sulfate">Sulfate (Äpfel, Reis, Zwibeln, Kohl, sowie Wein)</label>
+                    <input type="checkbox" id="lupine" name="allergene" value="lupine">
+                    <label for="lupine">Lupine (Mehl, Nudeln, Kaffee-, Milch- und Fleischersatz)</label>
+                    <input type="checkbox" id="weichtiere" name="allergene" value="weichtiere">
+                    <label for="weichtiere">Weichtiere (Schnecken, Muscheln, Tintenfische...)</label>
+                    <input type="checkbox" id="hausgrillenpulver" name="allergene" value="hausgrillenpulverweichtiere">
+                    <label for="hausgrillenpulver">Hausgrillenpulver (Kekse, Saucen, Pizzas...)</label>
+                </div>
             </div>
             
         </div>
@@ -234,7 +241,15 @@ export default {
             this.zFields.push({
                 textValue: ''
             });
-        }
+        },
+
+        removeField(index) {
+            this.fields.splice(index, 1);
+        },
+
+        removezField(index) {
+            this.zFields.splice(index, 1);
+        }        
     }
 };
 </script>
@@ -250,9 +265,10 @@ main {
     background-color: rgba(222, 220, 220, 0.81);
 }
 
+/* IMG container - Rezept Titel - Kategorien - Länder */
 .titel {
     display: flex;
-    padding: 50px 0 0 400px;
+    padding: 50px 0 0 100px;
 }
     
 .img-container {
@@ -320,15 +336,14 @@ main {
 }
 
 .t-label {
+    display: flex;
     font-size: 18px;
     margin-bottom: 20px;
 }
 
 .t-label Label {
-    width: 200px;
+    width: 45%;
     height: 30px;
-    margin-right: 20px;
-    text-align: center;
 }
 
 .t-label select {
@@ -350,8 +365,22 @@ main {
 
 /* Zutaten Container */
 
+.zutaten h2 {
+    font-size: 30px;
+    margin: 60px 0 20px 60px;
+}
+
 .input-container {
     display: flex;
+}
+
+.textfield-zu {
+    width: 400px;
+    height: 30px;
+    margin-right: 20px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 28px;
 }
 
 .nr-container {
@@ -400,6 +429,20 @@ main {
     font-size: 40px;
     text-align: center; 
     line-height: 28px;
+    margin-right: 5px;
+}
+
+.minus-b {
+    width: 50px;
+    height: 50px;
+    background-color: #0073ff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 40px;
+    text-align: center; 
+    line-height: 28px;
 }
 
 .infobox {
@@ -423,11 +466,15 @@ main {
 .zu-container {
     display: flex;
     width: 500px;
-    margin: 50px 0 0 400px;
+    margin: 50px 0 0 100px;
+}
+
+.zubereitung {
+    display: flex;
 }
 
 .textfield {
-    width: 800px;
+    width: 600px;
     height: 50px;
     margin-right: 20px;
     margin-bottom: 20px;
@@ -449,24 +496,50 @@ main {
     line-height: 28px;
 }
 
+/* Allergie Container */
+
 .allergene {
     display: flex;
     flex-direction: column;
+    margin: 50px 0 0 100px;
+    padding-bottom: 50px;
 }
 
 .checkbox-container {
     font-size: 26px;
     display: grid;
-    grid-template-columns: 300px 300px;
+    grid-template-columns: 480px 480px;
     grid-column-gap: 20px;
     grid-row-gap: 10px;
-    margin: 50px 0 0 300px;
+    margin: 50px 0 0 100px;
+}
+
+.allergene h2 {
+    font-size: 30px;
+    margin: 20px 0 0 100px;
 }
 
 [type="checkbox"] {
     width: 20px;
     height: 20px;
+
 }
 
+.al-box {
+    display: grid;
+    grid-template-columns: 50px 300px;
+    grid-column-gap: 5px;
+}
+
+
+.al-box2 {
+    display: grid;
+    grid-template-columns: 50px 250px;
+    grid-column-gap: 5px;
+}
+
+.al-box input, label {
+    display: flex;
+}
 
 </style>
