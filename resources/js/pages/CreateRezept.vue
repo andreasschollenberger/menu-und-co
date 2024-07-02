@@ -1,7 +1,10 @@
 <template>
-    <main> 
+    <main>
+        <div class="titel-text">
+            <h1>Rezept erstellen</h1>
+        </div>
 
-        <div class="titel"> 
+        <div class="titel">
 
             <div class="img-container">
                 <p>Rezept Bild Hochladen</p>
@@ -226,6 +229,10 @@
                    
         </div>
 
+        <div class="submit">
+            <img src="/public/Assets/img/rezept-senden-bnt.png" alt="Submit" @click="submitForm">
+        </div>
+
     </main>  
 </template>
 
@@ -315,6 +322,12 @@ export default {
         margin: auto;
         border-radius: 30px;
         background-color: rgba(222, 220, 220, 0.81);
+    }
+
+    .titel-text {
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
     }
 
     /* IMG container - Rezept Titel - Kategorien - Länder */
@@ -598,6 +611,7 @@ export default {
     }
 
     /* Vitamin Container */
+
     .infobox2 {
         width: 500px;
         background-color: rgba(179, 187, 195, 1);
