@@ -100,6 +100,37 @@
 
 </template>
 
+<script>
+import axios from 'axios';
+
+export default {
+    data() {
+        return {
+            recipe: {},
+            id: this.$route.params.id 
+        };
+    },
+    beforeMount() {
+        this.fetchRecipe();
+    },
+    methods: {
+        fetchRecipe() {
+            
+            console.log('fetchRecipe wird aufgerufen');
+            axios.get(`/api/recipes/${this.id}`)
+                .then(response => {
+                   
+                    this.recipe = response.data.data;
+                    console.log('Rezepte nach API-Aufruf:', this.recipe); // Loggen Sie die Daten nach dem Setzen
+                })
+                .catch(error => {
+                    console.error('Fehler beim Abrufen der Rezepte:', error);
+                });
+        },
+    },
+};
+</script>
+
 
 <style scoped>
 

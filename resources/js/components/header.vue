@@ -92,7 +92,7 @@ export default {
     top: 0;
 }
 
-.navigation a{ /* Hier muss der Tag umbenannt werden*/
+.navigation a{ 
     text-decoration: none;
     font-family: "Lexend Deca", sans-serif;
     font-size: 26px;
@@ -146,6 +146,32 @@ export default {
     font-size: 16px;
     text-align: center;
     line-height: 28px;
+}
+
+@media (max-width: 1406px) {
+
+    
+    .navigation a {
+        font-size: 20px;
+    }
+
+    .loginNav {
+        top: 55px;
+        right: 380px;
+    }
+
+    .loginNav a {
+        font-size: 20px;
+    }
+
+    .LogoHeader {
+        width: 200px;
+        height: 100px;
+        position: absolute;
+        z-index: 1;
+        top: 5px;
+        left: 50px;
+    }
 }
 
 @media (max-width: 768px) {

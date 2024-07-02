@@ -1,5 +1,5 @@
 <script setup>
-import menücard from '../components/dashMenuCard.vue';
+import menucard from '../components/dashMenuCard.vue';
 </script>
 
 <template>
@@ -22,7 +22,7 @@ import menücard from '../components/dashMenuCard.vue';
             </div>
 
             <div class="r-card">
-                <menücard />
+                <menucard />
             </div>
 
         </div>

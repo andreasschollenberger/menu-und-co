@@ -1,25 +1,56 @@
 <template>
-    <div class="menucard">
+
+    <div class="menucard" v-for="(recipe, index) in recipes" :key="index">
         <div class="menu-container">
             <img class="menuimg" src="/public/Assets/img/re-img.png" alt="" />
 
             <div class="menu-text">
-                <div class="titel">Rezept Name</div>
-                <div class="kategorie">Kategorie: Haubtgericht</div>
-                <div class="herkunft">Herkunft: Italien</div>
-                <div class="vegi">Neigung: Vegetarisch</div>
-                <div class="autor">Autor: Max Mustermann</div>
+                <div class="titel">{{ recipe.title }}</div>
+                <div class="kategorie"> Kategorie: {{ recipe.description }}</div>
+                <div class="herkunft">Herkunft: {{ recipe.country_name }}</div>
+                <div class="vegi">Neigung: {{ recipe.dish_name }}</div>
                 
-                <router-link to="/rezept">
-                    <div class="button">
+                <div class="autor">Autor: {{ recipe.user_first_name }}</div>
+                
+                <div class="button">
+                    <router-link :to="{ name: 'rezept', params: { id: recipe.id }}">
                         <button>Rezept Anschauen</button>
-                    </div>
-                </router-link>
+                    </router-link>
+                </div>
             </div>
         </div>
-
     </div> 
 </template>
+
+<script>
+import axios from 'axios';
+
+export default {
+    data() {
+        return {
+            recipes: [],
+        };
+    },
+    beforeMount() {
+        this.fetchRecipes();
+    },
+    methods: {
+        fetchRecipes() {
+            console.log('fetchRecipes wird aufgerufen');
+            axios.get('/api/recipes')
+                .then(response => {
+                    console.log('API-Antwort:', response); // Loggen Sie die gesamte Antwort
+                    this.recipes = response.data.data;
+                    console.log('Rezepte nach API-Aufruf:', this.recipes); // Loggen Sie die Daten nach dem Setzen
+                })
+                .catch(error => {
+                    console.error('Fehler beim Abrufen der Rezepte:', error);
+                });
+        },
+    },
+};
+</script>
+
 
 
 <style scoped>
@@ -33,20 +64,21 @@
 
 .menu-container {
     display: flex;
+    margin: 50px 0 50px 0;
 }
 
 .menu-text {
     display: flex;
     flex-direction: column;
     width: 300px;
-    margin: 50px 100px 50px 150px;
+    margin: 50px 200px 50px 100px;
     
 }
 
 img {
     border-radius: 50px;
     margin-top: 50px;
-    margin-left: 120px;
+    margin-left: 100px;
     margin-bottom: 50px;
 }
 
@@ -79,6 +111,10 @@ img {
     margin-top: 20px;
 }
 
+.button {
+    display: flex;
+}
+
 button {
     width: 200px;
     height: 50px;
@@ -88,6 +124,7 @@ button {
     border: none;
     border-radius: 10px;
     margin-top: 20px;
+    margin-right: 10px;
 }
 
 .menucard button:hover {

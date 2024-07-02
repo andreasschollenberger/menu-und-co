@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->timestamps();
         });
-        Schema::create('resipes_groups', function (Blueprint $table) {
+        Schema::create('recipes_groups', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->timestamps();
@@ -39,7 +39,7 @@ return new class extends Migration
             $table->json('ingredients');
             $table->json('instructions');
             $table->foreignId('dish_id')->constrained()->onDelete('cascade');
-            $table->foreignId('resipes_group_id')->constrained()->onDelete('cascade');
+            $table->foreignId('recipes_group_id')->constrained()->onDelete('cascade');
             $table->foreignId('country_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

@@ -49,7 +49,8 @@ export const routes = [
     },
 
     {
-        path: "/rezept",
+        name: 'rezept',
+        path: "/rezept/:id",
         component: () => import("./pages/Rezept.vue"),
     },
 
@@ -69,7 +70,8 @@ export const routes = [
     },
 
     {
-        path: "/edit-rezept",
+        name: 'edit-rezept',
+        path: "/edit-rezept/:id",
         component: () => import("./pages/EditRezept.vue"),
     },
 
