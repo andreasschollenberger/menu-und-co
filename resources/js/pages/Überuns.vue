@@ -50,7 +50,7 @@
                 <label for="nachricht">Nachricht:</label>
                 <textarea id="nachricht" name="nachricht" required></textarea>
             </div>
-            <button type="submit"><img src="/public/Assets/img/" alt=""></button>
+            <button type="submit"><img src="/public/Assets/img/e-mail.png" alt=""></button>
         </form>
     </div>
 </main>>
@@ -127,9 +127,8 @@
 }
 
 button {
-    width: 200px;
-    height: 50px;
-    font-size: 27px;
+    background-color: transparent;
+    border: none;
     margin-top: 20px;
 }
    
