@@ -6,9 +6,9 @@
 
             <div class="menu-text">
                 <div class="titel">{{ recipe.title }}</div>
-                <div class="kategorie"> Kategorie: {{ recipe.description }}</div>
+                <div class="kategorie"> Kategorie: {{ recipe.dish_name }}</div>
                 <div class="herkunft">Herkunft: {{ recipe.country_name }}</div>
-                <div class="vegi">Neigung: {{ recipe.dish_name }}</div>
+                <div class="vegi">Neigung: {{ recipe.recipes_group_name }}</div>
                 
                 <div class="autor">Autor: {{ recipe.user_first_name }}</div>
                 
