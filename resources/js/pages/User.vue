@@ -23,7 +23,7 @@ import menucard from '../components/dashMenuCard.vue';
                     <img src="/public/Assets/img/partner-bnd.png" alt="">
                 </router-link>
        
-                <router-link to="/create-company">
+                <router-link to="/create-werbung">
                     <img src="/public/Assets/img/werbung_bnd.png" alt="">
                 </router-link>
             </div>

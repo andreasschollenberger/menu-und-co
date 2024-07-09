@@ -91,8 +91,8 @@ export const routes = [
     },
 
     {
-        path: "/create-company",
-        component: () => import("./pages/CreateCompany.vue"),
+        path: "/create-werbung",
+        component: () => import("./pages/CreateWerbung.vue"),
     },
 
     
