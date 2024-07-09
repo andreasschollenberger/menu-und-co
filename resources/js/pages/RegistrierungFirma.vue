@@ -119,10 +119,14 @@ main {
 
 .i-container {
     background-color: rgba(179, 187, 195, 1);
-    width: 390px;
-    margin-left: 0px;
+    width: 500px;
+    margin: 0 10px 0 50px ;
     border-radius: 20px;
+    padding: 20px;
+    max-height: 520px;
+    overflow-y: auto;
 }
+
 
 .i-container h3 {
     font-size: 36px;
@@ -132,6 +136,13 @@ main {
 }
 
 .i-container p {
+    font-size: 27px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.i-container ul {
     font-size: 27px;
     margin-left: 20px;
     margin-top: 20px;
