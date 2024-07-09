@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Partner;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -12,7 +13,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        return Product::all();
     }
 
     /**
@@ -28,7 +29,24 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $parnter = Partner::find($request->partner_id);
+        $produkt = Product::find(1);
+        $partner = $product->partner;
+
+        $product = Product::create([
+            'user_id' => $request->user()->id,
+            'company_name' => $request->company_name,
+            'company_website' => $request->company_website,
+            'zip_code' => $request->zip_code,
+            'city' => $request->city,
+            'name' => $request->name,
+            'description' => $request->description,
+            'image' => Storage::disk('public')->put('products', $request->file('image')),
+            'url' => $request->url,
+            'address' => $request->address,
+            'partner_id' => $partner
+
+        ]);
     }
 
     /**

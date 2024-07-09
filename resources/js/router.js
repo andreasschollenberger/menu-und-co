@@ -91,14 +91,10 @@ export const routes = [
     },
 
     {
-        path: "/create-produkt",
-        component: () => import("./pages/CreateProdukt.vue"),
+        path: "/create-company",
+        component: () => import("./pages/CreateCompany.vue"),
     },
 
-    {
-        path: "/create-restaurant",
-        component: () => import("./pages/CreateRestaurant.vue"),
-    },
     
     {
         path: "/login",

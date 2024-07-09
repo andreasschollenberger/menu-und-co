@@ -5,12 +5,12 @@
             <img class="menuimg" src="/public/Assets/img/re-img.png" alt="" />
 
             <div class="menu-text">
-                <div class="titel">{{ products.title }}</div>
-                <div class="kategorie"> Kategorie: {{ recipe.dish_name }}</div>
-                <div class="herkunft">Herkunft: {{ recipe.country_name }}</div>
-                <div class="vegi">Neigung: {{ recipe.recipes_group_name }}</div>
+                <div class="titel">{{ products.name }}</div>
+                <div class="kategorie"> Produkt Beschreibung: {{ products.discription }}</div>
+                <div class="herkunft">Produkt-URL: {{ products.url }}</div>
+                <div class="vegi">Firmenname: {{ partner.concatmpany_name }}</div>
                 
-                <div class="autor">Autor: {{ recipe.user_first_name }}</div>
+                <div class="autor">Autor: {{ partner.company_website }}</div>
                 
             </div>
         </div>
@@ -24,6 +24,7 @@ export default {
     data() {
         return {
             products: [],
+            partner: [],
         };
     },
     beforeMount() {

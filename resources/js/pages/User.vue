@@ -19,6 +19,13 @@ import menucard from '../components/dashMenuCard.vue';
                 <router-link to="/create-rezept">
                     <img src="/public/Assets/img/rezept-button.png" alt="">
                 </router-link>
+                <router-link to="/registrierung-firma">
+                    <img src="/public/Assets/img/partner-bnd.png" alt="">
+                </router-link>
+       
+                <router-link to="/create-company">
+                    <img src="/public/Assets/img/"
+                </router-link>
             </div>
 
             <div class="r-card">
