@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Partner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -30,7 +31,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $parnter = Partner::find($request->partner_id);
-        $produkt = Product::find(1);
+        $product = Product::find(1);
         $partner = $product->partner;
 
         $product = Product::create([

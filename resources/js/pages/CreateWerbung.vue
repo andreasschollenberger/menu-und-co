@@ -1,8 +1,25 @@
 <template>
-<div class="registrierung">
+    <main>
+        <div class="registrierung">
                 <h3>Entwikeln Sie Ihre Werbung</h3>
                 <form method="post">
                     <div class="reg-label">
+
+                        <div class="reg-label">
+                            <label for="discription">Werbetext für Ihr Produkt</label>
+                            <input type="text" id="discription" name="discription">
+                        </div>
+
+                        <div class="reg-label">
+                            <label for="discription">Werbetext für Ihr Restaurant</label>
+                            <input type="text" id="discription" name="discription">
+                        </div>
+
+                        <div class="reg-label">
+                            <label for="url">Produkt URL</label>
+                            <input type="text" id="url" name="url">
+                        </div>
+
                         <label for="type">Wählen Sie zwischen</label>
                         <div>
                             <input type="radio" id="product" name="type" value="product">
@@ -20,16 +37,14 @@
                     </div>
 
 
-
-
-
                     <div>
                         <router-link to="/User">
-                    <button type="submit"><img src="/public/Assets/img/" alt=""></button>
-                </router-link>
-                </div>
+                            <button type="submit"><img src="/public/Assets/img/senden-bnt.png" alt=""></button>
+                        </router-link>
+                    </div>
                 </form>
-            </div>
+        </div>
+    </main>
 
 
 </template>
@@ -37,7 +52,14 @@
 
 <style scoped>
 
-registrierung {
+main {
+    max-width: 90%;
+    margin: auto;
+    border-radius: 30px;
+    background-color: rgba(222, 220, 220, 0.81);
+}
+
+.registrierung {
     display: flex;
     flex-direction: column;
     align-items: center;

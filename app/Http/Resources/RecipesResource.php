@@ -21,7 +21,6 @@ class RecipesResource extends JsonResource
             "title" => $this->title,
             "description" => $this->description,
             "image" => $this->image,
-            "nutrition" => $this->nutrition,
             "allergies" => $this->allergies,
             "vitamins" => $this->vitamins,
             "ingredients" => $this->ingredients,

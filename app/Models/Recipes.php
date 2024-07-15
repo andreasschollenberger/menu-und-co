@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Allergy;
+use App\Models\Vitamin;
 
 class Recipes extends Model
 {
@@ -20,6 +22,18 @@ class Recipes extends Model
     {
         return $this->belongsTo(Dishes::class, 'dish_id');
     }
+
+   public function allergies()
+   {
+        return $this->hasMany(Allergy::class, 'id');
+   }
+
+   public function vitamins()
+   {
+        return $this->hasMany(Vitamin::class, 'id');
+   }
+
+
 
     public function recipes_group()
     {

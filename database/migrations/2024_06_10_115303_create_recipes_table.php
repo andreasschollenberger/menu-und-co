@@ -34,8 +34,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('image')->nullable();
-            $table->json('nutrition')->nullable();
-            $table->json('vitamins')->nullable();
+            
             $table->json('ingredients');
             $table->json('instructions');
             $table->foreignId('dish_id')->constrained()->onDelete('cascade');
@@ -45,7 +44,14 @@ return new class extends Migration
         });
         Schema::create('allergies_recipes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('allergy_id')->constrained()->onDelete('cascade');
+            $table->foreignId('allergies_id')->constrained()->onDelete('cascade');
+            $table->foreignId('recipe_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
+        });
+
+        Schema::create('vitamins_recipes', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('vitamins_id')->constrained()->onDelete('cascade');
             $table->foreignId('recipe_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
@@ -56,7 +62,11 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('dishes');
+        Schema::dropIfExists('recipes_groups');
+        Schema::dropIfExists('countries');
         Schema::dropIfExists('recipes');
         Schema::dropIfExists('allergies_recipes');
+        Schema::dropIfExists('vitamins_recipes');
     }
 };
