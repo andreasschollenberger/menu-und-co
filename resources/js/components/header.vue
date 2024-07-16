@@ -1,4 +1,37 @@
 <script setup>
+import { useAuthStore } from '@/stores/AuthStore';
+import AuthService from "@/services/AuthService";
+import {ref} from 'vue';
+import {useRouter} from 'vue-router';
+
+const router = useRouter();
+const store = useAuthStore();
+console.log(store.authUser);
+
+const user = ref({
+    email : '',
+    password : ''
+});
+
+
+const login = async() => {
+
+    try {
+
+        await AuthService.login(user.value);
+
+        const authUser = await store.getAuthUser();
+
+        if(authUser) {
+          router.push("/dashboard");
+        }
+        else {
+            console.log('error');
+        }
+      } catch (error) {
+        console.log(error);
+      }
+}
 
 </script>
 
@@ -25,19 +58,19 @@
 
         
         <nav class="loginNav">
-            <router-link to="/registrierung">Registrieren</router-link>
+            <div v-if="store.authUser == null">
+                <router-link to="/registrierung">Registrieren</router-link>
+            </div>
         
             <div>
-                <select class="user" v-model="selectedOption">
-                    <option disabled value="">User</option>
-                    <option>Login</option>
-                    <option>Profil</option>
-                    <option>Logout</option>
+                <select class="user" @change="onChange($event)">
+                        <option v-if="store.authUser == null" value="/login">Login</option>
+            
+                        <option v-if="store.authUser != null" value="/user">Profil</option>
+                
+                        <option option v-if="store.authUser != null" value="/login">Logout</option>
+    
                 </select>
-
-                <div v-if="selectedOption === 'Login'">
-                    <input class="pass" type="password" v-model="password" placeholder="Passwort" />
-                </div>
             </div> 
         
         </nav>
@@ -45,15 +78,19 @@
 </template>
 
 <script>
+
 export default {
-    data() {
-        return {
-            selectedOption: '',
-            password: ''
-        }
+  methods: {
+    onChange(event) {
+      const path = event.target.value;
+      if (path) {
+        this.$router.push(path);
+      }
     }
+  }
 }
 </script>
+
 
 <style scoped>
 

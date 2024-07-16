@@ -108,9 +108,11 @@
                             <option value="l">l.</option>
                             <option value="dl">Dl.</option>
                         </select>
+
                         <textarea class="textfield-zu" placeholder="Zutat Eingeben" v-model="textValue"></textarea>
                         <button class="plus-b" @click="addFields">+</button>
                         <button class="minus-b" @click="removeField(index)">-</button>
+
                     </div>
                     <div class="input-container2" v-for="(field, index) in fields" :key="index">
                         <input class="nr-field" type="number" placeholder="Einheit Eingeben (Zahl)" v-model="field.numberValue" />
@@ -133,12 +135,12 @@
             <div>
                 <h2>Zubereitung detailiert eintragen</h2>
                 <div class="zubereitung">
-                    <textarea class="textfield" placeholder="Zubereitung erster Schritt" v-model="textValue"></textarea>
+                    <textarea class="textfield" placeholder="Zubereitung erster Schritt" v-model="ztextValue"></textarea>
                     <button class="plus-b" @click="addzFields">+</button>
                     <button class="minus-b" @click="removezField(index)">-</button>
                 </div>
                 <div class="zubereitung" v-for="(field, index) in zFields" :key="index">
-                    <textarea class="textfield" placeholder="Weiterer Zubereitung Schritt" v-model="field.textValue"></textarea>
+                    <textarea class="textfield" placeholder="Weiterer Zubereitung Schritt" v-model="field.ztextValue"></textarea>
                 </div>
             </div>
         </div>
@@ -273,7 +275,8 @@ export default {
             fields: [],
             zFields: [],
             numberValue: '',
-            unitValue: ''
+            unitValue: '',
+            ztextValue : '',
 
 
         };
@@ -298,9 +301,11 @@ export default {
 
         addzFields() {
             this.zFields.push({
-                textValue: ''
+                ztextValue: ''
             });
         },
+
+        
 
         removeField(index) {
             this.fields.splice(index, 1);
