@@ -11,15 +11,15 @@
 
             <div class="registrierung">
                 <h3>Registrierung User</h3>
-                <form method="post">
+                <form @submit.prevent="registrieren">
                     <div class="reg-label">
-                        <label for="username">Vorname</label>
-                        <input type="text" id="username" name="username" required>
+                        <label for="first_name">Vorname</label>
+                        <input type="text" id="first_name" name="first_name" v-model="first_name" required>
                     </div>
 
                     <div class="reg-label">
-                        <label for="username">Familien Name</label>
-                        <input type="text" id="username" name="username" required>
+                        <label for="last_name">Familien Name</label>
+                        <input type="text" id="last_name" name="last_name" v-model="last_name" required>
                     </div>
 
                     <div class="reg-label">
@@ -38,14 +38,14 @@
                     </div>
 
                     <div class="check-label">
-                        <input type="checkbox" id="agb" name="agb" required>
+                        <input type="checkbox" id="agb" name="agb" v-model="agb" required>
                         <router-link to="/agb"><label for="agb">AGB Akzeptiert</label></router-link>
                     </div>
 
                     <div>
-                        <router-link to="/User">
+                        <!-- <router-link to="/User"> -->
                     <button type="submit"><img src="/public/Assets/img/registrieren-button.png" alt=""></button>
-                </router-link>
+                <!-- </router-link> -->
                 </div>
                 </form>
             </div>
@@ -56,9 +56,13 @@
 </template>
 
 <script>
+import AuthService from '../services/AuthService';
 export default {
     data() {
         return {
+            first_name: '',
+            last_name: '',
+            agb: false,
             email: '',
             password: '',
             passwordConfirm: '',
@@ -77,7 +81,22 @@ export default {
                 alert('Die Passwörter stimmen nicht überein.');
             }
         },
-        // ...
+        async registrieren() {
+            const user = {
+                first_name: this.first_name,
+                last_name: this.last_name,
+                agb: this.agb,
+                email: this.email,
+                password: this.password,
+                password_confirmation: this.passwordConfirm
+            }
+            try {
+                await AuthService.registerUser(user);
+                this.$router.push('/login');
+            } catch (error) {
+                console.log(error);
+            }
+        }
     }
 }
 </script>

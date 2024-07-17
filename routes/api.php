@@ -31,9 +31,10 @@ Route::get('/recipes/{id}', [RecipesController::class, 'show']);
 
 Route::get('/recipes/groups', [RecipesGroupsController::class, 'index']);
 Route::middleware(['auth:sanctum'])->group(function () {
+    Route::post('/recipes/groups', [RecipesGroupsController::class, 'store']);
 });
 
-Route::post('/recipes/groups', [RecipesGroupsController::class, 'store']);
+
 
 Route::get('/recipes/groups/{id}', [RecipesGroupsController::class, 'show']);
 

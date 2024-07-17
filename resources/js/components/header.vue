@@ -66,7 +66,7 @@ const login = async() => {
                 <select class="user" @change="onChange($event)">
                         <option v-if="store.authUser == null" value="/login">Login</option>
             
-                        <option v-if="store.authUser != null" value="/user">Profil</option>
+                        <option v-if="store.authUser != null" value="/dashboard">Profil</option>
                 
                         <option option v-if="store.authUser != null" value="/login">Logout</option>
     

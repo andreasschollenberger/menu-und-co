@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Recipes;
 use App\Models\RecipesGroups;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class RecipesGroupsController extends Controller
@@ -18,8 +19,13 @@ class RecipesGroupsController extends Controller
         return $recipesGroups;
     }
 
-    public function store()
+    public function store(Request $request)
     {
+        dd($request->user());
+        if ($request->user()->can('is-admin')) {
+            return response()->json(['error' => 'Unauthorized'], 403);
+        }
+
         $data = request()->validate([
             'name' => 'required|string'
         ]);
