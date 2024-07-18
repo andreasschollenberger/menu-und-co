@@ -1,4 +1,6 @@
 <script setup>
+import logoutButton from '@/components/LogoutButton.vue';
+
 import { useAuthStore } from '@/stores/AuthStore';
 import AuthService from "@/services/AuthService";
 import {ref} from 'vue';
@@ -58,7 +60,8 @@ const login = async() => {
             <!-- <div class="bnt"> -->
             <h2>Bitte klicken Sie auf 'Logout', um sich abzumelden.</h2>
                 
-            <button  class="logout-bnt" @click="logout">Logout</button>
+            <logoutButton />
+            
             
 
             <router-link to="/user">
@@ -135,16 +138,6 @@ main {
     
 }
 
-
-.logout-bnt {
-    font-size: 25px;
-    width: 200px;
-    height: 40px;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    margin-top: 20px;
-}
 
 .dash-bnt {
     font-size: 25px;

@@ -62,15 +62,20 @@ const login = async() => {
                 <router-link to="/registrierung">Registrieren</router-link>
             </div>
         
-            <div>
-                <select class="user" @change="onChange($event)">
-                        <option v-if="store.authUser == null" value="/login">Login</option>
-            
-                        <option v-if="store.authUser != null" value="/dashboard">Profil</option>
-                
-                        <option option v-if="store.authUser != null" value="/login">Logout</option>
-    
-                </select>
+            <div class="user" @change="onChange($event)">
+
+                <div v-if="store.authUser == null">
+                    <router-link to="/login">Login</router-link>
+                </div>
+
+                <div v-if="store.authUser != null">
+                    <router-link to="/dashboard">Profil</router-link>
+                </div>
+
+                <div v-if="store.authUser != null">
+                    <router-link to="/login">Logout</router-link>
+                </div>
+                        
             </div> 
         
         </nav>
