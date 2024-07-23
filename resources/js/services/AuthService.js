@@ -59,7 +59,9 @@ export default {
 
   async registerUser(payload) {
     await authClient.get("/sanctum/csrf-cookie");
-    return authClient.post("/register", payload);
+    const res = await authClient.post("/register", payload);
+    await authClient.post("/logout");
+    return res;
   },
 
   sendVerification(payload) {
