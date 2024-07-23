@@ -13,11 +13,7 @@
 </script>
 
 <template>
-    <button class="logout-bnt"
-      type="button"
-      @click="logout"
-    >Logout
-    </button>
+    <button class="logout-bnt" type="button" @click="logout">Logouts</button>
   </template>
 
   <style scoped>

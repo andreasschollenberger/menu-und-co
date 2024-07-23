@@ -42,7 +42,7 @@ export const routes = [
 
     {
         path: "/dashboard",
-        component: () => import("./pages/User.vue"),
+        component: () => import("./pages/Dashboard.vue"),
         meta: {
             requiresAuth: true,
         },
@@ -99,6 +99,11 @@ export const routes = [
     {
         path: "/login",
         component: () => import("./pages/Auth/Login.vue"),
+    },
+
+    {
+        path: "/admin",
+        component: () => import("./pages/Admin.vue"),
     },
 
 ];

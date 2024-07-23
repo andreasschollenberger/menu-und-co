@@ -1,3 +1,9 @@
+<script setup>
+
+
+
+</script>
+
 <template>
     <main>
         <div class="card">
@@ -49,50 +55,81 @@
                 <ol>
                     <li v-for="allergies in allergies">{{ allergies }}</li>
                 </ol>
-            </div>     
-    
+            </div>
+
+            <button @click="deleteRecipe">Rezept löschen</button>
+            <button @click="editRecipe">Rezept bearbeiten</button>
+            <button @click="releaseRecipe">Recept Freigeben</button>  
+
         </div>
 
     </main>
-
-
 </template>
 
 <script>
+
 import axios from 'axios';
 
 export default {
-    data() {
-        return {
-            recipe: {},
-            id: this.$route.params.id 
-        };
+  data() {
+    return {
+      recipe: null, // Initialisiert als null und wird durch `fetchRecipe` gesetzt
+      id: this.$route.params.id,
+    };
+},
+  beforeMount() {
+    this.fetchRecipe();
+  },
+  methods: {
+    fetchRecipe() {
+      console.log('fetchRecipe wird aufgerufen');
+      axios.get(`/api/recipes/${this.id}`)
+        .then(() => {
+          this.recipe = response.data.data;
+          console.log('Rezepte nach API-Aufruf:', this.recipe); // Loggen Sie die Daten nach dem Setzen
+        })
+        .catch(error => {
+          console.error('Fehler beim Abrufen der Rezepte:', error);
+        });
     },
-    beforeMount() {
-        this.fetchRecipe();
+
+    deleteRecipe() {
+        // Logik zum Löschen eines Rezepts
+        axios.delete(`/api/recipes/${this.id}`)
+        .then(response => {
+            console.log("Rezept gelöscht");
+        })
+        .catch(error => {
+            console.error('Fehler beim Löschen des Rezepts:', error);
+        });
     },
-    methods: {
-        fetchRecipe() {
-            
-            console.log('fetchRecipe wird aufgerufen');
-            axios.get(`/api/recipes/${this.id}`)
-                .then(response => {
-                   
-                    this.recipe = response.data.data;
-                    console.log('Rezepte nach API-Aufruf:', this.recipe); // Loggen Sie die Daten nach dem Setzen
-                })
-                .catch(error => {
-                    console.error('Fehler beim Abrufen der Rezepte:', error);
-                });
-        },
+
+    editRecipe() {
+        // Logik zum Bearbeiten eines Rezepts
+        axios.put(`/api/recipes/${this.id}`, this.recipe)
+            .then(response => {
+                console.log("Rezept bearbeitet");
+            })
+            .catch(error => {
+                console.error('Fehler beim Bearbeiten des Rezepts:', error);
+            });
     },
+
+    releaseRecipe() {
+      // Logik zum Freigeben eines Rezepts
+      console.log("Rezept freigegeben");
+    },
+  },
+
+  mounted() {
+    // Da `fetchRecipe` bereits in `beforeMount` aufgerufen wird, könnte dieser Teil entfernt oder für andere Initialisierungen genutzt werden
+  },
 };
+
 </script>
 
-
 <style scoped>
-
-/* Halb-transparenter hintergrund */
+  /* Halb-transparenter hintergrund */
 main {
     display: flex;
     justify-content: center;
@@ -216,6 +253,18 @@ main {
     margin: 50px 0px 0px 100px;
     width: 80%;
     padding-bottom: 80px;
+}
+
+button {
+    font-size: 25px;
+    width: 100;
+    height: 40px;
+    border-radius: 5px;
+    background: rgb(3,209,242);
+    background: linear-gradient(0deg, rgba(3,209,242,1) 0%, rgba(26,27,241,1) 62%);
+    color: white;
+    margin-top: 20px;
+    margin-right: 20px;
 }
 
 </style>

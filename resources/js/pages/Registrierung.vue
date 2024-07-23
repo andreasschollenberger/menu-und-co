@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="reg-label">
-                        <label for="password">Passwort:</label>
+                        <label for="password">Passwort (mindest länge 8 Zeichen):</label>
                         <input type="password" id="password" name="password" v-model="password" required>
                     </div>
 
@@ -76,11 +76,19 @@ export default {
                 alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
             }
         },
+
+        
+
         validatePassword() {
+            if (this.password.length < 8) {
+                alert('Bitte verwenden Sie mehr als 8 Zeichen für das Passwort.');
+            }
+
             if (this.password !== this.passwordConfirm) {
                 alert('Die Passwörter stimmen nicht überein.');
             }
         },
+
         async registrieren() {
             const user = {
                 first_name: this.first_name,

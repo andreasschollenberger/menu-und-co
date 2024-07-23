@@ -64,7 +64,7 @@ const login = async() => {
             
             
 
-            <router-link to="/user">
+            <router-link to="/dashboard">
                 <button class="dash-bnt">User Seite</button>
             </router-link>
         </div>  
