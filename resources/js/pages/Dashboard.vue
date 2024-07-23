@@ -14,12 +14,10 @@ const store = useAuthStore();
                 <p>{{ store.authUser.last_name }}</p>
                 <p>{{ store.authUser.email }}</p>
 
-                <!-- <p>Max</p>
-                <p>Mustermann</p>
-                <p>m@m.com</p> -->
-                <router-link to="/EditUser">
+                <router-link :to="{ name: 'edit-user'}">
                     <img src="/public/Assets/img/edit-button.png" alt="">
                 </router-link>
+
             </div>
 
             <div class="create">
