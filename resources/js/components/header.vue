@@ -254,4 +254,42 @@ export default {
     }
 }
 
+@media (max-width: 380px) {
+    .navigation {
+        display: none;
+    }
+    .loginNav {
+        top: 5px;
+        right: 480px;
+    }
+
+    .loginNav a{
+        font-size: 15px;
+        
+    }
+
+    .LogoHeader {
+        width: 60px;
+        height: 29px;
+        position: absolute;
+        z-index: 1;
+        top: 2px;
+        left: 53px;
+    }
+
+    .headerimg {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .headerpic {
+        width: 97%;
+        padding: 0px 20px 0px 6px;
+        position: relative;
+        z-index: -1;
+    }
+}
+
 </style>

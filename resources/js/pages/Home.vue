@@ -1,17 +1,8 @@
 <script setup>
-import hamburger from '../components/hamburger.vue';
+
 
 </script>
 <template>
-    <div>
-        <header>
-            <!-- Haburger Navigation muss noch in den Header umziehen -->
-            <div class="ham-nav">
-                <hamburger />
-            </div>
-
-        </header>
-    </div>
     <main>
         <div class="h-container">
 
@@ -47,10 +38,6 @@ import hamburger from '../components/hamburger.vue';
                 </div>
     </main>
     
-
-    <!-- <div>
-        <router-link to="/login">Link zur Login Seite</router-link>
-    </div> -->
 </template>
 
 
@@ -175,10 +162,68 @@ font-size: 27px;
         z-index: -1;
     }
 
-    /* Hamburger Navigation */
-    .ham-nav {
-    display: block;
+}
+
+@media (max-width: 380px) {
+    .w-text {
+        width: 263px;
+        padding: 0px;
+        top: 201px;
+        left: 65px;
     }
+
+    .w-text h1  {
+        font-size: 18px;
+    }
+
+    .w-text p {
+        font-size: 14px;
+    }
+
+    .homelogo {
+        position: absolute;
+        top: 50px;
+        left: 27px;
+    }
+
+    .muc-text {
+        width: 263px;
+        padding: 0px;
+        top: 670px;
+        left: 65px;
+    }
+
+    .muc-text h2 {
+        font-size: 18px;
+    }
+
+    .muc-text p {
+        font-size: 14px;
+    }
+
+    .homeimg {
+    width: 200px;
+    height: 200px;
+    padding: 0 0 0 57px;
+    
+    }
+
+    .semicontainer {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    /* .semitransparent {
+        position: absolute;
+        width: 95%;
+        height: 1900px ;
+        top: 90px;
+        left: 15px;
+        bottom: 50px;
+        border-radius: 30px;
+        background-color: rgba(222, 220, 220, 0.81);
+        z-index: -1;
+    } */
 
 }
 </style>

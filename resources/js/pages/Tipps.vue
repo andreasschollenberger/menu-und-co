@@ -1,6 +1,6 @@
 <template>
     <main>
-        <div>
+        <div class="t-container">
             <div class="einleitung">
                 <h1>Tipps</h1>
                 <p>Entdecken Sie die geballte Ladung wertvoller Tipps rund um Nahrung bei Menü und Co! 
@@ -8,51 +8,56 @@
                     um Ihre Ernährung auf das nächste Level zu heben. Lassen Sie sich inspirieren und 
                     profitieren Sie von unserem umfassenden Wissen. Starten Sie noch heute Ihre Reise
                     zu einem gesünderen Lebensstil mit Menü und Co</p>
+
+                <div class="inhalt">
+                    <ul>
+                        <h3>Inhaltsverzeichnis</h3>
+                            <ul>
+                                <p><a href="#genuss ohne risiko">Genuss ohne Risiko</a></p>
+                            </ul>
+                            
+                            <ul>
+                                    <p><a href="#nährwerttabelle">Nährwerttabelle Schweiz</a></p>
+                                    <li><a href="#energie">Energie</a></li>
+                                    <li><a href="#makronährstoffe">Makronährstoffe</a></li>
+                                    <li><a href="#nahrungsfasern">Nahrungsfasern</a></li>
+                                    <li><a href="#fett">Fett</a></li>
+                                    <li><a href="#cholesterin">Cholesterin</a></li>
+                                    <li><a href="#protein">Protein</a></li>
+                                    <li><a href="#alkohol">Alkohol</a></li>
+                                    <li><a href="#wasser">Wasser</a></li>
+                                </ul>
+                                <ul>
+                                    <p><a href="#vitamine">Vitamine</a></p>
+                                    <li><a href="#vitamin a">Vitamin A</a></li>
+                                    <li><a href="#betacarotin">Betacarotin</a></li>
+                                    <li><a href="#vitamin b1">Vitamin B1 (Thiamin)</a></li>
+                                    <li><a href="#vitamin b2">Vitamin B2 (Riboflavin)</a></li>
+                                    <li><a href="#vitamin b6">Vitamin B6 (Pyridoxin)</a></li>
+                                    <li><a href="#vitamin b12">Vitamin B12 (Cobalamin)</a></li>
+                                    <li><a href="#niacin">Niacin</a></li>
+                                    <li><a href="#folat">Folat</a></li>
+                                    <li><a href="#pantothensäure">Pantothensäure</a></li>
+                                    <li><a href="#vitamin c">Vitamin C (Ascorbinsäure)</a></li>
+                                    <li><a href="#vitamin d">Vitamin D</a></li>
+                                    <li><a href="#vitamin e">Vitamin E</a></li>
+                                </ul>
+                                <ul>
+                                    <p><a href="#mineralstoffe">Mineralstoffe</a></p>
+                                    <li><a href="#kalzium">Kalzium</a></li>
+                                    <li><a href="#magnesium">Magnesium</a></li>
+                                    <li><a href="#phosphor">Phosphor</a></li>
+                                    <li><a href="#kalium">Kalium</a></li>
+                                    <li><a href="#natrium">Natrium</a></li>
+                                    <li><a href="#chlorid">Chlorid</a></li>
+                                    <li><a href="#eisen">Eisen</a></li>
+                                    <li><a href="#zink">Zink</a></li>
+                                    <li><a href="#selen">Selen</a></li>
+                                    <li><a href="#jod">Jod</a></li>
+                                </ul>
+                    </ul>
+                </div>
                 
-                    <h3>Inhaltsverzeichnis</h3>
-                <ul>
-                    <li><a href="#genuss ohne risiko">Genuss ohne Risiko</a></li>
-                    <li><a href="#nährwerttabelle">Nährwerttabelle Schweiz</a></li>
-                        <ul>
-                            <li><a href="#energie">Energie</a></li>
-                            <li><a href="#makronährstoffe">Makronährstoffe</a></li>
-                            <li><a href="#nahrungsfasern">Nahrungsfasern</a></li>
-                            <li><a href="#fett">Fett</a></li>
-                            <li><a href="#cholesterin">Cholesterin</a></li>
-                            <li><a href="#protein">Protein</a></li>
-                            <li><a href="#alkohol">Alkohol</a></li>
-                            <li><a href="#wasser">Wasser</a></li>
-                        </ul>
-                    <li><a href="#vitamine">Vitamine</a></li>
-                        <ul>
-                            <li><a href="#vitamin a">Vitamin A</a></li>
-                            <li><a href="#betacarotin">Betacarotin</a></li>
-                            <li><a href="#vitamin b1">Vitamin B1 (Thiamin)</a></li>
-                            <li><a href="#vitamin b2">Vitamin B2 (Riboflavin)</a></li>
-                            <li><a href="#vitamin b6">Vitamin B6 (Pyridoxin)</a></li>
-                            <li><a href="#vitamin b12">Vitamin B12 (Cobalamin)</a></li>
-                            <li><a href="#niacin">Niacin</a></li>
-                            <li><a href="#folat">Folat</a></li>
-                            <li><a href="#pantothensäure">Pantothensäure</a></li>
-                            <li><a href="#vitamin c">Vitamin C (Ascorbinsäure)</a></li>
-                            <li><a href="#vitamin d">Vitamin D</a></li>
-                            <li><a href="#vitamin e">Vitamin E</a></li>
-                        </ul>
-                    <li><a href="#mineralstoffe">Mineralstoffe</a></li>
-                        <ul>
-                            <li><a href="#kalzium">Kalzium</a></li>
-                            <li><a href="#magnesium">Magnesium</a></li>
-                            <li><a href="#phosphor">Phosphor</a></li>
-                            <li><a href="#kalium">Kalium</a></li>
-                            <li><a href="#natrium">Natrium</a></li>
-                            <li><a href="#chlorid">Chlorid</a></li>
-                            <li><a href="#eisen">Eisen</a></li>
-                            <li><a href="#zink">Zink</a></li>
-                            <li><a href="#selen">Selen</a></li>
-                            <li><a href="#jod">Jod</a></li>
-                        </ul>
-                    <li><a href="#section3">Abschnitt 3</a></li>
-                </ul>
             </div>
 
             <!-- Hauptinhalt -->
@@ -68,84 +73,86 @@
                 Haltbarkeitsdatums über 365 Tage lang konsumiert werden. Wir haben eine Liste mit verschiedenen Lebensmitteln 
                 erstellt und angegeben, wie lange sie nach Ablauf des Verfallsdatums noch genießbar sind. </p>
                 
-                <div class="row1">
-                    <ul>
-                        <p>+365 Tage</p>
-                        <li>Mehl</li>
-                        <li>Teigwaren</li>
-                        <li>Reis</li>
-                        <li>Salz</li>
-                        <li>Gewürze</li>
-                        <li>Essig</li>
-                        <li>Zucker</li>
-                        <li>Süssstoffe</li>
-                        <li>Sirup</li>
-                        <li>Honig</li>
-                        <li>Konfitüre</li>
-                        <li>Schokolade</li>
-                        <li>Süsswaren</li>
-                        <li>Tee</li>
-                        <li>Kaffee</li>
-                    </ul>
+                <body>
+                    <div class="row1">
+                        <ul>
+                            <p>+365 Tage</p>
+                            <li>Mehl</li>
+                            <li>Teigwaren</li>
+                            <li>Reis</li>
+                            <li>Salz</li>
+                            <li>Gewürze</li>
+                            <li>Essig</li>
+                            <li>Zucker</li>
+                            <li>Süssstoffe</li>
+                            <li>Sirup</li>
+                            <li>Honig</li>
+                            <li>Konfitüre</li>
+                            <li>Schokolade</li>
+                            <li>Süsswaren</li>
+                            <li>Tee</li>
+                            <li>Kaffee</li>
+                        </ul>
 
-                    <ul>
-                        <p>+120 Tage</p>
-                        <li>Fett</li>
-                        <li>Öl</li>
-                        <li>Mineralwasser</li>
-                        <li>Softdrinks</li>
-                        <li>In Konservendosen (Gemüse, Fleisch, Früchte) </li>
-                        <li>in Glässer (in Öl eingelegte Produkte)</li>
-                        <li>Trockensuppen</li>
-                        <li>Trockensaucen</li>
-                        <li>Frühstückscerealien</li>
-                        <li>Knäckebrot</li>
-                        <li>Zwieback</li>
-                    </ul>
+                        <ul>
+                            <p>+120 Tage</p>
+                            <li>Fett</li>
+                            <li>Öl</li>
+                            <li>Mineralwasser</li>
+                            <li>Softdrinks</li>
+                            <li>In Konservendosen (Gemüse, Fleisch, Früchte) </li>
+                            <li>in Glässer (in Öl eingelegte Produkte)</li>
+                            <li>Trockensuppen</li>
+                            <li>Trockensaucen</li>
+                            <li>Frühstückscerealien</li>
+                            <li>Knäckebrot</li>
+                            <li>Zwieback</li>
+                        </ul>
 
-                    <ul>
-                        <p>+90 Tage</p>
-                        <li>Tiefkühl Produkte</li>
-                    </ul>
-                
-                    <ul>
-                        <p>+30 Tage</p>
-                        <li>Getränke gekühlt (Fruchtsäfte, Gemüsesäfte)</li>
-                        <li>UHT-Milch</li>
-                        <li>Butter</li>
-                        <li>Hartkäse</li>
-                        <li>Salzige Snäcks (gebackene Snäcks, Crecker. Samen, Nüsse) </li>
-                    </ul>
+                        <ul>
+                            <p>+90 Tage</p>
+                            <li>Tiefkühl Produkte</li>
+                        </ul>
+                    
+                        <ul>
+                            <p>+30 Tage</p>
+                            <li>Getränke gekühlt (Fruchtsäfte, Gemüsesäfte)</li>
+                            <li>UHT-Milch</li>
+                            <li>Butter</li>
+                            <li>Hartkäse</li>
+                            <li>Salzige Snäcks (gebackene Snäcks, Crecker. Samen, Nüsse) </li>
+                        </ul>
 
-                </div>
-                <div class="row2">
+                    </div>
+                    <div class="row2">
 
-                    <ul>
-                        <p>+14 Tage</p>
-                        <li>Quark</li>
-                        <li>Joghurt</li>
-                        <li>Frischkäse</li>
-                        <li>Weichkäse</li>
-                        <li>Rohschinken </li>
-                        <li>Salami</li>
-                        <li>Salsiz</li>
-                        <li>Gekochte-Eier</li>
-                        <li>Vorverpackte Backwahren</li>
-                    </ul>
+                        <ul>
+                            <p>+14 Tage</p>
+                            <li>Quark</li>
+                            <li>Joghurt</li>
+                            <li>Frischkäse</li>
+                            <li>Weichkäse</li>
+                            <li>Rohschinken </li>
+                            <li>Salami</li>
+                            <li>Salsiz</li>
+                            <li>Gekochte-Eier</li>
+                            <li>Vorverpackte Backwahren</li>
+                        </ul>
 
-                    <ul>
-                        <p>+6 Tage</p>
-                        <li>Rohe Eier</li>
-                        <li>Past-Milch</li>
-                        <li>Blätterteiggebäck</li>
-                        <li>Konfekt</li>
-                        <li>Kuchen</li>
-                    </ul>
-                </div>
+                        <ul>
+                            <p>+6 Tage</p>
+                            <li>Rohe Eier</li>
+                            <li>Past-Milch</li>
+                            <li>Blätterteiggebäck</li>
+                            <li>Konfekt</li>
+                            <li>Kuchen</li>
+                        </ul>
+                    </div>
+                </body>
 
             </div>
 
-            <div id="nährwerttabelle" class="section2">
+            <div id="nährwerttabelle" class="einleitung">
                 <h1>Nährwerttabelle Schweiz</h1>
 
                 <div id="energie">
@@ -610,12 +617,6 @@
                 </div>
 
             </div>
-
-
-            <div id="section3">
-                <h1>Abschnitt 3</h1>
-                
-            </div>
             
         </div>
 
@@ -635,14 +636,40 @@ main {
     padding-top: 50px;
 }
 
+.t-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 150px;
+}
+
 .einleitung {
     width: 80%;
     padding: 50px;
 }
 
+.inhalt {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inhalt ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 10px;
+}
+
+.inhalt ul li {
+  margin-bottom: 5px;
+}
+
+.inhalt ul p {
+  font-weight: bold;
+}
+
 .section1 {
-    width: 90%;
-    padding-left: 120px;
+    width: 80%;
+    padding: 50px;
     margin-top: 20px;
 }
 
@@ -655,7 +682,7 @@ main {
     margin-top: 20px;
 }
 
-.row1 {
+/* .row1 {
     width: 80%;
     display: flex;
 }
@@ -683,5 +710,65 @@ main {
 
 .row2 p {
     font-weight: bold;
-}   
+}    */
+
+
+body {
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+body .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+body .row1, body .row2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+body ul {
+    list-style-type: none;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+body ul p {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+body li {
+    padding: 5px 0;
+    font-size: 1em;
+    color: #555;
+}
+
+
+@media (min-width: 390px) {
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    body .row1, body .row2 {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
 </style>

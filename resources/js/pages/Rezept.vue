@@ -218,4 +218,162 @@ main {
     padding-bottom: 80px;
 }
 
+@media (max-width: 390px) {
+    .menucard {
+        width: 100%;
+        border-top-left-radius: 150px;
+        border-bottom-right-radius: 150px;
+    }
+
+    .card {
+        width: 90%;
+        background-color: rgba(179, 187, 195, 1);
+        border-top-left-radius: 150px;
+        border-bottom-right-radius: 150px; 
+        padding-top: 50px;
+        padding-left: 98px; 
+    
+}
+
+    .menu-container {
+        display: flex;
+        flex-direction: column;
+        margin: 50px 0 20px 0;
+    }
+
+    .menu-text {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        margin: 50px 0 50px 0;
+    }
+
+    img {
+        border-radius: 25px;
+        margin-top: 47px;
+        margin-left: 36px;
+        margin-bottom: -58px;
+        width: 40%;
+        height: 40%;
+    }
+
+    .img-back img {
+        width: 125px;
+        height: 100px;
+        /* aspect-ratio: 16/9; */
+        object-fit: cover;
+        margin: 0 0 0 27px;
+        border-radius: 25px;
+}
+
+    .img-back {
+        width: 175px;
+        height: 150px;
+        border-radius: 25px;
+        background-color: rgb(95, 68, 10);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: -38px;
+        margin-left: -155px;
+    }
+
+    .tag-contaner {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+
+    }
+
+    .titel {
+        font-size: 14px;
+        font-weight: bold;
+        color: #393636;
+        margin-top: -18px;
+        margin-left: -46px;
+    }
+
+    .kategorie {
+        display: flex;
+        font-size: 14px;
+        color: #393636;
+        /* margin-left:  165px; */
+        margin-top: -13px;
+        margin-left: -46px;
+    }
+
+    .herkunft {
+        font-size: 14px;
+        color: #393636;
+        margin-top: -4px;
+        margin-left: -46px;
+    }
+
+    .vegi {
+        font-size: 14px;
+        color: #393636;
+        margin-top: -3px;
+        margin-left: -46px;
+    }
+
+    .autor {
+        font-size: 14px;
+        color: #393636;
+        /* margin-left: 165px; */
+        margin-top: 16px;
+        margin-left: -46px;
+
+    }
+
+    .nährwert h3 {
+        font-size: 12px;
+        margin-top: 16px;
+        margin-left: -46px;
+    }  
+
+    .nährwert li {
+        font-size: 15px;
+    }
+
+    .titel {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .kategorie,
+    .herkunft,
+    .vegi,
+    .autor {
+        font-size: 12px;
+    }
+
+    .z-container {
+        margin: 50px 0px 0px 100px;
+    }
+
+    .z-container h3 {
+        font-size: 18px;
+        margin-left: -179px;
+    }
+
+    .z-container div {
+        font-size: 27px;  
+    }
+
+    .zubereitung {
+        margin: 50px 0px 0px 100px;
+        width: 80%;
+        display: flex;
+    }
+
+    .zubereitung h3 {
+        font-size: 18px;
+        margin-left: -179px;
+    }
+
+    .a-container {
+        margin-left: -79px;
+    }
+}
+
 </style>

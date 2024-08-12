@@ -149,5 +149,49 @@ main {
     margin-top: 20px;
 }
 
+@media (max-width: 380px) {
+
+    main {
+        margin-top: 150px;
+    }
+    
+
+    .log-container {
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .log-container h1 {
+        font-size: 30px;
+    }
+
+    .reg-label label {
+        font-size: 20px;
+    }
+
+    .reg-label input {
+        font-size: 20px;
+        width: 300px;
+        height: 30px;
+    }
+
+    .login-bnt {
+        font-size: 20px;
+        width: 150px;
+        height: 30px;
+    }
+
+    .bnt {
+        margin-top: 20px;
+    }
+
+    .dash-bnt {
+        font-size: 20px;
+        width: 150px;
+        height: 30px;
+    }
+}
+
 </style>
  

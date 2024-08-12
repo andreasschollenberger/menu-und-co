@@ -14,20 +14,20 @@
 
             <div class="registrierung">
                 <h3>Editierung User</h3>
-                <form @submit.prevent="registrieren">
+                <form @submit.prevent="updateUser">
                     <div class="reg-label">
                         <label for="first_name">Vorname</label>
-                        <input type="text" id="first_name" name="first_name" v-model="store.authUser.first_name" required>
+                        <input type="text" id="first_name" name="first_name" v-model="first_name" required>
                     </div>
 
                     <div class="reg-label">
                         <label for="last_name">Familien Name</label>
-                        <input type="text" id="last_name" name="last_name" v-model="store.authUser.last_name" required>
+                        <input type="text" id="last_name" name="last_name" v-model="last_name" required>
                     </div>
 
                     <div class="reg-label">
                         <label for="email">E-Mail:</label>
-                        <input type="email" id="email" name="email" v-model="store.authUser.email" @blur="validateEmail" required>
+                        <input type="email" id="email" name="email" v-model="email" @blur="validateEmail" required>
                     </div>
 
                     <div>
@@ -52,10 +52,10 @@ const store = useAuthStore();
 export default {
     data() {
         return {
-            first_name: '',
-            last_name: '',
-            email: '',
-            store: useAuthStore(),
+            first_name: store.authUser.first_name,
+            last_name: store.authUser.last_name,
+            email: store.authUser.email,
+            // store: useAuthStore(),
         }
     },
     methods: {
@@ -68,15 +68,16 @@ export default {
 
         
 
-        async registrieren() {
+        async updateUser() {
             const user = {
                 first_name: this.first_name,
                 last_name: this.last_name,
                 email: this.email,
             }
             try {
-                await AuthService.registerUser(user);
-                this.$router.push('/login');
+                await AuthService.updateUser(user);
+                await store.getAuthUser();
+                this.$router.push('/dashboard');
             } catch (error) {
                 console.log(error);
             }

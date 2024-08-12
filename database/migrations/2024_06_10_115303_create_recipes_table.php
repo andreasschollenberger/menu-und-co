@@ -32,7 +32,7 @@ return new class extends Migration
             $table->boolean('is_confirmed')->default(false);
             $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
             $table->string('title');
-            $table->text('description');
+    
             $table->string('image')->nullable();
             
             $table->json('ingredients');
@@ -42,17 +42,17 @@ return new class extends Migration
             $table->foreignId('country_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
-        Schema::create('allergies_recipes', function (Blueprint $table) {
+        Schema::create('allergy_recipes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('allergies_id')->constrained()->onDelete('cascade');
-            $table->foreignId('recipe_id')->constrained()->onDelete('cascade');
+            $table->foreignId('allergy_id')->constrained()->onDelete('cascade');
+            $table->foreignId('recipes_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
 
         Schema::create('vitamins_recipes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('vitamins_id')->constrained()->onDelete('cascade');
-            $table->foreignId('recipe_id')->constrained()->onDelete('cascade');
+            $table->foreignId('recipes_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

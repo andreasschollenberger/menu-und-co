@@ -132,4 +132,93 @@ button {
     color: yellowgreen;
     cursor: pointer;
 }
+
+@media (max-width: 390px) {
+    .menucard {
+        width: 100%;
+        border-top-left-radius: 150px;
+        border-bottom-right-radius: 150px;
+    }
+
+    .menu-container {
+        display: flex;
+        flex-direction: column;
+        margin: 50px 0 20px 0;
+    }
+
+    .menu-text {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        margin: 50px 0 50px 0;
+    }
+
+    img {
+        border-radius: 25px;
+        margin-top: 47px;
+        margin-left: 36px;
+        margin-bottom: -58px;
+        width: 40%;
+        height: 40%;
+
+
+    }
+
+    .titel {
+        font-size: 16px;
+        font-weight: bold;
+        color: #393636;
+        margin-top: -115px;
+        margin-left: 165px;
+    }
+
+    .kategorie {
+        font-size: 14px;
+        color: #393636;
+        margin-left:  165px;
+    }
+
+    .herkunft {
+        font-size: 14px;
+        color: #393636;
+        margin-left: 165px;
+    }
+
+    .vegi {
+        font-size: 14px;
+        color: #393636;
+        margin-left: 165px;
+    }
+
+    .autor {
+        font-size: 14px;
+        color: #393636;
+        margin-top: 20px;
+        margin-left: 165px;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        width: 120px;
+        height: 30px;
+        background-color: #393636;
+        color: white;
+        font-size: 11px;
+        border: none;
+        border-radius: 10px;
+        margin-top: 3px;
+        margin-right: 115px;
+    }
+
+    .menucard button:hover {
+        background-color: #555555;
+        color: yellowgreen;
+        cursor: pointer;
+    }
+}
 </style>

@@ -41,27 +41,27 @@ class RecipesController extends Controller
 
         // return redirect()->route('recipes.index');
 
-        $dish = Dishes::find($request->dish_id);
-        $recipe = $dish->recipes;
-        $recipe = Recipes::find(1);
-        $dish = $recipe->dish;
-        $recipes_groups = RecipesGroups::find($request->recipes_group_id);
-        $country = Countries::find($request->country_id);
 
-        $recipe = Recipes::create([
+        // $recipes_groups = RecipesGroups::find($request->recipes_group_id);
+        // $country = Countries::find($request->country_id);
+
+        
+
+        $recipes = Recipes::create([
             'user_id'=> $request->user()->id,
-            'titel' => $request->title,
-            'description' => $request->description,
-            'image' => Storage::disk('public')->put('recipes', $request->file('image')),
-            'nutrition' => $request->nutrition,
-            'vitamins' => $request->vitamins,
+            'title' => $request->title,
+            'image' => $request->file('image')? Storage::disk('public')->put('recipes', $request->file('image')): null,
             'ingredients' => $request->ingredients,
             'instructions' => $request->instructions,
-            'dish_id' => $dish,
-            'resipes_group_id' => $recipes_groups,
-            'country_id' => $country
+            'dish_id' => $request->dish_id,
+            'recipes_group_id' => $request->recipes_group_id,
+            'country_id' => $request->country_id
 
         ]);
+
+        $recipes->allergies()->sync($request->allergies);
+        $recipes->vitamins()->sync($request->vitamins);
+        $recipes->save();
     }
 
     /**

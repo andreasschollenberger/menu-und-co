@@ -13,68 +13,39 @@
             </div>
 
             <div class="r-titel">
-                <input class="r-box" type="text" placeholder="Rezept Titel eingeben">
+                <input class="r-box" type="text" placeholder="Rezept Titel eingeben"v-model="title">
 
                 <h4>Neue Kategorie erstellen</h4>
 
                 <form class="h-label">
                     <div class="h-label1">
-                        <input type="radio" id="vorspeise" name="kategorie" value="Vorspeise">
-                        <label for="vorspeise">Vorspeise</label>
-
-                        <input type="radio" id="hauptgang" name="kategorie" value="Hauptgang">
-                        <label for="hauptgang">Hauptgang</label>
-
-                        <input type="radio" id="dessert" name="kategorie" value="Dessert">
-                        <label for="dessert">Dessert</label>
+                        <label v-for="dish in dishes" :key="dish.id">
+                            <input type="radio" :id="dish.id" name="dish_id" :value="dish.id" v-model="dish_id">
+                            {{ dish.name }}
+                        </label>
                     </div>
-
-                    <div class="h-label2">
-                        <input type="radio" id="suppe" name="kategorie" value="Suppe">
-                        <label for="suppe">Suppe</label>
-
-                        <input type="radio" id="salat" name="kategorie" value="Salat">
-                        <label for="salat">Salat</label>
-
-                        <input type="radio" id="beilage" name="kategorie" value="Beilage">
-                        <label for="beilage">Beilage</label>
-                    </div>
-
-                    <div class="h-label3">
-                        <input type="radio" id="kinder-menu" name="kategorie" value="Kinder Menü">
-                        <label for="kinder-menu">Kinder Menü</label>
-
-                        <input type="radio" id="gebaeck" name="kategorie" value="Gebäck">
-                        <label for="gebaeck">Gebäck</label>
-
-                        <input type="radio" id="drinks" name="kategorie" value="Drinks">
-                        <label for="drinks">Drinks</label>
-                    </div>
+                    
                 
                 </form>
         
                 <div class="place2">
-                    <form class="s-label">
-                        <input type="radio" id="vegan" name="kategorie" value="Vegan">
-                        <label for="vegan">Vegan</label>
 
-                        <input type="radio" id="vegetarisch" name="kategorie" value="Vegetarisch">
-                        <label for="vegetarisch">Vegetarisch</label>
+                    <div class="h-label2">
+                        <label v-for="recipes_group in recipes_groups" :key="recipes_group.id">
+                            <input type="radio" :id="recipes_group.id" name="recipes_group_id" :value="recipes_group.id" v-model="recipes_group_id">
+                            {{ recipes_group.name }}
+                        </label>
+                    </div>
 
-                        <input type="radio" id="fleisch" name="kategorie" value="Fleisch">
-                        <label for="fleisch">Fleisch</label>
-
-                        <input type="radio" id="ka" name="kategorie" value="ka">
-                        <label for="ka">k.A</label>
-                    </form>
+                
                 </div>
 
                 <div class="place3">
                     <div class="t-label">
                         <label for="herkunft"> Das Rezept kommt aus?</label>
-                        <select v-model="selectedCountry">
+                        <select v-model="country_id">
                             <option value="" disabled selected>Land auswählen</option>
-                            <option v-for="country in countries" :key="country">{{ country }}</option>
+                            <option v-for="country in countries" :key="country.id" :value="country.id">{{ country.name }}</option>
                         </select>
 
                     </div>
@@ -148,42 +119,11 @@
         <div class="allergene">
             <h2>Mögliche Allergene im Rezept</h2>
             <div class="checkbox-container">
-                <div class="al-box">
-                    <input type="checkbox" id="gluten" name="allergene" value="gluten">
-                    <label for="gluten">Glutenhaltige Getreide</label>
-                    <input type="checkbox" id="laktose" name="allergene" value="laktose">
-                    <label for="laktose">Milch (einschliesslich Laktose)</label>
-                    <input type="checkbox" id="ei" name="allergene" value="ei">
-                    <label for="ei">Eier</label>
-                    <input type="checkbox" id="soja" name="allergene" value="soja">
-                    <label for="soja">Sojabohnen</label>
-                    <input type="checkbox" id="erdnuss" name="allergene" value="erdnuss">
-                    <label for="erdnuss">Erdnuss</label>
-                    <input type="checkbox" id="nuss" name="allergene" value="nuss">
-                    <label for="nuss">Hartschalenopst (Nüsse)</label>
-                    <input type="checkbox" id="fisch" name="allergene" value="fisch">
-                    <label for="fisch">Fisch</label>
-                    <input type="checkbox" id="krebstiere" name="allergene" value="krebstiere">
-                    <label for="krebstiere">Krebstiere</label>
-                    <input type="checkbox" id="sellerie" name="allergene" value="sellerie">
-                    <label for="sellerie">Sellerie</label>
-                    <input type="checkbox" id="senf" name="allergene" value="senf">
-                    <label for="senf">Senf</label>
+                <div v-for="allergy in allergies" :key="allergy.id" class="al-box">
+                    <input type="checkbox" :id="allergy.id" :name="allergy.id" :value="allergy.id" v-model="allergy_selected">
+                    <label :for="allergy.id">{{ allergy.name }}</label>
                 </div>
-                <div class="al-box2">
-                    <input type="checkbox" id="sesam" name="allergene" value="sesam">
-                    <label for="sesam">Sesam-Samen</label>
-                    <input type="checkbox" id="schwefeldioxid" name="allergene" value="schwefeldioxid">
-                    <label for="schwefeldioxid">Schwefeldioxid (Trocken Obst, Opstsäfte, Marmeladen...)</label>
-                    <input type="checkbox" id="sulfate" name="allergene" value="sulfate">
-                    <label for="sulfate">Sulfate (Äpfel, Reis, Zwibeln, Kohl, sowie Wein)</label>
-                    <input type="checkbox" id="lupine" name="allergene" value="lupine">
-                    <label for="lupine">Lupine (Mehl, Nudeln, Kaffee-, Milch- und Fleischersatz)</label>
-                    <input type="checkbox" id="weichtiere" name="allergene" value="weichtiere">
-                    <label for="weichtiere">Weichtiere (Schnecken, Muscheln, Tintenfische...)</label>
-                    <input type="checkbox" id="hausgrillenpulver" name="allergene" value="hausgrillenpulverweichtiere">
-                    <label for="hausgrillenpulver">Hausgrillenpulver (Kekse, Saucen, Pizzas...)</label>
-                </div>
+                    
             </div>
             
         </div>
@@ -198,33 +138,12 @@
                     <p>Für jedes Vitamin haben wir eine Liste erstellt, die zeigt, in welchen Lebensmitteln es vorkommt. 
                         Zum Beispiel enthält Vitamin A: Leber, Milchprodukte, Eigelb, sowie buntes Gemüse wie Karotten und Spinat.</p>
                 </div>
-                    <div class="vit-box">
-                        <input type="checkbox" id="vitamin-d" name="vitamins" value="vitamin-d">
-                        <label for="vitamin-a">Vitamin A: Leber, Milchprodukte, Eigelb, buntes Gemüse wie z.B.. Karotten, Spinat</label> 
-                        <input type="checkbox" id="vitamin-d" name="vitamins" value="vitamin-d">
-                        <label for="vitamin-d">Vitamin D: Fisch, Milch, Eier, Avocado, Butter, Champignons</label>
-                        <input type="checkbox" id="vitamin-e" name="vitamins" value="vitamin-e">
-                        <label for="vitamin-e">Vitamin E: Pflanzenöle und -fette, Nüsse, Vollkorngetreide</label>
-                        <input type="checkbox" id="vitamin-k" name="vitamins" value="vitamin-k">
-                        <label for="vitamin-k">Vitamin K: Grünes Gemüse, Kohl, Salat, Kresse, Hähnchenfleisch</label>
-                        <input type="checkbox" id="vitamin-b1" name="vitamins" value="vitamin-b1">
-                        <label for="vitamin-b1">Vitamin B1: Kartoffeln, Fleisch, Hülsenfrüchte, Weizenkeime</label>
-                        <input type="checkbox" id="vitamin-b2" name="vitamins" value="vitamin-b2">
-                        <label for="vitamin-b2">Vitamin B2: Milchprodukte, Vollkorngetreide, Fleisch, Fisch, dunkles Blattgemüse</label>
-                        <input type="checkbox" id="vitamin-b3" name="vitamins" value="vitamin-b3">
-                        <label for="vitamin-b3">Vitamin B3: Bierhefe, Fisch, Geflügel, Eier, Erdnüsse, Erbsen</label>
-                        <input type="checkbox" id="vitamin-b5" name="vitamins" value="vitamin-b5">
-                        <label for="vitamin-b5">Vitamin B5: Leber, Vollkorngetreide, Kohl, Fleisch, Nüsse</label>
-                        <input type="checkbox" id="vitamin-b6" name="vitamins" value="vitamin-b6">
-                        <label for="vitamin-b6">Vitamin B6: Bananen, Nüsse, Vollkorngetreide, Leber, Kartoffeln</label>
-                        <input type="checkbox" id="vitamin-b7" name="vitamins" value="vitamin-b7">
-                        <label for="vitamin-b7">Vitamin B7: Eigelb, Haferflocken, Sojabohnen, Naturreis, Erdnüsse</label>
-                        <input type="checkbox" id="vitamin-b9" name="vitamins" value="vitamin-b9">
-                        <label for="vitamin-b9">Vitamin B9: Grünes Blattgemüse, Leber, Weizenkeime, Fisch, Fleisch</label>
-                        <input type="checkbox" id="vitamin-b12" name="vitamins" value="vitamin-b12">
-                        <label for="vitamin-b12">Vitamin B12: Eigelb, Fisch, Leber, Milchprodukte</label>
-                        <input type="checkbox" id="vitamin-c" name="vitamins" value="vitamin-c">
-                        <label for="vitamin-c">Vitamin C: Zitrusfrüchte, Paprika, Tomaten, Hagebutte, Sanddorn</label>
+                    <div class="checkbox-container">
+                        <div v-for="vitamin in vitamins" :key="vitamin.id" class="al-box">
+                            <input type="checkbox" :id="vitamin.id" :name="vitamin.id" :value="vitamin.id" v-model="vitamins_selected">
+                            <label :for="vitamin.id">{{ vitamin.name }}</label>
+                        </div>
+                        
                         
                     </div>
             </div>
@@ -243,45 +162,90 @@
 import { useRouter } from 'vue-router';
 import axios from 'axios';
 
+export const authClient = axios.create({
+  baseURL: import.meta.env.VITE_BASE_URL,
+  withCredentials: true, // required to handle the CSRF token
+});
+
 
 export default {
     data() {
         return {
+            title: '',
+            dish_id: '',
+            recipes_group_id: '',
             imageUrl: null,
             selectedCountry: '',
-            countries: ['k.A.', 'Schweiz', 'Deutschland', 'Östereich', 'Afghanistan', 'Ägypten', 
-            'Åland', 'Albanien', '	Algerien', 'Amerikanische Jungferninseln', 'Amerikanisch-Samoa', 'Andorra', 'Angola', 
-            'Anguilla', 'Antarktika', 'Antigua und Barbuda', 'Äquatorialguinea', 'Argentinien', 'Armenien', 
-            'Aruba', 'Aserbaidschan', 'Äthiopien', 'Australien', 'Bahamas', 'Bahrain', 
-            'Bangladesch', 'Barbados', 'Bassas da India', 'Belarus', 'Belgien', 
-            'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivien', 'Bosnien und Herzegowina', 
-            'Botsuana', 'Bouvetinsel', 'Brasilien', 'Britische Jungferninseln', 'Britisches Territorium im Indischen Ozean', 'Brunei Darussalam', 
-            'Bulgarien', 'Burkina Faso', 'Burundi', 'Cabo Verde', '	Chile', 'China', 'Clipperton', 'Cookinseln', 'Costa Rica', 'Côte d Ivoire',
-            'Dänemark', 'Dominica', 'Dominikanische Republik', 'Dschibuti', 'Ecuador',
-            'El Salvador', 'Eritrea', 'Estland', 'Eswatini', 'Falklandinseln', 'Färöer', 'Fidschi', 'Finnland', 'Frankreich', 'Französisch-Guayana', 'Französisch-Polynesien', 'Gabun',
-            'Gambia', 'Gazastreifen', 'Georgien', 'Ghana', 'Gibraltar', 'Glorieuses', 'Grenada', 'Griechenland',
-            'Grönland', 'Großbritannien', 'Guadeloupe', 'Guam', 'Guatemala', 'Guernsey', 'Guinea', 'Guinea-Bissau', 'Guyana',
-            'Haiti', 'Heard und McDonaldinseln', 'Honduras', 'Hongkong', 'Indien', 'Indonesien', 'Insel Man', 'Irak', 'Iran', 'Irland', 'Island', 'Israel', 'Italien', 'Jamaika', 'Japan', 'Jemen', 'Jersey',
-            'Jordanien', 'Juan de Nova', 'Kaimaninseln', 'Kambodscha', 'Kamerun', 'Kanada', 'Kasachstan', 'Katar', 'Kenia', 'Kirgisistan', 'Kiribati', 'Kokosinseln (Keelinginseln)', 'Kolumbien', 'Komoren', 'Kongo', 'Korea, Demokratische Volksrepublik', 'Korea, Republik', 
-            'Kosovo', 'Kroatien', 'Kuba', 'Kuwait', 'Laos', 'Lesotho', 'Lettland', 'Libanon', '	Liberia', 'Libyen', 'Liechtenstein', 'Litauen', 'Luxemburg', 'Macau', 'Madagaskar', 'Malawi', 'Malaysia',
-            'Malediven', 'Mali', 'Malta', 'Marokko', 'Marshallinseln', 'Martinique', 'Mauretanien', 'Mauritius', 'Mayotte', 'Mexiko', 'Mikronesien', 'Moldau', 'Monaco', 'Mongolei', 'Montenegro', 'Montserrat', 'Mosambik',
-            'Myanmar', 'Namibia', '	Nauru', 'Nepal', 'Neukaledonien', 'Neuseeland', 'Nicaragua', 'Niederlande', 'Niger', 'Nigeria', 'Niue', 'Nördliche Marianen', 'Nordmazedonien', 'Norfolkinsel', 'Norwegen', 'Oman', 'Pakistan',
-            'Palau', 'Panama', 'Papua-Neuguinea', 'Paraguay', 'Peru', '	Philippinen', 'Pitcairninseln', 'Polen', 'Portugal', 'Puerto Rico', 'Réunion', 'Ruanda', 'Rumänien', 'Russische Föderation', 'Saint-Martin', 'Salomonen', 'Sambia',
-            'Samoa', 'San Marino', 'São Tomé und Príncipe', 'Saudi-Arabien', 'Schweden', 'Senegal', 'Serbien', 'Serbien und Montenegro', 'Seychellen', 'Sierra Leone', 'Simbabwe', 'Singapur', 'Slowakei', 'Slowenien', 'Somalia', 'Spanien', 'Spitzbergen',
-            'Sri Lanka', 'St. Barthélemy', 'St. Helena, Ascension und Tristan da Cunha', 'St. Kitts und Nevis', 'St. Lucia', 'St. Pierre und Miquelon', 'St. Vincent und die Grenadinen', 'Südafrika', 'Sudan', 'Südgeorgien', 'Südsudan', 'Suriname', 'Syrien', 'Tadschikistan', 'Taiwan', 'Tansania', 'Thailand',
-            'Timor-Leste', 'Togo', 'Tokelau', 'Tonga', 'Trinidad und Tobago', 'Tromelin', 'Tschad', 'Tschechische Republik', 'Tunesien', 'Türkei', 'Turkmenistan', 'Turks- und Caicosinseln', 'Tuvalu', 'Uganda', 'Ukraine', 'Ungarn', 'Uruguay',
-            'Usbekistan', 'Vanuatu', 'Vatikanstadt', 'Venezuela', 'Vereinigte Arabische Emirate', 'USA', 'Vietnam', 'Wallis und Futuna', 'Weihnachtsinsel', 'Westjordanland', 'Westsahara', 'Zentralafrikanische Republik', 'Zypern'],
+            countries: [],
+            allergies: [],
+            allergy_selected: [],
+            vitamins: [],
+            vitamins_selected: [],
             textValue: '',
             fields: [],
             zFields: [],
             numberValue: '',
             unitValue: '',
             ztextValue : '',
-
-
+            dishes: [],
+            recipes_groups: [],
+            country_id: '',
         };
     },
+    mounted() {
+        this.getDishes();
+        this.getRecipesGroups();
+        this.getCountry();
+        this.getAllergies();
+        this.getVitamins();
+    },
     methods: {
+
+            async getDishes() {
+                try {
+                    const response = await authClient.get('/dishes');
+                    this.dishes= response.data;
+                } catch (error) {
+                    console.error(error);
+                }
+            },
+
+            async getRecipesGroups() {
+                try {
+                    const response = await authClient.get('/recipes/groups');
+                    this.recipes_groups = response.data;
+                } catch (error) {
+                    console.error(error);
+                }
+            },
+
+            async getCountry() {
+                try {
+                    const response = await authClient.get('/countries');
+                    this.countries = response.data;
+                } catch (error) {
+                    console.error(error);
+                }
+            },
+
+            async getAllergies() {
+                try {
+                    const response = await authClient.get('/allergies');
+                    this.allergies = response.data;
+                } catch (error) {
+                    console.error(error);
+                }
+            },
+
+            async getVitamins() {
+                try {
+                    const response = await authClient.get('/vitamins');
+                    this.vitamins = response.data;
+                } catch (error) {
+                    console.error(error);
+                }
+            },
+
         handleFileUpload(event) {
             const file = event.target.files[0];
             const reader = new FileReader();
@@ -313,7 +277,35 @@ export default {
 
         removezField(index) {
             this.zFields.splice(index, 1);
-        }        
+        },
+        async submitForm() {
+            const formData = new FormData();
+            formData.append('image', this.imageUrl);
+            formData.append('title', this.title);
+            formData.append('dish_id', this.dish_id);
+            formData.append('recipes_group_id', this.recipes_group_id);
+            formData.append('country_id', this.country_id);
+            formData.append('ingredients', JSON.stringify(this.fields));
+            formData.append('instructions', JSON.stringify(this.zFields));
+            formData.append('allergies', JSON.stringify(this.allergy_selected));
+            formData.append('vitamins', JSON.stringify(this.vitamins_selected));
+
+            
+
+            try {
+                await authClient.get("/sanctum/csrf-cookie");
+
+                await authClient.post('/recipes', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                });
+
+                this.$router.push('/dashboard');
+            } catch (error) {
+                console.error(error);
+            }
+        }       
     }
 };
 </script>
@@ -381,14 +373,14 @@ export default {
 
     .h-label1 {
         display: grid;
-        grid-template-columns: 50px 15px;
-        grid-column-gap: 5px;
+        grid-template-columns: 155px 15px;
+        grid-column-gap: 122px;
     }
 
     .h-label2 {
         display: grid;
         grid-template-columns: 50px 15px;
-        grid-column-gap: 5px;
+        grid-column-gap: 228px;
     }
 
     .h-label3 {
@@ -409,6 +401,7 @@ export default {
         display: flex;
         font-size: 18px;
         margin-bottom: 20px;
+        margin-top: 20px;
     }
 
     .t-label Label {

@@ -10,4 +10,8 @@ class Vitamin extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'description'];
+    public function recipes()
+    {
+        return $this->belongsToMany(Recipes::class);
+    }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Recipes;
+
 use App\Models\RecipesGroups;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;

@@ -4,14 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Allergy;
-use App\Models\Vitamin;
 
 class Recipes extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'title', 'description', 'image', 'nutrition', 'allergies', 'vitamins', 'ingredients', 'instructions', 'dish_id', 'recipes_group_id', 'country_id'];
+    protected $fillable = ['user_id', 'title', 'image', 'nutrition', 'allergies', 'vitamins', 'ingredients', 'instructions', 'dish_id', 'recipes_group_id', 'country_id'];
 
     public function user()
     {
@@ -25,12 +23,12 @@ class Recipes extends Model
 
    public function allergies()
    {
-        return $this->hasMany(Allergy::class, 'id');
+        return $this->belongsToMany(Allergy::class);
    }
 
    public function vitamins()
    {
-        return $this->hasMany(Vitamin::class, 'id');
+        return $this->belongsToMany(Vitamin::class);
    }
 
 

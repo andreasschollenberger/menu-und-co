@@ -1,12 +1,14 @@
 
 <script setup>
 import headerpic from './components/header.vue';
+import hamburger from './components/hamburger.vue';
 </script>
 
 <template>
 
     <header>
         <headerpic />
+        <hamburger />
     </header>
 
     <div class="cover">
@@ -34,6 +36,10 @@ import headerpic from './components/header.vue';
 * {
     max-width: 100vw;
     font-family: "Lexend Deca", sans-serif;
+}
+
+hamburger {
+    display: none;
 }
 
     body {
