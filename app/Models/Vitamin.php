@@ -12,6 +12,6 @@ class Vitamin extends Model
     protected $fillable = ['name', 'description'];
     public function recipes()
     {
-        return $this->belongsToMany(Recipes::class);
+        return $this->belongsToMany(Recipes::class, 'vitamins_recipes');
     }
 }

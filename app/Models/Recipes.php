@@ -23,12 +23,12 @@ class Recipes extends Model
 
    public function allergies()
    {
-        return $this->belongsToMany(Allergy::class);
+        return $this->belongsToMany(Allergy::class, 'allergy_recipes');
    }
 
    public function vitamins()
    {
-        return $this->belongsToMany(Vitamin::class);
+        return $this->belongsToMany(Vitamin::class, 'vitamins_recipes');
    }
 
 

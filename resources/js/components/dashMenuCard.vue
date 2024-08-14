@@ -2,7 +2,7 @@
 
     <div class="menucard" v-for="(recipe, index) in recipes" :key="index">
         <div class="menu-container">
-            <img class="menuimg" src="/public/Assets/img/re-img.png" alt="" />
+            <img class="menuimg" :src="`/storage/${recipe.image}`" alt="" />
 
             <div class="menu-text">
                 <div class="titel">{{ recipe.title }}</div>

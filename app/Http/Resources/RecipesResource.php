@@ -27,6 +27,7 @@ class RecipesResource extends JsonResource
             "dish_name" => $this->dish["name"],
             "recipes_group_name" => $this->recipes_group["name"],
             "country_name" => $this->country["name"],
+            
         ];
     }
 }

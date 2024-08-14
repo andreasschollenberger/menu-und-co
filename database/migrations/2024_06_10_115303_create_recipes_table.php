@@ -51,7 +51,7 @@ return new class extends Migration
 
         Schema::create('vitamins_recipes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('vitamins_id')->constrained()->onDelete('cascade');
+            $table->foreignId('vitamin_id')->constrained()->onDelete('cascade');
             $table->foreignId('recipes_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

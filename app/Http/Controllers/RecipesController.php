@@ -45,7 +45,8 @@ class RecipesController extends Controller
         // $recipes_groups = RecipesGroups::find($request->recipes_group_id);
         // $country = Countries::find($request->country_id);
 
-        
+
+
 
         $recipes = Recipes::create([
             'user_id'=> $request->user()->id,
@@ -59,8 +60,8 @@ class RecipesController extends Controller
 
         ]);
 
-        $recipes->allergies()->sync($request->allergies);
-        $recipes->vitamins()->sync($request->vitamins);
+        $recipes->allergies()->attach(json_decode($request->allergies, true));
+        $recipes->vitamins()->attach(json_decode($request->vitamins, true));
         $recipes->save();
     }
 

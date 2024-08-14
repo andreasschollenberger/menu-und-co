@@ -13,6 +13,6 @@ class Allergy extends Model
     protected $fillable = ['name', 'description', 'url'];
     public function recipes()
     {
-        return $this->belongsToMany(Recipes::class );
+        return $this->belongsToMany(Recipes::class, 'allergy_recipes');
     }
 }

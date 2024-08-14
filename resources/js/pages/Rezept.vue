@@ -4,7 +4,7 @@
             <div class="menucard">
                 <div class="m-img">
                     <div class="img-back">
-                        <img src="/public/Assets/img/veganer-burger.png" alt="">
+                        <img :src="`/storage/${recipe.image}`" alt="">
                     </div>
                 </div>
 
@@ -21,7 +21,7 @@
                         <div class="nährwert" v-if="recipe">
                             <h3>Vitamingehalt</h3>
                             <ul>
-                                <li v-for="vitamin in vitamins">{{ vitamin }}</li>
+                                <li v-for="vitamin in recipe.vitamins">{{ vitamin.name }}</li>
                             </ul>
                         </div>
                     </div>
@@ -32,14 +32,14 @@
 
             <div class="z-container" v-if="recipe">
                     <h3>Zutaten:</h3>
-                    <div v-for="ingrediens in ingrediens">{{ ingrediens }}</div>
+                    <div v-for="ingredient in ingrediens">{{ ingredient.numberValue }} {{ ingredient.unitValue }} {{ ingredient.textValue }}</div>
                    
                 </div>
 
             <div class="zubereitung" v-if="recipe">
                 <h3>Zubereitung:</h3>
                 <ol>
-                    <li v-for="instruction in instruction">{{ instruction }}</li>
+                    <li v-for="instruction in instructions">{{ instruction.ztextValue  }}</li>
                 </ol>
             </div>
 
@@ -47,7 +47,7 @@
                 <h3> Allergiker Informationen</h3>
                 <div>Rezepte enthalten Allergene, die wir bei der Erstellung so gut wie möglich für Sie hier abbilden.</div><br>
                 <ol>
-                    <li v-for="allergies in allergies">{{ allergies }}</li>
+                    <li v-for="allergies in recipe.allergies">{{ allergies.name }}</li>
                 </ol>
             </div>     
     
@@ -65,6 +65,8 @@ export default {
     data() {
         return {
             recipe: {},
+            ingrediens: [],
+            instructions: [],
             id: this.$route.params.id 
         };
     },
@@ -79,6 +81,9 @@ export default {
                 .then(response => {
                    
                     this.recipe = response.data.data;
+                    this.ingrediens = JSON.parse(response.data.data.ingredients);
+                    this.instructions = JSON.parse(response.data.data.instructions);
+                    console.log('Hallo du', this.ingrediens);
                     console.log('Rezepte nach API-Aufruf:', this.recipe); // Loggen Sie die Daten nach dem Setzen
                 })
                 .catch(error => {

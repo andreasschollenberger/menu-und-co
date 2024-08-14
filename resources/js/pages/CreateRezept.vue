@@ -69,33 +69,19 @@
                 </div>
 
                 <div class="nr-container">
-                    <div class="input-container1">
-                        <input class="nr-field" type="number" placeholder="Einheit Eingeben (Zahl)" v-model="numberValue" />
-                        <select class="el-drop" v-model="unitValue">
-                            <option value="EL">EL</option>
-                            <option value="kg">Kg.</option>
-                            <option value="g">g</option>
-                            <option value="stk">Stk.</option>
-                            <option value="l">l.</option>
-                            <option value="dl">Dl.</option>
-                        </select>
-
-                        <textarea class="textfield-zu" placeholder="Zutat Eingeben" v-model="textValue"></textarea>
-                        <button class="plus-b" @click="addFields">+</button>
-                        <button class="minus-b" @click="removeField(index)">-</button>
-
-                    </div>
-                    <div class="input-container2" v-for="(field, index) in fields" :key="index">
-                        <input class="nr-field" type="number" placeholder="Einheit Eingeben (Zahl)" v-model="field.numberValue" />
-                        <select class="el-drop" v-model="field.unitValue">
-                            <option value="EL">EL</option>
-                            <option value="kg">Kg.</option>
-                            <option value="g">g</option>
-                            <option value="stk">Stk.</option>
-                            <option value="l">l.</option>
-                            <option value="dl">Dl.</option>
-                        </select>
-                        <textarea class="textfield-zu" placeholder="Zutat Eingeben" v-model="field.textValue"></textarea>
+                        <div class="input-container1" v-for="(field, index) in fields" :key="index">
+                            <input class="nr-field" type="number" placeholder="Einheit Eingeben (Zahl)" v-model="field.numberValue" />
+                            <select class="el-drop" v-model="field.unitValue">
+                                <option value="EL">EL</option>
+                                <option value="kg">Kg.</option>
+                                <option value="g">g</option>
+                                <option value="stk">Stk.</option>
+                                <option value="l">l.</option>
+                                <option value="dl">Dl.</option>
+                            </select>
+                            <textarea class="textfield-zu" placeholder="Zutat Eingeben" v-model="field.textValue"></textarea>
+                            <button class="plus-b" @click="addFields">+</button>
+                            <button class="minus-b" v-if="index !== 0 || addFieldClicked" @click="removeField(index)">-</button>
                     </div>
                 </div>
             </div>
@@ -105,13 +91,10 @@
         <div class="zu-container">
             <div>
                 <h2>Zubereitung detailiert eintragen</h2>
-                <div class="zubereitung">
-                    <textarea class="textfield" placeholder="Zubereitung erster Schritt" v-model="ztextValue"></textarea>
-                    <button class="plus-b" @click="addzFields">+</button>
-                    <button class="minus-b" @click="removezField(index)">-</button>
-                </div>
                 <div class="zubereitung" v-for="(field, index) in zFields" :key="index">
-                    <textarea class="textfield" placeholder="Weiterer Zubereitung Schritt" v-model="field.ztextValue"></textarea>
+                    <textarea class="textfield" placeholder="Zubereitung Schritt eintragen" v-model="field.ztextValue"></textarea>
+                    <button class="plus-b" @click="addzFields">+</button>
+                    <button class="minus-b" v-if="index !== 0 || addzFieldClicked" @click="removezField(index)">-</button>
                 </div>
             </div>
         </div>
@@ -128,17 +111,17 @@
             
         </div>
 
-        <div class="Vitamin-Contanier">
+        <div class="vitamin-contanier">
             <h2>Vitaminangaben</h2>
             <div class="input-container">
-                <div class="infobox">
+                <div class="infobox2">
                     <p class="i-titel">Vitaminangaben:</p>
                     <p>Welche Vitamine sind in Ihrem Rezept? Nutzen Sie unsere Top-Vitamin-Lieferantenliste. 
                         Wählen Sie die Vitamine aus, die in Ihrem Rezept enthalten sind.</p>
                     <p>Für jedes Vitamin haben wir eine Liste erstellt, die zeigt, in welchen Lebensmitteln es vorkommt. 
                         Zum Beispiel enthält Vitamin A: Leber, Milchprodukte, Eigelb, sowie buntes Gemüse wie Karotten und Spinat.</p>
                 </div>
-                    <div class="checkbox-container">
+                    <div class="checkbox-container2">
                         <div v-for="vitamin in vitamins" :key="vitamin.id" class="al-box">
                             <input type="checkbox" :id="vitamin.id" :name="vitamin.id" :value="vitamin.id" v-model="vitamins_selected">
                             <label :for="vitamin.id">{{ vitamin.name }}</label>
@@ -175,6 +158,7 @@ export default {
             dish_id: '',
             recipes_group_id: '',
             imageUrl: null,
+            image: null,
             selectedCountry: '',
             countries: [],
             allergies: [],
@@ -182,8 +166,14 @@ export default {
             vitamins: [],
             vitamins_selected: [],
             textValue: '',
-            fields: [],
-            zFields: [],
+            fields: [{
+                textValue: ''
+            }],
+            addFieldClicked: false,
+            zFields: [{
+                ztextValue: ''
+            }],
+            addzFieldClicked: false,
             numberValue: '',
             unitValue: '',
             ztextValue : '',
@@ -252,6 +242,7 @@ export default {
 
             reader.onload = () => {
                 this.imageUrl = reader.result;
+                this.image = file;
             };
 
             reader.readAsDataURL(file);
@@ -280,7 +271,7 @@ export default {
         },
         async submitForm() {
             const formData = new FormData();
-            formData.append('image', this.imageUrl);
+            formData.append('image', this.image);
             formData.append('title', this.title);
             formData.append('dish_id', this.dish_id);
             formData.append('recipes_group_id', this.recipes_group_id);
@@ -327,10 +318,14 @@ export default {
         padding-top: 50px;
     }
 
+    .titel-text h1 {
+        font-size: 40px;
+    }
+
     /* IMG container - Rezept Titel - Kategorien - Länder */
     .titel {
         display: flex;
-        padding: 50px 0 0 100px;
+        justify-content: center;
     }
         
     .img-container {
@@ -428,19 +423,29 @@ export default {
 
     /* Zutaten Container */
 
+    .zutaten {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        padding-bottom: 50px;
+    }
+
     .zutaten h2 {
-        font-size: 30px;
-        margin: 60px 0 20px 60px;
+        font-size: 35px;
+        margin: 60px auto 20px;
+        text-align: center;
     }
 
     .input-container {
         display: flex;
     }
 
+
     .textfield-zu {
         width: 400px;
         height: 30px;
         margin-right: 20px;
+        margin-bottom: -11px;
         font-size: 16px;
         text-align: center;
         line-height: 28px;
@@ -463,7 +468,7 @@ export default {
 
     .el-drop {
         width: 50px;
-        height: 30px;
+        height: 34px;
         margin-right: 20px;
         margin-bottom: 20px;
         font-size: 16px;
@@ -482,8 +487,8 @@ export default {
     }
 
     .plus-b {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         background-color: #4CAF50;
         color: white;
         border: none;
@@ -493,11 +498,12 @@ export default {
         text-align: center; 
         line-height: 28px;
         margin-right: 5px;
+        padding: 0 0 3px 0;
     }
 
     .minus-b {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         background-color: #0073ff;
         color: white;
         border: none;
@@ -506,6 +512,7 @@ export default {
         font-size: 40px;
         text-align: center; 
         line-height: 28px;
+        padding: 0 0 5px 0;
     }
 
     .infobox {
@@ -531,8 +538,14 @@ export default {
     /* Zubereitung Container */
     .zu-container {
         display: flex;
-        width: 500px;
-        margin: 50px 0 0 100px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .zu-container h2 {
+        font-size: 35px;
+        margin: 60px auto 20px;
+        text-align: center;
     }
 
     .zubereitung {
@@ -547,42 +560,34 @@ export default {
         font-size: 16px;
         text-align: center;
         line-height: 28px;
+        
+
     }
 
-    .plus-b {
-        width: 50px;
-        height: 50px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        font-size: 40px;
-        text-align: center; 
-        line-height: 28px;
-    }
-
+    
     /* Allergie Container */
 
     .allergene {
         display: flex;
         flex-direction: column;
+        align-items: center;
         margin: 50px 0 0 100px;
         padding-bottom: 50px;
     }
 
     .checkbox-container {
-        font-size: 26px;
+        font-size: 20px;
         display: grid;
-        grid-template-columns: 480px 480px;
-        grid-column-gap: 20px;
-        grid-row-gap: 10px;
-        margin: 50px 0 0 100px;
+        grid-template-columns: 500px 500px;
+        grid-row-gap: 24px;
+        margin: 50px 0 0 0;
+        padding-left: 120px;
     }
 
     .allergene h2 {
-        font-size: 30px;
-        margin: 20px 0 0 100px;
+        font-size: 35px;
+        margin: 60px auto 20px;
+        text-align: center;
     }
 
     [type="checkbox"] {
@@ -610,13 +615,23 @@ export default {
 
     /* Vitamin Container */
 
+    .vitamin-contanier h2 {
+        font-size: 35px;
+        margin: 60px auto 20px;
+        text-align: center;
+    }
+
+
     .infobox2 {
-        width: 500px;
+        width: 350px;
         background-color: rgba(179, 187, 195, 1);
         border-radius: 10px;
         padding: 20px;
-        margin: 0 10px 0 50px ;
+        margin: -303px 0 0 50px ;
         font-size: 18px;
+        max-height: 300px;
+        overflow-y: auto;
+        
     }
 
     .vit-box {
@@ -631,6 +646,27 @@ export default {
         grid-column-gap: 5px;
     }
 
+    .checkbox-container2 {
+        font-size: 20px;
+        display: grid;
+        grid-template-columns: 450px 450px;
+        grid-row-gap: 24px;
+        margin: 45px 0 0 0;
+        padding-left: 20px;
+    }
+
+    .input-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .submit {
+        display: flex;
+        justify-content: center;
+        margin-top: 80px;
+        padding-bottom: 85px;
+    }
 
 
 </style>
