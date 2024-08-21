@@ -17,6 +17,7 @@ class RecipesResource extends JsonResource
   
         return [
             "id" => $this->id,
+            "user_id" => $this->user_id,
             "user_first_name" => $this->user["first_name"],
             "title" => $this->title,
             "image" => $this->image,

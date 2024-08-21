@@ -1,0 +1,349 @@
+{
+  "_registrieren-button-CkWxCne4.js": {
+    "file": "assets/registrieren-button-CkWxCne4.js",
+    "assets": [
+      "assets/registrieren-button-BdJZvi4m.png"
+    ]
+  },
+  "_rezept-senden-bnt-B8o6PVfI.js": {
+    "file": "assets/rezept-senden-bnt-B8o6PVfI.js",
+    "assets": [
+      "assets/rezept-senden-bnt-DtvT4Hd3.png"
+    ]
+  },
+  "public/Assets/img/cover.png": {
+    "file": "assets/cover-4YrmZmsY.png",
+    "src": "public/Assets/img/cover.png"
+  },
+  "public/Assets/img/coversecend.png": {
+    "file": "assets/coversecend-UptTblRa.png",
+    "src": "public/Assets/img/coversecend.png"
+  },
+  "public/Assets/img/e-mail.png": {
+    "file": "assets/e-mail-CRb1dYkE.png",
+    "src": "public/Assets/img/e-mail.png"
+  },
+  "public/Assets/img/edit-button.png": {
+    "file": "assets/edit-button-Cezzxc_o.png",
+    "src": "public/Assets/img/edit-button.png"
+  },
+  "public/Assets/img/haeder-hintergrund.png": {
+    "file": "assets/haeder-hintergrund-DhrXzT3e.png",
+    "src": "public/Assets/img/haeder-hintergrund.png"
+  },
+  "public/Assets/img/homelogo.png": {
+    "file": "assets/homelogo-Ch4LO0oD.png",
+    "src": "public/Assets/img/homelogo.png"
+  },
+  "public/Assets/img/logo.png": {
+    "file": "assets/logo-VIRj3R9x.png",
+    "src": "public/Assets/img/logo.png"
+  },
+  "public/Assets/img/partner-bnd.png": {
+    "file": "assets/partner-bnd-BVZL9AAD.png",
+    "src": "public/Assets/img/partner-bnd.png"
+  },
+  "public/Assets/img/re-img.png": {
+    "file": "assets/re-img-Bov_76vV.png",
+    "src": "public/Assets/img/re-img.png"
+  },
+  "public/Assets/img/registrieren-button.png": {
+    "file": "assets/registrieren-button-BdJZvi4m.png",
+    "src": "public/Assets/img/registrieren-button.png"
+  },
+  "public/Assets/img/rezept-button.png": {
+    "file": "assets/rezept-button-CR2d4-1r.png",
+    "src": "public/Assets/img/rezept-button.png"
+  },
+  "public/Assets/img/rezept-senden-bnt.png": {
+    "file": "assets/rezept-senden-bnt-DtvT4Hd3.png",
+    "src": "public/Assets/img/rezept-senden-bnt.png"
+  },
+  "public/Assets/img/senden-bnt.png": {
+    "file": "assets/senden-bnt-Dit5607h.png",
+    "src": "public/Assets/img/senden-bnt.png"
+  },
+  "public/Assets/img/veganer-burger.png": {
+    "file": "assets/veganer-burger-DvyUQtr7.png",
+    "src": "public/Assets/img/veganer-burger.png"
+  },
+  "public/Assets/img/werbung_bnd.png": {
+    "file": "assets/werbung_bnd-Cf02B9CT.png",
+    "src": "public/Assets/img/werbung_bnd.png"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-l0sNRNKZ.js",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-tfqh9oj9.js",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/pages/Home.vue",
+      "resources/js/pages/Rezepte.vue",
+      "resources/js/pages/Produkte.vue",
+      "resources/js/pages/Restaurant.vue",
+      "resources/js/pages/Tipps.vue",
+      "resources/js/pages/Überuns.vue",
+      "resources/js/pages/AGB.vue",
+      "resources/js/pages/Registrierung.vue",
+      "resources/js/pages/Dashboard.vue",
+      "resources/js/pages/Rezept.vue",
+      "resources/js/pages/RegistrierungFirma.vue",
+      "resources/js/pages/EditUser.vue",
+      "resources/js/pages/CreateRezept.vue",
+      "resources/js/pages/EditRezept.vue",
+      "resources/js/pages/EditFirma.vue",
+      "resources/js/pages/EditProdukt.vue",
+      "resources/js/pages/EditRestaurant.vue",
+      "resources/js/pages/CreateWerbung.vue",
+      "resources/js/pages/Auth/Login.vue",
+      "resources/js/pages/Admin.vue"
+    ],
+    "css": [
+      "assets/app-CKW4jT5p.css"
+    ],
+    "assets": [
+      "assets/cover-4YrmZmsY.png",
+      "assets/coversecend-UptTblRa.png",
+      "assets/haeder-hintergrund-DhrXzT3e.png",
+      "assets/logo-VIRj3R9x.png"
+    ]
+  },
+  "resources/js/pages/AGB.vue": {
+    "file": "assets/AGB-utymfTF6.js",
+    "src": "resources/js/pages/AGB.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/AGB-Dy1nplQu.css"
+    ]
+  },
+  "resources/js/pages/Admin.vue": {
+    "file": "assets/Admin-DZge2WY6.js",
+    "src": "resources/js/pages/Admin.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/Admin-C1ewZ8sX.css"
+    ],
+    "assets": [
+      "assets/veganer-burger-DvyUQtr7.png"
+    ]
+  },
+  "resources/js/pages/Auth/Login.vue": {
+    "file": "assets/Login-B1cSmJWh.js",
+    "src": "resources/js/pages/Auth/Login.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/Login-DzytDooS.css"
+    ]
+  },
+  "resources/js/pages/CreateRezept.vue": {
+    "file": "assets/CreateRezept-C_ft3SIy.js",
+    "src": "resources/js/pages/CreateRezept.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_rezept-senden-bnt-B8o6PVfI.js"
+    ],
+    "css": [
+      "assets/CreateRezept-igm3F0fs.css"
+    ]
+  },
+  "resources/js/pages/CreateWerbung.vue": {
+    "file": "assets/CreateWerbung-CLuW5WN-.js",
+    "src": "resources/js/pages/CreateWerbung.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/CreateWerbung-Hzwe3H3I.css"
+    ],
+    "assets": [
+      "assets/senden-bnt-Dit5607h.png"
+    ]
+  },
+  "resources/js/pages/Dashboard.vue": {
+    "file": "assets/Dashboard-B6rb5szZ.js",
+    "src": "resources/js/pages/Dashboard.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/Dashboard-PON9akVk.css"
+    ],
+    "assets": [
+      "assets/rezept-button-CR2d4-1r.png",
+      "assets/partner-bnd-BVZL9AAD.png",
+      "assets/werbung_bnd-Cf02B9CT.png",
+      "assets/edit-button-Cezzxc_o.png"
+    ]
+  },
+  "resources/js/pages/EditFirma.vue": {
+    "file": "assets/EditFirma-DkW-EbAD.js",
+    "src": "resources/js/pages/EditFirma.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/pages/EditProdukt.vue": {
+    "file": "assets/EditProdukt-DkW-EbAD.js",
+    "src": "resources/js/pages/EditProdukt.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/pages/EditRestaurant.vue": {
+    "file": "assets/EditRestaurant-DdTf9jMf.js",
+    "src": "resources/js/pages/EditRestaurant.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/pages/EditRezept.vue": {
+    "file": "assets/EditRezept-DQMH36oG.js",
+    "src": "resources/js/pages/EditRezept.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_rezept-senden-bnt-B8o6PVfI.js"
+    ],
+    "css": [
+      "assets/EditRezept-C4UEYSJX.css"
+    ]
+  },
+  "resources/js/pages/EditUser.vue": {
+    "file": "assets/EditUser-DrJkg0JF.js",
+    "src": "resources/js/pages/EditUser.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_registrieren-button-CkWxCne4.js"
+    ],
+    "css": [
+      "assets/EditUser-x7LpKmog.css"
+    ]
+  },
+  "resources/js/pages/Home.vue": {
+    "file": "assets/Home-DgH1MXLi.js",
+    "src": "resources/js/pages/Home.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/Home-CbG00WgP.css"
+    ],
+    "assets": [
+      "assets/homelogo-Ch4LO0oD.png"
+    ]
+  },
+  "resources/js/pages/Produkte.vue": {
+    "file": "assets/Produkte-CUKuvXR9.js",
+    "src": "resources/js/pages/Produkte.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/Produkte-Q5MwsNCk.css"
+    ],
+    "assets": [
+      "assets/re-img-Bov_76vV.png"
+    ]
+  },
+  "resources/js/pages/Registrierung.vue": {
+    "file": "assets/Registrierung-CzRw6tEq.js",
+    "src": "resources/js/pages/Registrierung.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_registrieren-button-CkWxCne4.js"
+    ],
+    "css": [
+      "assets/Registrierung-B4SFpdT2.css"
+    ]
+  },
+  "resources/js/pages/RegistrierungFirma.vue": {
+    "file": "assets/RegistrierungFirma-BaEkmLD-.js",
+    "src": "resources/js/pages/RegistrierungFirma.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_registrieren-button-CkWxCne4.js"
+    ],
+    "css": [
+      "assets/RegistrierungFirma-CFbwVTEn.css"
+    ]
+  },
+  "resources/js/pages/Restaurant.vue": {
+    "file": "assets/Restaurant-nVScp8v5.js",
+    "src": "resources/js/pages/Restaurant.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/pages/Rezept.vue": {
+    "file": "assets/Rezept-U8foYECn.js",
+    "src": "resources/js/pages/Rezept.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/Rezept-nnaFqmVm.css"
+    ]
+  },
+  "resources/js/pages/Rezepte.vue": {
+    "file": "assets/Rezepte-D1mymFvX.js",
+    "src": "resources/js/pages/Rezepte.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/Rezepte-CoedgrQe.css"
+    ]
+  },
+  "resources/js/pages/Tipps.vue": {
+    "file": "assets/Tipps-DRNdl_Xb.js",
+    "src": "resources/js/pages/Tipps.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/Tipps-DwhmFisJ.css"
+    ]
+  },
+  "resources/js/pages/Überuns.vue": {
+    "file": "assets/Überuns-CN1xo54T.js",
+    "src": "resources/js/pages/Überuns.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/Überuns-DCvQZN-u.css"
+    ],
+    "assets": [
+      "assets/e-mail-CRb1dYkE.png"
+    ]
+  }
+}

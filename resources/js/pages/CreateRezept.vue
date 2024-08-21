@@ -65,7 +65,7 @@
                         z.B. EL (EL = Esslöffel) und zuletzt die Zutat wie z.B. Mehl angezeigt.</p>
                     <p>Eine neue Zutat können durch Klicken auf das Pluszeichen hinzugefühgt werden.</p>
                     <p> Mit dem Minuszeichen entfenen Sie ein feld.</p>
-                    <p>EL = Esslöffel, Kg. = Kilogramm, g = Gramm, Stk. = Stück l = Liter, Dl. = Deziliter.  </p>
+                    <p>EL = Esslöffel, Kg. = Kilogramm, g = Gramm, Stk. = Stück l = Liter, Dl. = Deziliter, n.B. = Nach belieben. </p>
                 </div>
 
                 <div class="nr-container">
@@ -78,6 +78,9 @@
                                 <option value="stk">Stk.</option>
                                 <option value="l">l.</option>
                                 <option value="dl">Dl.</option>
+                                <option value="prise">Prise</option>
+                                <option value="bund">Bund</option>
+                                <option value="nb">n.B.</option>
                             </select>
                             <textarea class="textfield-zu" placeholder="Zutat Eingeben" v-model="field.textValue"></textarea>
                             <button class="plus-b" @click="addFields">+</button>
@@ -94,7 +97,7 @@
                 <div class="zubereitung" v-for="(field, index) in zFields" :key="index">
                     <textarea class="textfield" placeholder="Zubereitung Schritt eintragen" v-model="field.ztextValue"></textarea>
                     <button class="plus-b" @click="addzFields">+</button>
-                    <button class="minus-b" v-if="index !== 0 || addzFieldClicked" @click="removezField(index)">-</button>
+                    <button class="minus-b" v-if="index !== 0 || addzFieldClicked" @click="removeField(index)">-</button>
                 </div>
             </div>
         </div>

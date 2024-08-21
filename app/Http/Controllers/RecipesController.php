@@ -19,6 +19,7 @@ class RecipesController extends Controller
     public function index()
     {
         return RecipesResource::collection(Recipes::all());
+        
     }
 
     /**

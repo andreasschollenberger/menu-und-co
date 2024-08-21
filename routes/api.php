@@ -14,7 +14,11 @@ use App\Http\Controllers\DishController; // Import the DishController class
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\AllergyController; // Import the AllergyController class
 use App\Http\Controllers\VitaminController;
+
+
 Route::post('/sanctum/token', TokenController::class);
+
+
 
 
 /**
@@ -22,8 +26,10 @@ Route::post('/sanctum/token', TokenController::class);
  */
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/users/auth', [UserController::class, 'show']);
+    Route::get('/users/auth/recipes', [UserController::class, 'recipes']);
 });
 
+Route::get('/users/{user_id}/recipes', [UserController::class, 'getRecipesByUserId']);
 Route::post('/auth/register', [UserController::class, 'register']);
 
 
