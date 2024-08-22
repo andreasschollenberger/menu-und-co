@@ -30,7 +30,7 @@
                 <div class="muc-text">
                     <h2>MENÜ UND CO</h2>
                     <p>Unser Ziel ist es, nicht nur die Zutatenliste eines Rezepts 
-                        bereitzustellen, sondern auch den Vitamin- und Nährwertgehalt 
+                        bereitzustellen, sondern auch den Vitamingehalt 
                         transparent zu machen. Dabei legen wir besonderen Wert 
                         auf die Berücksichtigung der Ernährungsbedürfnisse von 
                         Allergikern, die stets im Vordergrund unserer Rezeptentwicklung 
