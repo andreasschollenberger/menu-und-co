@@ -74,22 +74,29 @@ export default {
             const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             if (!re.test(this.email)) {
                 alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
+                return false;
             }
+            return true;
         },
-
-        
 
         validatePassword() {
             if (this.password.length < 8) {
                 alert('Bitte verwenden Sie mehr als 8 Zeichen für das Passwort.');
+                return false;
             }
 
             if (this.password !== this.passwordConfirm) {
                 alert('Die Passwörter stimmen nicht überein.');
+                return false;
             }
+            return true;
         },
 
         async registrieren() {
+            if (!this.validateEmail() || !this.validatePassword()) {
+                return;
+            }
+
             const user = {
                 first_name: this.first_name,
                 last_name: this.last_name,
