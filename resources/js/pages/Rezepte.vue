@@ -100,7 +100,7 @@ export default {
           (!this.dish_id || recipe.dish_id === this.dish_id) &&
           (!this.recipes_group_id || recipe.recipes_group_id === this.recipes_group_id) &&
           (!this.country_id || recipe.country_id === this.country_id) &&
-          (!this.allergy_id || recipe.allergies.some((allergy) => allergy.id === this.allergy_id))
+          (!this.allergy_id || !recipe.allergies.some((allergy) => allergy.id === this.allergy_id))
         );
       });
     },
