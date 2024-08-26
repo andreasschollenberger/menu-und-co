@@ -9,28 +9,34 @@
         </div>
        
         <div class="place3">
+          <div class="kategorie">
             <h2>Neigung Filter</h2>
             <div class="filter-box">
                 <button class="filter-bnt" v-for="recipes_group in recipes_groups" :key="recipes_group.id" :id="recipes_group.id" name="recipes_group_id" :value="recipes_group.id" @click="filterByRecipesGroup(recipes_group.id)">{{ recipes_group.name }}</button>
             </div>
+          </div>
 
             <div class="t-label">
+              <div class="kategorie">
                 <label for="herkunft">Filter für die Herkunft des Rezeptes. </label>
                 <select v-model="country_id" @change="filterByCountry">
                     <option value="" disabled selected>Land auswählen</option>
                     <option v-for="country in countries" :key="country.id" :value="country.id">{{ country.name }}</option>
                 </select>
+              </div>
             </div>
             
             <div class="allergie-box">
+              <div class="kategorie">
                 <div>
                     <p>Der Allergiefilter verhindert, dass Rezepte mit allergenen Inhaltsstoffen angezeigt werden, falls diese vom Autor vermerkt wurde.</p>
                 </div>
                 <div class="filter-box" >
                 
-                    <button v-for="allergy in allergies" :key="allergy.id" class="al-box" :id="allergy.id" :name="allergy.id" :value="allergy.id">{{ allergy.name }}</button>
+                    <button v-for="allergy in allergies" :key="allergy.id" class="al-box" :id="allergy.id" :name="allergy.id" :value="allergy.id" @click="filterByAllergy(allergy.id)">{{ allergy.name }}</button>
                     
-                </div>  
+                </div>
+              </div> 
             </div>
         </div>
     </div>
@@ -72,6 +78,7 @@ export default {
       recipes_groups: [],
       countries: [],
       allergies: [],
+      allergy_id: null,
       recipes: [],
       dish_id: null,
       recipes_group_id: null,
@@ -87,32 +94,32 @@ export default {
     this.fetchRecipes();
   },
   methods: {
+    filterRecipes() {
+      this.filteredRecipes = this.recipes.filter((recipe) => {
+        return (
+          (!this.dish_id || recipe.dish_id === this.dish_id) &&
+          (!this.recipes_group_id || recipe.recipes_group_id === this.recipes_group_id) &&
+          (!this.country_id || recipe.country_id === this.country_id) &&
+          (!this.allergy_id || recipe.allergies.some((allergy) => allergy.id === this.allergy_id))
+        );
+      });
+    },
     filterByDish(dishId) {
       this.dish_id = dishId;
-      this.applyFilters();
+      this.filterRecipes();
     },
     filterByRecipesGroup(recipesGroupId) {
       this.recipes_group_id = recipesGroupId;
-      this.applyFilters();
+      this.filterRecipes();
     },
     filterByCountry() {
-      this.applyFilters();
+      this.filterRecipes();
     },
-    async applyFilters() {
-      try {
-        const response = await axios.get('/api/recipes', {
-          params: {
-            dish_id: this.dish_id,
-            recipes_group_id: this.recipes_group_id,
-            country_id: this.country_id,
-          },
-        });
-        this.filteredRecipes = response.data.data;
-        console.log('filteredRecipe:', this.filteredRecipe);
-      } catch (error) {
-        console.error('Fehler beim Abrufen der gefilterten Rezepte:', error);
-      }
+    filterByAllergy(allergyId) {
+      this.allergy_id = allergyId;
+      this.filterRecipes();
     },
+   
     async fetchRecipes() {
       try {
         const response = await authClient.get('/recipes');
@@ -164,12 +171,54 @@ export default {
 
 .filter-container {
     z-index: 9998;
-    position: absolute;
     top: 160px;
     left: 50%;
-    transform: translateX(-50%); 
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(222, 220, 220, 0.81);
+    border-radius: 40px;
 }
 
+.t-label {
+    margin-top: 20px;
+}
+
+select {
+    width: 200px;
+    height: 35px;
+    background-color: #b9afaf;
+    color: rgb(37, 36, 36);
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.filter-container h1 {
+    font-size: 35px;
+    font-weight: bold;
+    color: #393636;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.kategorie {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.allergie-box {
+  padding-bottom: 20px;
+}
+
+.filter-container h2 {
+    font-size: 35px;
+    font-weight: bold;
+    color: #393636;
+    margin-top: 20px;
+    margin-left: 20px;
+}
 
 
 .filter-bnt{
@@ -182,15 +231,30 @@ export default {
     border-radius: 10px;
     margin-right: 10px;
     margin-top: 10px;
+    margin-left: 20px;
+}
+
+.al-box {
+    width: 145px;
+    /* height: 35px; */
+    background-color: #b9afaf;
+    color: rgb(37, 36, 36);
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
 }
 
 
 .r-card {
     z-index: 9998;
-    position: absolute;
+    /* position: absolute; */
     top: 700px;
     left: 50%;
-    transform: translateX(-50%);
+    /* transform: translateX(-50%); */
+    width: 80%;
+    margin: 0 auto;
     
 }
 
@@ -231,6 +295,7 @@ img {
 
 .filter-box {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     margin-top: 20px;
 }
