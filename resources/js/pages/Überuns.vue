@@ -58,19 +58,22 @@
 </template>
 
 <script>
-methods: {
-    sendEmail(); {
-        // Get form values
-        const vorname = document.getElementById('vorname').value;
-        const nachname = document.getElementById('nachname').value;
-        const email = document.getElementById('email').value;
-        const nachricht = document.getElementById('nachricht').value;
+export default {
+    name: 'Überuns',
+    methods: {
+        sendEmail() {
+            // Get form values
+            const vorname = document.getElementById('vorname').value;
+            const nachname = document.getElementById('nachname').value;
+            const email = document.getElementById('email').value;
+            const nachricht = document.getElementById('nachricht').value;
 
-        // Create email body
-        const body = `Vorname: ${vorname}\nNachname: ${nachname}\nEmail: ${email}\nNachricht: ${nachricht}`;
+            // Create email body
+            const body = `Vorname: ${vorname}\nNachname: ${nachname}\nEmail: ${email}\nNachricht: ${nachricht}`;
 
-        // Send email
-        window.location.href = `mailto:info@menueundco.ch?subject=Kontaktformular&body=${encodeURIComponent(body)}`;
+            // Send email
+            window.location.href = `mailto:info@menueundco.ch?subject=Kontaktformular&body=${encodeURIComponent(body)}`;
+        }
     }
 }
 
