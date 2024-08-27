@@ -65,7 +65,7 @@
                         z.B. EL (EL = Esslöffel) und zuletzt die Zutat wie z.B. Mehl angezeigt.</p>
                     <p>Eine neue Zutat können durch Klicken auf das Pluszeichen hinzugefühgt werden.</p>
                     <p> Mit dem Minuszeichen entfenen Sie ein feld.</p>
-                    <p>EL = Esslöffel, Kg. = Kilogramm, g = Gramm, Stk. = Stück l = Liter, Dl. = Deziliter, n.B. = Nach belieben. </p>
+                    <p>EL = Esslöffel, Kg. = Kilogramm, g = Gramm, Stk. = Stück l = Liter, Dl. = Deziliter, ml = Mililitter, n.B. = Nach belieben. </p>
                 </div>
 
                 <div class="nr-container">
@@ -78,8 +78,10 @@
                                 <option value="stk">Stk.</option>
                                 <option value="l">l.</option>
                                 <option value="dl">Dl.</option>
+                                <option value="bund">ml.</option>
                                 <option value="prise">Prise</option>
                                 <option value="bund">Bund</option>
+                                <option value="bund">Tasse</option>
                                 <option value="nb">n.B.</option>
                             </select>
                             <textarea class="textfield-zu" placeholder="Zutat Eingeben" v-model="field.textValue"></textarea>
