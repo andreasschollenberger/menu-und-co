@@ -99,7 +99,7 @@
                 <div class="zubereitung" v-for="(field, index) in zFields" :key="index">
                     <textarea class="textfield" placeholder="Zubereitung Schritt eintragen" v-model="field.ztextValue"></textarea>
                     <button class="plus-b" @click="addzFields">+</button>
-                    <button class="minus-b" v-if="index !== 0 || addzFieldClicked" @click="removeField(index)">-</button>
+                    <button class="minus-b" v-if="index !== 0 || addzFieldClicked" @click="removezField(index)">-</button>
                 </div>
             </div>
         </div>

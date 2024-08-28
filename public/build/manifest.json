@@ -3,8 +3,8 @@
     "file": "assets/baustelle-C4aj_c8V.css",
     "src": "_baustelle-!~{00n}~.js"
   },
-  "_baustelle-8fDhxQcb.js": {
-    "file": "assets/baustelle-8fDhxQcb.js",
+  "_baustelle-CCx2mvHT.js": {
+    "file": "assets/baustelle-CCx2mvHT.js",
     "imports": [
       "resources/js/app.js"
     ],
@@ -90,7 +90,7 @@
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-skaRKw8H.js",
+    "file": "assets/app-42Te3YGy.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "dynamicImports": [
@@ -126,7 +126,7 @@
     ]
   },
   "resources/js/pages/AGB.vue": {
-    "file": "assets/AGB-BNMkmj8K.js",
+    "file": "assets/AGB-010WsLPN.js",
     "src": "resources/js/pages/AGB.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -137,7 +137,7 @@
     ]
   },
   "resources/js/pages/Admin.vue": {
-    "file": "assets/Admin-D-lzKyfk.js",
+    "file": "assets/Admin-CE_KfX5s.js",
     "src": "resources/js/pages/Admin.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -151,7 +151,7 @@
     ]
   },
   "resources/js/pages/Auth/Login.vue": {
-    "file": "assets/Login-2YatDWo-.js",
+    "file": "assets/Login-Bn4Yp8LR.js",
     "src": "resources/js/pages/Auth/Login.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -162,7 +162,7 @@
     ]
   },
   "resources/js/pages/CreateRezept.vue": {
-    "file": "assets/CreateRezept-Ds7RuHbb.js",
+    "file": "assets/CreateRezept-CHW0Bpgu.js",
     "src": "resources/js/pages/CreateRezept.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -170,11 +170,11 @@
       "_rezept-senden-bnt-B8o6PVfI.js"
     ],
     "css": [
-      "assets/CreateRezept-DpHIH_8H.css"
+      "assets/CreateRezept-iQo8wht9.css"
     ]
   },
   "resources/js/pages/CreateWerbung.vue": {
-    "file": "assets/CreateWerbung-DxqJHpM5.js",
+    "file": "assets/CreateWerbung-sB448CcB.js",
     "src": "resources/js/pages/CreateWerbung.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -188,7 +188,7 @@
     ]
   },
   "resources/js/pages/Dashboard.vue": {
-    "file": "assets/Dashboard-BjfDw-xk.js",
+    "file": "assets/Dashboard-FcluZBr2.js",
     "src": "resources/js/pages/Dashboard.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -205,7 +205,7 @@
     ]
   },
   "resources/js/pages/EditFirma.vue": {
-    "file": "assets/EditFirma-pPDV8Rn8.js",
+    "file": "assets/EditFirma-BphGbIbX.js",
     "src": "resources/js/pages/EditFirma.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -213,7 +213,7 @@
     ]
   },
   "resources/js/pages/EditProdukt.vue": {
-    "file": "assets/EditProdukt-pPDV8Rn8.js",
+    "file": "assets/EditProdukt-BphGbIbX.js",
     "src": "resources/js/pages/EditProdukt.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -221,7 +221,7 @@
     ]
   },
   "resources/js/pages/EditRestaurant.vue": {
-    "file": "assets/EditRestaurant-HP_QtL6j.js",
+    "file": "assets/EditRestaurant-Bk6iGnkh.js",
     "src": "resources/js/pages/EditRestaurant.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -229,7 +229,7 @@
     ]
   },
   "resources/js/pages/EditRezept.vue": {
-    "file": "assets/EditRezept-BIu4nB1n.js",
+    "file": "assets/EditRezept-C5DriU8k.js",
     "src": "resources/js/pages/EditRezept.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -237,11 +237,11 @@
       "_rezept-senden-bnt-B8o6PVfI.js"
     ],
     "css": [
-      "assets/EditRezept-C4UEYSJX.css"
+      "assets/EditRezept-CEZfQdkh.css"
     ]
   },
   "resources/js/pages/EditUser.vue": {
-    "file": "assets/EditUser-Dc0ZHwLL.js",
+    "file": "assets/EditUser-DTbRnjEd.js",
     "src": "resources/js/pages/EditUser.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -253,7 +253,7 @@
     ]
   },
   "resources/js/pages/Home.vue": {
-    "file": "assets/Home-DaXob4GK.js",
+    "file": "assets/Home-DIXlFLqc.js",
     "src": "resources/js/pages/Home.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -267,12 +267,12 @@
     ]
   },
   "resources/js/pages/Produkte.vue": {
-    "file": "assets/Produkte-C8REg6uO.js",
+    "file": "assets/Produkte-DLyqqudo.js",
     "src": "resources/js/pages/Produkte.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_baustelle-8fDhxQcb.js"
+      "_baustelle-CCx2mvHT.js"
     ],
     "css": [
       "assets/Produkte-Q5MwsNCk.css"
@@ -282,7 +282,7 @@
     ]
   },
   "resources/js/pages/Registrierung.vue": {
-    "file": "assets/Registrierung-BR-3BC9R.js",
+    "file": "assets/Registrierung-6-orO-sO.js",
     "src": "resources/js/pages/Registrierung.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -294,7 +294,7 @@
     ]
   },
   "resources/js/pages/RegistrierungFirma.vue": {
-    "file": "assets/RegistrierungFirma-CFnDVshf.js",
+    "file": "assets/RegistrierungFirma-DCbvu4-o.js",
     "src": "resources/js/pages/RegistrierungFirma.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -306,16 +306,16 @@
     ]
   },
   "resources/js/pages/Restaurant.vue": {
-    "file": "assets/Restaurant-DufLdSd4.js",
+    "file": "assets/Restaurant-DnjPXMLg.js",
     "src": "resources/js/pages/Restaurant.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_baustelle-8fDhxQcb.js"
+      "_baustelle-CCx2mvHT.js"
     ]
   },
   "resources/js/pages/Rezept.vue": {
-    "file": "assets/Rezept-kSrBgAo3.js",
+    "file": "assets/Rezept-B-JrD5TZ.js",
     "src": "resources/js/pages/Rezept.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -326,7 +326,7 @@
     ]
   },
   "resources/js/pages/Rezepte.vue": {
-    "file": "assets/Rezepte-BGuaOYxN.js",
+    "file": "assets/Rezepte-EJyx-P9G.js",
     "src": "resources/js/pages/Rezepte.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -337,7 +337,7 @@
     ]
   },
   "resources/js/pages/Tipps.vue": {
-    "file": "assets/Tipps-CV7avll_.js",
+    "file": "assets/Tipps-Bez_x1yC.js",
     "src": "resources/js/pages/Tipps.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -348,7 +348,7 @@
     ]
   },
   "resources/js/pages/Überuns.vue": {
-    "file": "assets/Überuns-BPn22PEN.js",
+    "file": "assets/Überuns-LsyMDRN6.js",
     "src": "resources/js/pages/Überuns.vue",
     "isDynamicEntry": true,
     "imports": [

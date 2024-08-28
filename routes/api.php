@@ -45,6 +45,7 @@ Route::get('/recipes/groups', [RecipesGroupsController::class, 'index']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/recipes', [RecipesController::class, 'store']);
+    Route::put('/recipes/{id}', [RecipesController::class, 'update']);
 
     Route::post('/recipes/groups', [RecipesGroupsController::class, 'store']);
 });

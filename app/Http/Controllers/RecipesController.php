@@ -85,13 +85,25 @@ class RecipesController extends Controller
     /**
      * Aktualisieren Sie die angegebene Ressource im Speicher.
      */
-    public function update(Request $request, Recipes $recipes)
+    public function update(Request $request, $id)
     {
-        $recipes->title = $request->input('title');
-        $recipes->description = $request->input('description');
-        $recipes->save();
+        $recipes = Recipes::findOrFail($id);
+        
+        $recipes->update([
+            'user_id'=> $request->user()->id,
+            'title' => $request->title,
+            'image' => $request->file('image')? Storage::disk('public')->put('recipes', $request->file('image')): null,
+            'ingredients' => $request->ingredients,
+            'instructions' => $request->instructions,
+            'dish_id' => $request->dish_id,
+            'recipes_group_id' => $request->recipes_group_id,
+            'country_id' => $request->country_id
 
-        return redirect()->route('recipes.index');
+        ]);
+
+        $recipes->allergies()->sync(json_decode($request->allergies, true));
+        $recipes->vitamins()->sync(json_decode($request->vitamins, true));
+        $recipes->save();
     }
 
     /**
