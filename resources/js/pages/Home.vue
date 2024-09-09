@@ -9,9 +9,10 @@
             <div class="i-container">
                 <div class="homelogo">
                     <img class="homeimg" src="/public/Assets/img/homelogo.png" alt="Home Logo" />
+                    <img class="homeimg1" src="/public/Assets/img/Group 76 1.png" alt="" />
                 </div>
 
-                <div class="w-text">
+                <!-- <div class="w-text">
                     <h1>Willkommen bei unserer Rezepte-Plattform!</h1>
 
                     <p>Als Gast haben Sie die Möglichkeit, alle unsere köstlichen Rezepte
@@ -24,10 +25,13 @@
                         und erstellen Sie Ihre eigenen Rezepte! Ihre Kreativität 
                         und kulinarischen Fähigkeiten helfen dabei, unsere Datenbank 
                         mit Leben zu füllen.</p>
-                </div>
+                </div> -->
             </div> 
         </div>
-                <div class="muc-text">
+        <div>
+            <img class="homeimg2" src="/public/Assets/img/Group 74 1.png" alt="" />
+        </div>
+                <!-- <div class="muc-text">
                     <h2>MENÜ UND CO</h2>
                     <p>Unser Ziel ist es, nicht nur die Zutatenliste eines Rezepts 
                         bereitzustellen, sondern auch den Vitamingehalt 
@@ -35,7 +39,7 @@
                         auf die Berücksichtigung der Ernährungsbedürfnisse von 
                         Allergikern, die stets im Vordergrund unserer Rezeptentwicklung 
                         stehen.</p>
-                </div>
+                </div> -->
     </main>
     
 </template>
@@ -71,6 +75,16 @@ main {
 .homeimg {
     width: 800px;
     height: 800px;
+}
+
+.homeimg1 {
+    margin-top: 10px;
+}
+
+.homeimg2 {
+    display: block;
+    margin: 0 auto;
+    padding: 50px 0 50px 0;
 }
 
 

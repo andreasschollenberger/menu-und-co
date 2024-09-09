@@ -203,10 +203,6 @@ select {
     margin-left: 20px;
 }
 
-.kategorie {
-  margin-top: 20px;
-  margin-left: 20px;
-}
 
 .allergie-box {
   padding-bottom: 20px;
@@ -234,6 +230,12 @@ select {
     margin-left: 20px;
 }
 
+.filter-bnt:hover {
+    background-color: #555555;
+    color: yellowgreen;
+    cursor: pointer;
+}
+
 .al-box {
     width: 145px;
     /* height: 35px; */
@@ -246,6 +248,11 @@ select {
     margin-top: 10px;
 }
 
+.al-box:hover {
+  background-color: #555555;
+    color: yellowgreen;
+    cursor: pointer;
+}
 
 .r-card {
     z-index: 9998;
@@ -267,21 +274,31 @@ select {
 
 .menu-container {
     display: flex;
-    margin: 50px 0 50px 0;
+    margin: 50px 15px 50px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .menu-text {
     display: flex;
+    flex: 1;
     flex-direction: column;
-    width: 300px;
-    margin: 50px 200px 50px 100px;
-    
+    /* width: 300px;
+    margin: 50px 200px 50px 100px; */ 
+}
+
+.card-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 img {
+  flex: 1;
+    max-width: 100%;
     border-radius: 50px;
     margin-top: 50px;
-    margin-left: 100px;
+    margin-left: -67px;
     margin-bottom: 50px;
 }
 
