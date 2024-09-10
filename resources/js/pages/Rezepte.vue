@@ -256,10 +256,8 @@ select {
 
 .r-card {
     z-index: 9998;
-    /* position: absolute; */
     top: 700px;
     left: 50%;
-    /* transform: translateX(-50%); */
     width: 80%;
     margin: 0 auto;
     
@@ -283,8 +281,6 @@ select {
     display: flex;
     flex: 1;
     flex-direction: column;
-    /* width: 300px;
-    margin: 50px 200px 50px 100px; */ 
 }
 
 .card-img {
@@ -294,11 +290,11 @@ select {
 }
 
 img {
-  flex: 1;
+    flex: 1;
     max-width: 100%;
     border-radius: 50px;
     margin-top: 50px;
-    margin-left: -67px;
+    margin-left: 3px;
     margin-bottom: 50px;
 }
 
@@ -307,6 +303,7 @@ img {
     font-weight: bold;
     color: #393636;
     margin-top: 20px;
+    padding-left: 15px;
    
 }
 
@@ -320,26 +317,31 @@ img {
 .kategorie {
     font-size: 25px;
     color: #393636;
+    padding-left: 20px;
 }
 
 .herkunft {
     font-size: 25px;
     color: #393636;
+    padding-left: 20px;
 }
 
 .vegi {
     font-size: 25px;
     color: #393636;
+    padding-left: 20px;
 }
 
 .autor {
     font-size: 25px;
     color: #393636;
     margin-top: 20px;
+    padding-left: 20px;
 }
 
 .button {
     display: flex;
+    padding-left: 20px;
 }
 
 .ansicht{
