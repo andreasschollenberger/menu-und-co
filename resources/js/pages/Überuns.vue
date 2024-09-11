@@ -88,7 +88,7 @@ export default {
                     }
                 });
 
-                this.$router.push('/über-uns'); // neue seite erstellen für bestätigung
+                this.$router.push('/mail-gesendet');
             } catch (error) {
                 console.error(error);
             }

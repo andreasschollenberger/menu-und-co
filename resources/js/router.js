@@ -119,6 +119,12 @@ export const routes = [
     },
 
     {
+        name: 'mail-gesendet',
+        path: "/mail-gesendet",
+        component: () => import("./pages/thx.vue"),
+    },
+
+    {
         name: 'admin',
         path: "/admin",
         component: () => import("./pages/Admin.vue"),

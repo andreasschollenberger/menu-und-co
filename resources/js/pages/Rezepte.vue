@@ -317,7 +317,7 @@ img {
 .kategorie {
     font-size: 25px;
     color: #393636;
-    padding-left: 20px;
+    padding-left: 15px;
 }
 
 .herkunft {
