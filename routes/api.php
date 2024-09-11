@@ -14,6 +14,7 @@ use App\Http\Controllers\DishController; // Import the DishController class
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\AllergyController; // Import the AllergyController class
 use App\Http\Controllers\VitaminController;
+use App\Http\Controllers\EmailController; // Import the EmailController class
 
 
 Route::post('/sanctum/token', TokenController::class);
@@ -58,5 +59,7 @@ Route::get('/countries', [CountryController::class, 'index']);
 
 Route::get('/allergies', [AllergyController::class, 'index']);
 Route::get('/vitamins', [VitaminController::class, 'index']);
+
+Route::post('/contact-email', [EmailController::class, 'sendEmail']);
 
 

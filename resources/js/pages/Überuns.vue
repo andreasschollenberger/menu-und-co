@@ -32,23 +32,23 @@
     </div>
 
     <div class="kontakt">
-        <form>
+        <form method="post" @submit.prevent="sendEmail">
             <h2>Kontakt</h2>
             <div class="form-group">
                 <label for="vorname">Vorname:</label>
-                <input type="text" id="vorname" name="vorname" required>
+                <input v-model="vorname" type="text" id="vorname" name="vorname" required>
             </div>
             <div class="form-group">
                 <label for="nachname">Familienname:</label>
-                <input type="text" id="nachname" name="nachname" required>
+                <input v-model="nachname" type="text" id="nachname" name="nachname" required>
             </div>
             <div class="form-group">
                 <label for="email">E-Mail Adresse:</label>
-                <input type="email" id="email" name="email" required>
+                <input v-model="email" type="email" id="email" name="email" required>
             </div>
             <div class="form-nachricht">
                 <label for="nachricht">Nachricht:</label>
-                <textarea id="nachricht" name="nachricht" required></textarea>
+                <textarea v-model="nachricht" id="nachricht" name="nachricht" required></textarea>
             </div>
             <button type="submit"><img src="/public/Assets/img/e-mail.png" alt=""></button>
         </form>
@@ -58,21 +58,40 @@
 </template>
 
 <script>
+export const authClient = axios.create({
+  baseURL: import.meta.env.VITE_BASE_URL,
+  withCredentials: true, // required to handle the CSRF token
+});
 export default {
     name: 'Überuns',
+    data() {
+        return {
+            vorname: '',
+            nachname: '',
+            email: '',
+            nachricht: ''
+        }
+    },
     methods: {
-        sendEmail() {
-            // Get form values
-            const vorname = document.getElementById('vorname').value;
-            const nachname = document.getElementById('nachname').value;
-            const email = document.getElementById('email').value;
-            const nachricht = document.getElementById('nachricht').value;
+        async sendEmail() {
+            try {
+                const formData = new FormData();
+                formData.append('vorname', this.vorname);
+                formData.append('nachname', this.nachname);
+                formData.append('email', this.email);
+                formData.append('nachricht', this.nachricht);
+                await authClient.get("/sanctum/csrf-cookie");
 
-            // Create email body
-            const body = `Vorname: ${vorname}\nNachname: ${nachname}\nEmail: ${email}\nNachricht: ${nachricht}`;
+                await authClient.post('/contact-email', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                });
 
-            // Send email
-            window.location.href = `mailto:info@menueundco.ch?subject=Kontaktformular&body=${encodeURIComponent(body)}`;
+                this.$router.push('/über-uns'); // neue seite erstellen für bestätigung
+            } catch (error) {
+                console.error(error);
+            }
         }
     }
 }
